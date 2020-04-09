@@ -1,0 +1,17 @@
+{
+  "name": "duckyhub-website",
+  "version": "1.0.0",
+  "main": "index.html",
+  "repository": "https://github.com/cvbenur/duckyhub-website",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel index.html --open"
+  },
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.1"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
