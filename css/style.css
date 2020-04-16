@@ -15,3 +15,32 @@
 .navbar .nav-item.active>.nav-link{ background-color: #0E4880 !important; }
 
 .page-footer a:hover{ text-decoration: underline; }
+
+.collapsible-item {
+    background-color:inherit;
+    cursor: pointer;
+    width: 800px;
+    border: none;
+    border-bottom: 1px solid #08549E;
+    text-align: left;
+    outline: none;
+}
+
+.active:after { content: "\2212"; }
+
+.active, .collapsible-item:hover {
+    color: rgb(5, 45, 85);
+    border-bottom: 1px solid rgb(7, 62, 117);
+}
+
+.collapsible-item:after {
+    content: '\002B';
+    float: right;
+    margin-left: 5px;
+}
+
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
