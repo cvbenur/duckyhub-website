@@ -1,17 +1,17 @@
-.card-comments img{ width:4rem }
+.card-comments img { width: 4rem }
 
-.dropdown .dropdown-menu .dropdown-item:active, .dropdown .dropdown-menu .dropdown-item:hover{ background-color: #81B1E0 !important; }
+.dropdown .dropdown-menu .dropdown-item:active, .dropdown .dropdown-menu .dropdown-item:hover { background-color: #81B1E0 !important; }
 
-.ducky-blue{ background-color: #08549E !important; }
+.ducky-blue { background-color: #08549E !important; }
 
-.ducky-skyblue{ background-color: #81B1E0 !important; }
+.ducky-skyblue { background-color: #81B1E0 !important; }
 
-.ducky-skyblue-text{ color: #81B1E0 !important; }
+.ducky-skyblue-text { color: #81B1E0 !important; }
 
-.ducky-blue-text{ color: #08549E !important; }
+.ducky-blue-text { color: #08549E !important; }
 
-.navbar .nav-item:hover{ background-color: #0D4D8B !important; }
+.navbar .nav-item:hover { background-color: #0E4880 !important; }
 
-.navbar .nav-item.active>.nav-link{ background-color: #0E4880 !important; }
+.navbar .nav-item.active>.nav-link { background-color: #0E4880 !important; }
 
-.page-footer a:hover{ text-decoration: underline; }
+.page-footer a:hover { text-decoration: underline; }
