@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+  <title>Générateur</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.min.css" rel="stylesheet">
+</head>
+
+<body class="light-blue-skin">
+
+  <!--Main Navigation-->
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light ducky-blue scrolling-navbar">
+      <div class="container">
+
+        <!-- Brand -->
+        <a class="navbar-brand waves-effect" href="#">
+          <img src="./img/ducky/logo.png" height="35" alt="DuckyHub Logo">
+          <strong class="white-text">DuckyHub</strong>
+        </a>
+
+        <!-- Collapse -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <!-- Left -->
+          <ul class="navbar-nav mr-auto">
+
+            <!-- Accueil -->
+            <li class="nav-item">
+              <a class="nav-link waves-effect white-text px-2" href="#"><strong>Accueil</strong>
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <!-- Accueil -->
+
+            <!-- Apprendre -->
+            <li class="nav-item px-2 dropdown">
+              <a class="white-text nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">Apprendre  </a>
+              <div class="dropdown-menu ducky-blue" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item white-text" href="#">Tutoriels</a>
+                <a class="dropdown-item white-text" href="#">Ressources</a>
+              </div>
+            </li>
+            <!-- Apprendre -->
+
+            <!-- Scripts -->
+            <li class="nav-item px-2">
+              <a class="nav-link waves-effect white-text" href="#">Scripts</a>
+            </li>
+            <!-- Scripts -->
+
+            <!-- Générateur -->
+            <li class="nav-item px-2 active">
+              <a class="nav-link waves-effect white-text" href="#">Générateur</a>
+            </li>
+            <!-- Générateur -->
+          </ul>
+
+          <!-- Right -->
+          <ul class="navbar-nav nav-flex-icons">
+            <li class="nav-item">
+              <a href="https://github.com/cvbenur/duckyhub-website" class="nav-link border border-light rounded waves-effect white-text"
+                target="_blank">
+                <i class="fab fa-github mr-2"></i>DuckyHub GitHub
+              </a>
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+    </nav>
+    <!-- Navbar -->
+
+  </header>
+  <!--Main Navigation-->
+
+  <!--Main layout-->
+  <main class="mt-5 pt-5">
+    <div class="container">
+
+      <!-- Description -->
+      <section>
+
+        <h1 class="my-4 text-center ducky-blue-text">
+          <strong>Générateur de scripts</strong>
+        </h1>
+
+        <hr class="my-5">
+        
+        <div>
+          <div>
+            <h3 class="pb-3 ducky-skyblue-text">
+              <strong>Générez vos propres scripts DuckyScript, facilement !</strong>
+            </h3>
+    
+            <div class="my-3 ducky-blue-text text-justify">
+              <p>
+                Concevoir et écrire du DuckyScript se montre souvent peu intuitif les premières fois. Pour cette raison,
+                nous avons mis au point cet outil gratuit de génération de scripts DuckyScript.
+              </p>
+              
+              <p>
+                Cet outil est facile d'utilisation, puisque vous n'avez qu'à cocher les cases des fonctionnalités désirées, 
+                cliquer sur le bouton "<strong>Générer</strong>", et télécharger le résultat.
+              </p>
+  
+              <p class="pb-2">
+                Nous nous occupons du reste.
+              </p>
+            </div>
+          </div>
+
+          <br class="my-5">
+
+          <div>
+            <h3 class="pb-3 ducky-skyblue-text">
+              <strong>Instructions d'utilisation</strong>
+            </h3>
+    
+            <div class="my-3 ducky-blue-text text-justify">
+              <p>
+                Une fois avoir construit votre script DuckyScript et l'avoir téléchargé, vous vous retrouverez en 
+                possession d'un fichier au nom commençant par "<strong>script-</strong>" et terminant par <strong>-dh.txt</strong>".
+              </p>
+              
+              <p>
+                Il vous suffit de renommer ce fichier en "<strong>script.txt</strong>", et de le déposer sur la carte SD de votre 
+                dispositif Rubber Ducky.
+              </p>
+  
+              <p class="pb-2">
+                La dernière étape est de brancher votre dispositif Rubber Ducky à votre ordinateur, et d'observer votre script à 
+                l'oeuvre !
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Description -->
+
+      <!-- Génération de scripts -->
+      <section class="py-5">
+
+        <!-- Accordion -->
+        <div class="accordion" id="accordion">
+
+          <!-- Générateur de script simple -->
+          <div class="card z-depth-0">
+            
+            <div class="card-header" id="headingOne2">
+              <h5 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-row1"
+                  aria-expanded="true" aria-controls="accordion-row1">
+                  Générateur de script simple
+                </button>
+              </h5>
+            </div>
+
+
+            <div id="accordion-row1" class="collapse" aria-labelledby="headingOne2"
+              data-parent="#accordion">
+
+              <div class="card-body">
+                <div class="text-center">
+                  <div class="row pt-5" id="script-line-form">
+
+                      <div class="col-3">
+                        <form id="line">
+                          <select id="keyword-list" class="browser-default custom-select">
+                            <option selected>Sélectionner une option</option>
+                            <option value="string">Taper une chaîne de caractères</option>
+                            <option value="key">Pression de touche du clavier</option>
+                            <option value="delay">Pause (en ms)</option>
+                            <option value="rem">Ligne de commentaire</option>
+                          </select>
+                        </form>
+                      </div>
+
+                      <div class="col">
+                        <input type="text" name="line-text" class="form-control" placeholder="Ecrire votre instruction ici !">
+                      </div>
+
+                      <div class="col-2">
+                        <button type="button" class="btn ducky-blue white-text py-2 my-0"><i class="fas fa-plus"></i></button>
+                      </div>
+                  </div>
+
+                  <br class="pt-5">
+                  
+                  <div class="py-4">
+                    <button type="button" class="btn ducky-blue white-text" id="line-generate-btn">
+                      Générer
+                    </button>
+                  </div>
+          
+                  <hr>
+          
+                  <div id="generated-line" class="ducky-blue-text">
+                    <p>Script généré :</p>
+
+                    <div id="selected-list">
+                        <p>Rien pour le moment.</p>
+                    </div>
+            
+                    <a id="dl-btn" style="display:none" download>
+                        <button type="button" class="btn ducky-blue white-text">Télécharger</button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Générateur de script simple -->
+
+          <!-- Générateur de script complexe -->
+          <div class="card z-depth-0">
+            <div class="card-header" id="headingTwo2">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                  data-target="#accordion-row2" aria-expanded="false" aria-controls="accordion-row2">
+                  Générateur de script complexe
+                </button>
+              </h5>
+            </div>
+
+
+            <div id="accordion-row2" class="collapse" aria-labelledby="headingTwo2"
+              data-parent="#accordion">
+
+              <div class="card-body">
+                <div class="text-center">
+                  <div id="script-comp-form" class="pt-5">
+
+                    <div id="os">
+                      <h4 class="pb-3">Sélectionner le système d'exploitation de l'ordinateur cible :</h4>
+
+                      <div class="row">
+                        <div class="custom-control custom-radio col">
+                          <input type="radio" class="custom-control-input" id="win" name="defaultExampleRadios">
+                          <label class="custom-control-label" for="win">Windows</label>
+                        </div>
+  
+                        <div class="custom-control custom-radio col">
+                          <input type="radio" class="custom-control-input" id="mac" name="defaultExampleRadios">
+                          <label class="custom-control-label" for="mac">MacOS</label>
+                        </div>
+  
+                        <div class="custom-control custom-radio col">
+                          <input type="radio" class="custom-control-input" id="linux" name="defaultExampleRadios">
+                          <label class="custom-control-label" for="linux">Linux</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <br class="pt-5">
+                  
+                  <div class="py-4">
+                    <button type="button" class="btn ducky-blue white-text" id="comp-generate-btn">
+                      Générer
+                    </button>
+                  </div>
+
+                  <hr class="pb-4">
+          
+                  <div id="generated-line" class="ducky-blue-text">
+                    <p>Script généré :</p>
+
+                    <div id="selected-list">
+                        <p>Rien pour le moment.</p>
+                    </div>
+            
+                    <a id="dl-btn" style="display:none" download>
+                        <button type="button" class="btn ducky-blue white-text">Télécharger</button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Générateur de script complexe -->
+
+        </div>
+        <!-- Accordion -->
+
+      </section>
+      <!-- Génération de scripts -->
+
+    </div>
+  </main>
+  <!--Main layout-->
+
+  <!--Footer-->
+  <footer class="page-footer text-center font-small ducky-blue mt-4 wow fadeIn">
+
+    <!-- Links -->
+    <div class="py-3">
+      <a class="px-2" href="">Lien 1</a>
+      <a class="px-2" href="">Lien 2</a>
+      <a class="px-2" href="">Lien 3</a>
+    </div>
+    <!-- Links -->
+
+    <!--Copyright-->
+    <div class="footer-copyright white-text py-3">
+      © 2020 Copyright : DuckyHub </a>
+    </div>
+    <!--/.Copyright-->
+
+  </footer>
+  <!--/.Footer-->
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Custom DuckyHub JavaScript -->
+  <script src="./js/custom.js"></script>
+  <script src="./js/ducky/create.js"></script>
+  <script src="./js/ducky/duckify.js"></script>
+  <script src="./js/ducky/generate.js"></script>
+  <!-- Initializations -->
+  <script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+
+  </script>
+</body>
+
+</html>
