@@ -186,23 +186,32 @@
                 <div class="text-center">
                   <h4 class="py-3">Ecrivez votre script ligne par ligne !</h4>
 
-                  <form id="line-whole-script" class="line-needs-validation" novalidate>
+                  <form id="line-form" class="line-needs-validation" novalidate>
+                    <div id="line-lines">
+                    </div>
+
+
+                    <div>
+                      <div class="pt-5">
+                        <button type="button" id="add-line-btn" class="btn ducky-blue white-text py-2 my-0">
+                          <i class="fas fa-plus"></i>
+                          Commencer votre script
+                        </button>
+                      </div>
+    
+                      <br class="pt-5">
+                      
+                      <div class="py-5">
+                        <div class="invalid-feedback">
+                          Erreur dans le script
+                        </div>
+
+                        <button type="button" class="btn ducky-blue white-text submit" id="line-generate-btn" disabled>
+                          Générer
+                        </button>
+                      </div>
+                    </div>
                   </form>
-
-                  <div class="pt-5">
-                    <button type="button" id="add-line-btn" class="btn ducky-blue white-text py-2 my-0 submit">
-                      <i class="fas fa-plus"></i>
-                      Commencer votre script
-                    </button>
-                  </div>
-
-                  <br class="pt-5">
-                  
-                  <div class="py-5">
-                    <button type="button" class="btn ducky-blue white-text" id="line-generate-btn" disabled>
-                      Générer
-                    </button>
-                  </div>
           
                   <hr>
           
