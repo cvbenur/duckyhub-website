@@ -98,7 +98,7 @@ function createNewScriptLine () {
 document.getElementById('add-line-btn').addEventListener('click', () => {
 
     // Append the new div to DOM
-    document.getElementById('line-whole-script').appendChild(createNewScriptLine());
+    document.getElementById('line-lines').appendChild(createNewScriptLine());
 
     // Get the remove buttons in a collection
     const rmvBtns = document.getElementsByClassName('btn-line-remove');
@@ -106,6 +106,7 @@ document.getElementById('add-line-btn').addEventListener('click', () => {
     // Changing the add line button's text
     if (rmvBtns.length > 0) {
         document.getElementById('add-line-btn').innerHTML = '<i class="fas fa-plus"></i> Ajouter une ligne';
+        document.getElementById('line-generate-btn').disabled = false;
     }
 
     // Enable all remove buttons when there is more than one line
@@ -119,7 +120,7 @@ document.getElementById('add-line-btn').addEventListener('click', () => {
 
 
 // Remove line on click
-function removeLineOnClick (e) {
+export function removeLineOnClick (e) {
     e.preventDefault();
     e.stopPropagation();
 
@@ -143,29 +144,5 @@ function removeLineOnClick (e) {
 }
 
 
-
-
-
-window.addEventListener('load', function() {
-
-
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.getElementsByClassName('line-needs-validation');
-
-    // Loop over them and prevent submission
-    var validation = Array.prototype.filter.call(forms, function(form) {
-
-        form.addEventListener('submit', function(event) {
-
-            if (form.checkValidity() === false) {
-                event.preventDefault();
-                event.stopPropagation();
-            }
-
-            form.classList.add('was-validated');
-            
-        }, false);
-
-    });
-
-}, false);
+// Form validation
+// TODO
