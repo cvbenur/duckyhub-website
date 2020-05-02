@@ -9,6 +9,7 @@ var blob;
 
 
 // Generating the item list on click of the 'Generate' button
+/*
 $('#generate-btn').click(function() {
     text="";
 
@@ -46,6 +47,24 @@ $('#generate-btn').click(function() {
         $('#dl-btn').css('display', "");
     }
 });
+*/
+
+
+// Generating script from line generator
+export function generateLineScript () {
+    console.log('line');
+    // TODO
+}
+
+
+// Generating script from complex generator
+export function generateCompScript () {
+    console.log('comp');
+    // TODO
+}
+
+
+
 
 
 // Starting download on click of the 'Download' button
