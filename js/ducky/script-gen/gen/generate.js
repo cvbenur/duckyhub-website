@@ -1,6 +1,6 @@
 import $ from "jquery";
 import { duckify } from './duckify';
-import { checkValidity } from '../forms/line-script.js';
+import { checkValidity, removeErrorWarnings } from '../forms/line-script.js';
 
 var text = "";
 
@@ -49,13 +49,17 @@ $('#generate-btn').click(function() {
 });
 
 
-// Generating script from line generator
+
+// TODO: Generating script from line generator
 export function generateLineScript () {
 
-    // TODO
+    // Remove error lines
+    removeErrorWarnings();
 
-    // 1. Parse lines and check validity for each
-    if (!checkValidity()) return;
+
+    // Parse lines and check validity for the form
+    const instructions = checkValidity();
+    if (instructions.some(i => i === null)) return;
 
 
     document.getElementById('line-generate-btn').disabled = true;
@@ -65,25 +69,22 @@ export function generateLineScript () {
 
 
 
-    // 2. If valid, get values
-    
+    // TODO: 3. Duckify values
 
-    // 3. Duckify values
+    // TODO: 4. Concat
 
-    // 4. Concat
+    // TODO: 5. Enable dl
 
-    // 5. Enable dl
-
-    // 6. Update Generated status
+    // TODO: 6. Update Generated status
 }
 
 
-// Generating script from complex generator
+
+// TODO: Generating script from complex generator
 export function generateCompScript () {
     console.log('comp');
-    // TODO
 
-    // 1. 
+    // 1.
 }
 
 

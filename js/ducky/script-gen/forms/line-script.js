@@ -3,6 +3,7 @@ export function createNewScriptLine () {
 
     // Initialize the select div
     let select = document.createElement('select');
+    select.required = true;
     select.className = "browser-default custom-select keyword-list";
 
     // Initialize the select's options individually
@@ -63,6 +64,7 @@ export function createNewScriptLine () {
 
     // Initialize input
     let input = document.createElement('input');
+    input.required = true;
     input.type = "text";
     input.name = "line-text";
     input.className = "form-control";
@@ -93,6 +95,11 @@ export function createNewScriptLine () {
     button.appendChild(i);
 
 
+    // Initialize button div
+    let buttonDiv = document.createElement('div');
+    buttonDiv.appendChild(button);
+
+
     // Initialize row div
     let row = document.createElement('div');
     row.className = "line-form-row row pt-2";
@@ -102,7 +109,7 @@ export function createNewScriptLine () {
     row.appendChild(lineNbrDiv);
     row.appendChild(selectDiv);
     row.appendChild(col);
-    row.appendChild(button);
+    row.appendChild(buttonDiv);
 
 
     // Return resulting row div
@@ -146,6 +153,9 @@ export function removeLineOnClick (e) {
 // Form validation
 export function checkValidity () {
 
+    let instructions = [];
+    let invalid = [];
+
     const warning = document.getElementById('line-script-invalid');
 
 
@@ -153,33 +163,65 @@ export function checkValidity () {
     for (const line of document.getElementsByClassName('line-form-row')) {
 
         // Check validity line by line
-        if (!checkLineValidity(line)) {
+        const lineInfo = checkLineValidity(line);
+        if (lineInfo === null) {
 
-            // Show error in code
-            warning.innerText = 'Erreur détectée ligne ' + line.children[0].innerText;
-            warning.className = 'd-block pt-3 red-text animated bounceIn faster';
-
-            return false;
+            invalid.push(line.children[0].innerText.split('.')[0]);
         }
+
+        instructions.push(lineInfo);
     }
 
-    warning.className = 'd-block pt-3 green-text animated fadeIn faster';
-    warning.innerText = 'Aucun problème détecté dans le code.';
+    
+    // If there are any problems
+    if (invalid.length === 0) {
 
-    return true;
+        // Show status OK
+        warning.className = 'd-block pt-3 green-text animated fadeIn faster';
+        warning.innerText = 'Aucun problème détecté dans le code.';
+
+    } else {
+
+        // Show error in code
+        warning.innerText = `Erreur détectée ligne ${invalid[0]}.`;
+        warning.className = 'd-block pt-3 red-text animated bounceIn faster';
+    }
+
+
+    return instructions;
 }
 
 
 
+// Define dictionnary of error divs
+const errors = [
+    {
+        name: 'int',
+        body: '<div class="red-text">La valeur doit être un nombre entier positif</div>'
+    },
+    {
+        name: 'key',
+        body: '<div class="red-text">La commande n\'est pas valide</div>'
+    },
+    {
+        name: 'empty',
+        body: '<div class="red-text">La ligne est vide</div>'
+    }
+];
+
 // Check line validity
 function checkLineValidity (line) {
-
-    let valid = true;
-
 
     const select = line.children[1].children[0];
     const input = line.children[2].children[0];
     console.log(select.value + ' : ' + input.value);
+
+
+    // Define new element for line info
+    const lineInfo = {
+        instruction: '',
+        body: ''
+    };
 
 
     switch (select.value) {
@@ -187,42 +229,86 @@ function checkLineValidity (line) {
         // Handle STRING
         case 'string':
             // Do nothing
+            lineInfo.instruction = select.value;
+            lineInfo.body = input.value;
             break;
 
 
         // Handle key press
         case 'key':
-            valid = checkKeypressValidity(input.value);
+            // Check that the keypress proposition is valid
+            if (!checkKeypressValidity(input.value)) {
+
+                // Output error under erroneous input field
+                displayError(input, 'key');
+                return null;
+            }
+
+            lineInfo.instruction = select.value;
+            lineInfo.body = input.value;
             break;
 
         
         // Handle DELAY
-        case 'delay' || 'repeat':
-            // If the parsed value is NOT an integer
-            if (isNaN(parseInt(input.value, 10))) valid = false;
+        case 'delay':
+            // Check that the parsed value is an integer
+            if (isNaN(parseInt(input.value, 10))) {
+
+                // Output error under erroneous input field
+                displayError(input, 'int');
+                return null;
+            }
+
+            lineInfo.instruction = select.value;
+            lineInfo.body = input.value;
             break;
         
         
         // Handle REPEAT
         case 'repeat':
-            // If the parsed value is NOT an integer
-            if (isNaN(parseInt(input.value, 10))) valid = false;
+            // Check that the parsed value is an integer
+            if (isNaN(parseInt(input.value, 10))) {
+
+                // Output error under erroneous input field
+                displayError(input, 'int');
+                return null;
+            }
+
+            lineInfo.instruction = select.value;
+            lineInfo.body = input.value;
             break;
         
         
         // Handle REM
         case 'rem':
             // Do nothing
+
+            lineInfo.instruction = select.value;
+            lineInfo.body = input.value;
             break;
 
         
         // Handle empty line
         default:
-            valid = false;
+            // Output error under erroneous input field
+            displayError(input, 'empty');
+            return null;
     }
 
 
-    return valid;
+    return lineInfo;
+}
+
+
+
+// Display error on page
+function displayError (input, errorCode) {
+
+    let div = document.createElement('div');
+
+    div.className = 'text-left line-error';
+    div.innerHTML = errors.find(e => e.name === errorCode).body;
+    input.parentElement.appendChild(div);
 }
 
 
@@ -270,4 +356,14 @@ function checkKeypressValidity (string) {
     }
     
     return true;
+}
+
+
+
+// Remove error warnings in the code
+export function removeErrorWarnings () {
+    Array.from(document.getElementsByClassName('line-error')).forEach(div => {
+        const parent = div.parentElement;
+        parent.removeChild(div);
+    });
 }
