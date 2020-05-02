@@ -1,11 +1,15 @@
 // Converting comments into 'REM' strings
 function duckyREM(phrase) { return "REM " + phrase }
 
+
+
 // Converting line with parameters into their type in Ducky
 function duckyDelay(number) { return "DELAY " + number }
 function duckyDefaultDelay(number) { return "DEFAULTDELAY " + number }
 function duckyRepeat(number) { return "REPEAT " + number }
 function duckyString(phrase) { return "STRING " + phrase }
+
+
 
 // Returning the Ducky key as a String
 function getKey(key) {
@@ -38,6 +42,8 @@ function getKey(key) {
     else if (key === "tab")         { return "TAB"; }
 }
 
+
+
 // Converting keypress combinations into Ducky
 function duckyPressKeys(parts) {
     var duckyKeyString = '';
@@ -51,6 +57,7 @@ function duckyPressKeys(parts) {
 
     return duckyKeyString;
 }
+
 
 
 // Concatenating all lines into the final script in the form of a String
