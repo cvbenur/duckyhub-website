@@ -49,10 +49,20 @@ for (const radio of document.getElementsByClassName('custom-control-input')) {
 const actions = document.getElementsByClassName('comp-action');
 
 for (const box of actions) {
+
+    // Detecting change in checkbox
     box.addEventListener('change', (e) => {
+
+        // If this particular checkbox gets checked
         if (e.target.checked) {
+
+            // Enable Generate button
             document.getElementById('comp-generate-btn').disabled = false;
+
+        // Else, if no ckeckbox is left checked
         } else if (!Array.from(actions).find(b => { b.checked })) {
+
+            // Disable Generate button
             document.getElementById('comp-generate-btn').disabled = true;
         }
     });
