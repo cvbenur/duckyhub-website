@@ -190,8 +190,9 @@ function checkLineValidity (line) {
             break;
 
 
-        // TODO: Handle key press
+        // Handle key press
         case 'key':
+            valid = checkKeypressValidity(input.value);
             break;
 
         
@@ -222,4 +223,51 @@ function checkLineValidity (line) {
 
 
     return valid;
+}
+
+
+
+// Define array of keypresses
+const keypresses = [
+    'GUI',
+    'WINDOWS',
+    'APP',
+    'MENU',
+    'SHIFT',
+    'ALT',
+    'CTRL',
+    'CONTROL',
+    'DOWNARROW',
+    'DOWN',
+    'UPARROW',
+    'UP',
+    'LEFTARROW',
+    'LEFT',
+    'BREAK',
+    'PAUSE',
+    'CAPSLOCK',
+    'DELETE',
+    'END',
+    'ENTER',
+    'ESCAPE',
+    'HOME',
+    'INSERT',
+    'NUMLOCK',
+    'PAGEUP',
+    'PAGEDOWN',
+    'PRINTSCREEN',
+    'SCROLLLOCK',
+    'SPACE',
+    'TAB'
+];
+
+// Check keypresses arguments validity
+function checkKeypressValidity (string) {
+
+    // Check the args against the array of possible key presses
+    for (const arg of string.split(' ')) {
+        if (!keypresses.some(key => arg.toUpperCase() === key)) return false;
+    }
+    
+    return true;
 }
