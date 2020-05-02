@@ -9,27 +9,32 @@ function createNewScriptLine () {
     let none = document.createElement('option');
     none.selected = true;
     none.value = "none";
-    none.innerHTML = "Sélectionner une option";
+    none.innerText = "Sélectionner une option";
     
 
     let string = document.createElement('option');
     string.value = "string";
-    string.innerHTML = "Taper une chaîne de caractères";
+    string.innerText = "STRING";
 
 
     let key = document.createElement('option');
     key.value = "key";
-    key.innerHTML = "Pression de touche du clavier";
+    key.innerText = "Touche(s) du clavier";
     
 
     let delay = document.createElement('option');
     delay.value = "delay";
-    delay.innerHTML = "Pause (en ms)";
+    delay.innerText = "DELAY";
+
+
+    let repeat = document.createElement('option');
+    repeat.value = "repeat";
+    repeat.innerText = "REPEAT";
     
 
     let rem = document.createElement('option');
     rem.value = "rem";
-    rem.innerHTML = "Ligne de commentaire";
+    rem.innerText = "REM";
 
 
     // Append options to select
@@ -37,6 +42,7 @@ function createNewScriptLine () {
     select.appendChild(string);
     select.appendChild(key);
     select.appendChild(delay);
+    select.appendChild(repeat);
     select.appendChild(rem);
 
 
