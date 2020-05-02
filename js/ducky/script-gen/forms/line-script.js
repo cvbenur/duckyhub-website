@@ -46,6 +46,16 @@ export function createNewScriptLine () {
     select.appendChild(rem);
 
 
+    // Initialize line number
+    let lineNbr = document.createElement('h4');
+    lineNbr.innerText = document.getElementsByClassName('line-form-row').length + 1 + '.';
+    lineNbr.className = 'ducky-blue-text line-number';
+
+    let lineNbrDiv = document.createElement('div');
+    lineNbrDiv.className = 'mt-1 pr-1';
+    lineNbrDiv.appendChild(lineNbr);
+
+
     // Initialize div, append select to it
     let selectDiv = document.createElement('div');
     selectDiv.appendChild(select);
@@ -89,6 +99,7 @@ export function createNewScriptLine () {
 
 
     // Append subdivs to row div
+    row.appendChild(lineNbrDiv);
     row.appendChild(selectDiv);
     row.appendChild(col);
     row.appendChild(button);
