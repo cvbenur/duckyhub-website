@@ -1,5 +1,6 @@
-import $ from "jquery"
-import duckify from './duckify'
+import $ from "jquery";
+import { duckify } from './duckify';
+import { checkValidity } from '../forms/line-script.js';
 
 var text = "";
 
