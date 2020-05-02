@@ -133,8 +133,93 @@ export function removeLineOnClick (e) {
     if (rmvBtns.length === 1) {
         rmvBtns[0].disabled = true;
     }
+
+    // Relabel line numbers
+    const nbrs = document.getElementsByClassName('line-number');
+    for (let i = 0; i < nbrs.length; i++) {
+        nbrs[i].innerText = i + 1 + '.';
+    }
 }
 
 
+
 // Form validation
-// TODO
+export function checkValidity () {
+
+    const warning = document.getElementById('line-script-invalid');
+
+
+    // Get all form lines
+    for (const line of document.getElementsByClassName('line-form-row')) {
+
+        // Check validity line by line
+        if (!checkLineValidity(line)) {
+
+            // Show error in code
+            warning.innerText = 'Erreur détectée ligne ' + line.children[0].innerText;
+            warning.className = 'd-block pt-3 red-text animated bounceIn faster';
+
+            return false;
+        }
+    }
+
+    warning.className = 'd-block pt-3 green-text animated fadeIn faster';
+    warning.innerText = 'Aucun problème détecté dans le code.';
+
+    return true;
+}
+
+
+
+// Check line validity
+function checkLineValidity (line) {
+
+    let valid = true;
+
+
+    const select = line.children[1].children[0];
+    const input = line.children[2].children[0];
+    console.log(select.value + ' : ' + input.value);
+
+
+    switch (select.value) {
+
+        // Handle STRING
+        case 'string':
+            // Do nothing
+            break;
+
+
+        // TODO: Handle key press
+        case 'key':
+            break;
+
+        
+        // Handle DELAY
+        case 'delay' || 'repeat':
+            // If the parsed value is NOT an integer
+            if (isNaN(parseInt(input.value, 10))) valid = false;
+            break;
+        
+        
+        // Handle REPEAT
+        case 'repeat':
+            // If the parsed value is NOT an integer
+            if (isNaN(parseInt(input.value, 10))) valid = false;
+            break;
+        
+        
+        // Handle REM
+        case 'rem':
+            // Do nothing
+            break;
+
+        
+        // Handle empty line
+        default:
+            valid = false;
+    }
+
+
+    return valid;
+}
