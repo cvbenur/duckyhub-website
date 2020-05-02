@@ -10,7 +10,6 @@ var blob;
 
 
 // Generating the item list on click of the 'Generate' button
-/*
 $('#generate-btn').click(function() {
     text="";
 
@@ -48,13 +47,34 @@ $('#generate-btn').click(function() {
         $('#dl-btn').css('display', "");
     }
 });
-*/
 
 
 // Generating script from line generator
 export function generateLineScript () {
-    console.log('line');
+
     // TODO
+
+    // 1. Parse lines and check validity for each
+    if (!checkValidity()) return;
+
+
+    document.getElementById('line-generate-btn').disabled = true;
+    setTimeout(() => {
+        document.getElementById('line-generate-btn').disabled = false;
+    }, 5000);
+
+
+
+    // 2. If valid, get values
+    
+
+    // 3. Duckify values
+
+    // 4. Concat
+
+    // 5. Enable dl
+
+    // 6. Update Generated status
 }
 
 
@@ -62,6 +82,8 @@ export function generateLineScript () {
 export function generateCompScript () {
     console.log('comp');
     // TODO
+
+    // 1. 
 }
 
 
