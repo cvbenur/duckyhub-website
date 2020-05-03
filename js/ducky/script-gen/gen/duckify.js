@@ -1,83 +1,202 @@
+// Define array of keypresses
+export const keypresses = [
+    'GUI',
+    'WINDOWS',
+    'APP',
+    'MENU',
+    'SHIFT',
+    'ALT',
+    'CTRL',
+    'CONTROL',
+    'DOWNARROW',
+    'DOWN',
+    'UPARROW',
+    'UP',
+    'LEFTARROW',
+    'LEFT',
+    'BREAK',
+    'PAUSE',
+    'CAPSLOCK',
+    'DELETE',
+    'DEL',
+    'END',
+    'ENTER',
+    'ESCAPE',
+    'HOME',
+    'INSERT',
+    'NUMLOCK',
+    'PAGEUP',
+    'PAGEDOWN',
+    'PRINTSCREEN',
+    'SCROLLLOCK',
+    'SPACE',
+    'TAB'
+];
+
 // Converting comments into 'REM' strings
-function duckyREM(phrase) { return "REM " + phrase }
+function duckyREM (phrase) { return "REM " + phrase }
 
 
 
 // Converting line with parameters into their type in Ducky
-function duckyDelay(number) { return "DELAY " + number }
-function duckyDefaultDelay(number) { return "DEFAULTDELAY " + number }
-function duckyRepeat(number) { return "REPEAT " + number }
-function duckyString(phrase) { return "STRING " + phrase }
-
-
-
-// Returning the Ducky key as a String
-function getKey(key) {
-    if (key === "gui")              { return "GUI"; }
-    else if (key === "windows")     { return "WINDOWS"; }
-    else if (key === "app")         { return "APP"; }
-    else if (key === "menu")        { return "MENU"; }
-    else if (key === "shift")       { return "SHIFT"; }
-    else if (key === "alt")         { return "ALT"; }
-    else if (key === "ctrl")        { return "CTRL"; }
-    else if (key === "dwn")         { return "DOWNARROW"; }
-    else if (key === "up")          { return "UPARROW"; }
-    else if (key === "lft")         { return "LEFTARROW"; }
-    else if (key === "rght")        { return "RIGHTARROW"; }
-    else if (key === "brk")         { return "BREAK"; }
-    else if (key === "pause")       { return "PAUSE"; }
-    else if (key === "caps")        { return "CAPSLOCK"; }
-    else if (key === "del")         { return "DELETE"; }
-    else if (key === "end")         { return "END"; }
-    else if (key === "enter")       { return "ENTER"; }
-    else if (key === "esc")         { return "ESCAPE"; }
-    else if (key === "home")        { return "HOME"; }
-    else if (key === "insrt")       { return "INSERT"; }
-    else if (key === "nmlck")       { return "NUMLOCK"; }
-    else if (key === "pgup")        { return "PAGEUP"; }
-    else if (key === "pgdwn")       { return "PAGEDOWN"; }
-    else if (key === "prntscrn")    { return "PRINTSCREEN"; }
-    else if (key === "scrlllck")    { return "SCROLLLOCK"; }
-    else if (key === "spc")         { return "SPACE"; }
-    else if (key === "tab")         { return "TAB"; }
-}
+function duckyDelay (number) { return "DELAY " + number }
+function duckyDefaultDelay (number) { return "DEFAULTDELAY " + number }
+function duckyRepeat (number) { return "REPEAT " + number }
+function duckyString (phrase) { return "STRING " + phrase }
 
 
 
 // Converting keypress combinations into Ducky
-function duckyPressKeys(parts) {
-    var duckyKeyString = '';
-    
-    let i=0;
-    parts.forEach(part => function() {
-        duckyKeyString += getKey(part);
+function duckyPressKeys (parts) {
 
-        if (i < parts.length()) { duckyKeyString += ' '; }
-    });
+    let duckyKeyString = '';
 
-    return duckyKeyString;
+
+    for (const part of parts) {
+
+        const found = keypresses.find(k => k === part.toUpperCase());
+
+        if (found !== undefined) {
+            duckyKeyString += found + ' ';
+        }
+    }
+
+
+    return duckyKeyString.trim();
 }
 
 
 
 // Concatenating all lines into the final script in the form of a String
-export function duckify(lines) {
-    var duckyfied = "";
+export function duckifyAndCodify (lines) {
+    
+    let duckified = "";
 
-    lines.forEach(line => function() {
-        let parts = line.split(';');
+    for (let i = 0; i < lines.length; i ++) {
 
-        if (parts[0] === "rem")                 { duckified += duckyREM(parts[1]); }
-        else if (parts[0] === "delay")          { duckified += duckyDelay(parts[1]); }
-        else if (parts[0] === "defaultdelay")   { duckified += duckyDefaultDelay(parts[1]); }
-        else if (parts[0] === "repeat")         { duckified += duckyRepeat(parts[1]); }
-        else if (parts[0] === "string")         { duckified += duckyString(parts[1]); }
-        else if (parts[0] === /"(gui|windows|app|menu|shift|alt|ctrl|dwn|up|lft|rght|brk|pause|caps|del|end|enter|esc|home|insrt|nmlck|pgup|pgdwn|prntscrn|scrlllck|spc|tab)"/) {
-            duckified += duckyPressKeys(parts);
+
+        let currentLine = '';
+
+        switch (lines[i].instruction) {
+
+            case 'rem':
+                currentLine = duckyREM(lines[i].body);
+                break;
+            
+            case 'delay':
+                currentLine = duckyDelay(lines[i].body);
+                break;
+
+            case 'defaultdelay':
+                currentLine = duckyDefaultDelay(lines[i].body);
+                break;
+
+            case 'repeat':
+                currentLine = duckyRepeat(lines[i].body);
+                break;
+            
+            case 'string':
+                currentLine = duckyString(lines[i].body);
+                break;
+            
+            case 'key':
+                currentLine = duckyPressKeys(lines[i].body.split(' '));
+                break;
+
+            default:
         }
 
-        duckified += '\n';
-    });
+        duckified += `${currentLine.replace(/\\/g, '\\\\')}\n`;
+        codifyLine(currentLine, lines[i].instruction);
+    }
 
-    return duckified;
+
+    return  watermarkScript(duckified);
+}
+
+
+
+
+// Define watermark to go on top of scripts
+const watermark = {
+    start: [
+        'REM    #    Script généré sur DuckyHub - (C) 2020 Copyright : DuckyHub',
+        'REM    #    https://duckyhub.efrei.tech',
+        'REM    #',
+        "REM    #    Merci d'utiliser DuckyHub :)",
+        'REM    #',
+        'REM    #    DEBUT DU SCRIPT',
+    ],
+    end: [
+        'REM    #    FIN DU SCRIPT'
+    ]
+}
+
+// Add watermark to generated script
+function watermarkScript (script) {
+
+    let watermarked = '';
+
+
+    // Add prefix watermark to script
+    for (const line of watermark.start) {
+        watermarked += line + '\n';
+    }
+
+
+    watermarked += '\n' + script + '\n';
+
+
+    // Add suffix watermark to script
+    for (let i = 0; i < watermark.end.length; i++) {
+        watermarked += watermark.end[i];
+
+        if (i === watermark.end.length - 1) {
+            watermarked += '\n'
+        }
+    }
+
+
+    return watermarked;
+}
+
+
+
+// Defining the render destination for the line script
+const renderedLine = document.getElementById('line-script-render');
+
+// Codify line
+function codifyLine (line, type) {
+
+    let spanLine = document.createElement('span');
+    spanLine.className = 'new-line white-text'
+    let codified = '';
+
+    switch (type) {
+
+        case 'string':
+            codified = `<span class="pink-text">STRING </span>${line.split('STRING ')[1]}`;
+            break;
+
+        case 'rem':
+            codified = `<span class="grey-text">${line}</span>`;
+            break;
+
+        case 'delay':
+            codified = `<span class="purple-text">DELAY </span>${line.split('DELAY ')[1]}`;
+            break;
+
+        case 'repeat':
+            codified = `<span class="purple-text">REPEAT </span>${line.split('REPEAT ')[1]}`;
+            break;
+
+        case 'key':
+            codified = `<span class="blue-text">${line}</span>`;
+            break;
+
+        default:
+    }
+
+    spanLine.innerHTML = codified;
+    renderedLine.appendChild(spanLine);
 }
