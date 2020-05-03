@@ -1,3 +1,6 @@
+import { keypresses } from '../gen/duckify.js';
+
+
 // Create new element to be added
 export function createNewScriptLine () {
 
