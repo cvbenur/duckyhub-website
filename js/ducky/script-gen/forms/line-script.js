@@ -183,7 +183,7 @@ export function checkValidity () {
     } else {
 
         // Show error in code
-        warning.innerText = `Erreur détectée ligne ${invalid[0]}.`;
+        warning.innerText = `Erreur détectée à la ligne ${invalid[0]}.`;
         warning.className = 'd-block pt-3 red-text animated bounceIn faster';
     }
 
@@ -214,7 +214,7 @@ function checkLineValidity (line) {
 
     const select = line.children[1].children[0];
     const input = line.children[2].children[0];
-    console.log(select.value + ' : ' + input.value);
+    input.value = input.value.trim();
 
 
     // Define new element for line info
@@ -224,6 +224,7 @@ function checkLineValidity (line) {
     };
 
 
+    // Testing the line's body
     switch (select.value) {
 
         // Handle STRING
@@ -260,7 +261,7 @@ function checkLineValidity (line) {
             }
 
             lineInfo.instruction = select.value;
-            lineInfo.body = input.value;
+            lineInfo.body = parseInt(input.value, 10);
             break;
         
         
@@ -275,7 +276,7 @@ function checkLineValidity (line) {
             }
 
             lineInfo.instruction = select.value;
-            lineInfo.body = input.value;
+            lineInfo.body = parseInt(input.value, 10);
             break;
         
         
@@ -312,40 +313,6 @@ function displayError (input, errorCode) {
 }
 
 
-
-// Define array of keypresses
-const keypresses = [
-    'GUI',
-    'WINDOWS',
-    'APP',
-    'MENU',
-    'SHIFT',
-    'ALT',
-    'CTRL',
-    'CONTROL',
-    'DOWNARROW',
-    'DOWN',
-    'UPARROW',
-    'UP',
-    'LEFTARROW',
-    'LEFT',
-    'BREAK',
-    'PAUSE',
-    'CAPSLOCK',
-    'DELETE',
-    'END',
-    'ENTER',
-    'ESCAPE',
-    'HOME',
-    'INSERT',
-    'NUMLOCK',
-    'PAGEUP',
-    'PAGEDOWN',
-    'PRINTSCREEN',
-    'SCROLLLOCK',
-    'SPACE',
-    'TAB'
-];
 
 // Check keypresses arguments validity
 function checkKeypressValidity (string) {
