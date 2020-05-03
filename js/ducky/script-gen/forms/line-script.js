@@ -53,10 +53,10 @@ export function createNewScriptLine () {
     // Initialize line number
     let lineNbr = document.createElement('h4');
     lineNbr.innerText = document.getElementsByClassName('line-form-row').length + 1 + '.';
-    lineNbr.className = 'ducky-blue-text line-number text-left';
+    lineNbr.className = 'ducky-blue-text text-left';
 
     let lineNbrDiv = document.createElement('div');
-    lineNbrDiv.className = 'mt-1 ';
+    lineNbrDiv.className = 'mt-1 line-number-div ';
 
     const number = parseInt(lineNbr.innerText.split('.')[0], 10);
     if (number < 10) {
@@ -64,7 +64,6 @@ export function createNewScriptLine () {
     } else if (number < 100) {
         lineNbrDiv.className += 'mr-2';
     }
-    console.log(lineNbrDiv.className);
     lineNbrDiv.appendChild(lineNbr);
 
 
@@ -138,13 +137,16 @@ export function removeLineOnClick (e) {
     const elt = e.target;
     let parent = elt.parentElement;
 
+
     // Getting the right div to remove
     while (parent.className != "line-form-row row pt-2") {
         parent = parent.parentElement;
     }
 
+
     // Actually removing the div
     parent.remove();
+
 
     // Ensuring the last remaining remove button is disabled and not clickable
     const rmvBtns = document.getElementsByClassName('btn-line-remove');
@@ -152,10 +154,23 @@ export function removeLineOnClick (e) {
         rmvBtns[0].disabled = true;
     }
 
+
     // Relabel line numbers
-    const nbrs = document.getElementsByClassName('line-number');
+    const nbrs = document.getElementsByClassName('line-number-div');
     for (let i = 0; i < nbrs.length; i++) {
-        nbrs[i].innerText = i + 1 + '.';
+        nbrs[i].children[0].innerText = i + 1 + '.';
+    }
+
+
+
+    // Resize margins on line numbers
+    const lines = [...document.querySelectorAll('div.line-number-div')];
+    for (let i=0; i < lines.length; i++) {
+        if (parseInt(lines[i].children[0].innerText.split('.')[0], 10) < 10) {
+            lines[i].className = 'mt-1 line-number-div mr-4';
+        } else if (i < 100) {
+            lines[i].className = 'mt-1 line-number-div mr-2';
+        }
     }
 }
 
