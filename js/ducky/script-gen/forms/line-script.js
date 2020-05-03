@@ -13,7 +13,7 @@ export function createNewScriptLine () {
     let none = document.createElement('option');
     none.selected = true;
     none.value = "none";
-    none.innerText = "Sélectionner une option";
+    none.innerText = "Aucun";
     
 
     let string = document.createElement('option');
@@ -23,7 +23,7 @@ export function createNewScriptLine () {
 
     let key = document.createElement('option');
     key.value = "key";
-    key.innerText = "Touche(s) du clavier";
+    key.innerText = "Touches";
     
 
     let delay = document.createElement('option');
@@ -53,10 +53,18 @@ export function createNewScriptLine () {
     // Initialize line number
     let lineNbr = document.createElement('h4');
     lineNbr.innerText = document.getElementsByClassName('line-form-row').length + 1 + '.';
-    lineNbr.className = 'ducky-blue-text line-number';
+    lineNbr.className = 'ducky-blue-text line-number text-left';
 
     let lineNbrDiv = document.createElement('div');
-    lineNbrDiv.className = 'mt-1 pr-1';
+    lineNbrDiv.className = 'mt-1 ';
+
+    const number = parseInt(lineNbr.innerText.split('.')[0], 10);
+    if (number < 10) {
+        lineNbrDiv.className += 'mr-4';
+    } else if (number < 100) {
+        lineNbrDiv.className += 'mr-2';
+    }
+    console.log(lineNbrDiv.className);
     lineNbrDiv.appendChild(lineNbr);
 
 
@@ -309,9 +317,9 @@ function checkLineValidity (line) {
 function displayError (input, errorCode) {
 
     let div = document.createElement('div');
-
     div.className = 'text-left line-error';
     div.innerHTML = errors.find(e => e.name === errorCode).body;
+
     input.parentElement.appendChild(div);
 }
 

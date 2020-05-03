@@ -169,13 +169,13 @@ const renderedLine = document.getElementById('line-script-render');
 function codifyLine (line, type) {
 
     let spanLine = document.createElement('span');
-    spanLine.className = 'new-line white-text'
+    spanLine.className = 'new-line';
     let codified = '';
 
     switch (type) {
 
         case 'string':
-            codified = `<span class="pink-text">STRING </span>${line.split('STRING ')[1]}`;
+            codified = `<span class="cyan-text">STRING </span>${line.split('STRING ')[1]}`;
             break;
 
         case 'rem':
@@ -183,11 +183,11 @@ function codifyLine (line, type) {
             break;
 
         case 'delay':
-            codified = `<span class="purple-text">DELAY </span>${line.split('DELAY ')[1]}`;
+            codified = `<span class="orange-text">DELAY </span>${line.split('DELAY ')[1]}`;
             break;
 
         case 'repeat':
-            codified = `<span class="purple-text">REPEAT </span>${line.split('REPEAT ')[1]}`;
+            codified = `<span class="orange-text">REPEAT </span>${line.split('REPEAT ')[1]}`;
             break;
 
         case 'key':

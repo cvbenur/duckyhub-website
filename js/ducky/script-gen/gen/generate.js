@@ -6,7 +6,7 @@ var text = "";
 
 var generated = false;
 var warned = false;
-var blob;
+let blob;
 
 
 // Generating the item list on click of the 'Generate' button
@@ -63,7 +63,7 @@ export function generateLineScript () {
 
     // Parse lines and check validity for the form
     const instructions = checkValidity();
-    if (instructions.some(i => i === null)) return;
+    if (instructions.some(i => i === null)) return false;
 
 
 
@@ -91,7 +91,7 @@ export function generateLineScript () {
 
 
     // Show rendered script on page
-    linePreTag.className = 'line-numbers elegant-color-dark py-3 animated fadeIn faster';
+    linePreTag.className = 'line-numbers mdb-color darken-3 py-3 animated fadeIn faster';
     
 
     // Prepare dl
@@ -102,6 +102,9 @@ export function generateLineScript () {
 
     // Enable dl
     document.getElementById('line-dl-btn').className = '';
+
+
+    return true;
 }
 
 
