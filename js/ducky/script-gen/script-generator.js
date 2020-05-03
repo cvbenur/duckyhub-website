@@ -58,3 +58,10 @@ document.getElementById('add-line-btn').addEventListener('click', () => {
         }
     }
 });
+
+
+
+// Handle line script download on click
+document.getElementById('line-dl-btn').addEventListener('click', () => {
+    downloadScript('line');
+});
