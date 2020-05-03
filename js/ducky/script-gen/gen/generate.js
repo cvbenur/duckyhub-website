@@ -1,5 +1,5 @@
 import $ from "jquery";
-import { duckify } from './duckify';
+import { duckifyAndCodify } from './duckify';
 import { checkValidity, removeErrorWarnings } from '../forms/line-script.js';
 
 var text = "";
@@ -50,11 +50,15 @@ $('#generate-btn').click(function() {
 
 
 
-// TODO: Generating script from line generator
+
+const linePreTag = document.getElementById('line-script-render').parentElement;
+
+// Generating script from line generator
 export function generateLineScript () {
 
-    // Remove error lines
+    // Remove existing error warnings
     removeErrorWarnings();
+
 
 
     // Parse lines and check validity for the form
@@ -62,6 +66,8 @@ export function generateLineScript () {
     if (instructions.some(i => i === null)) return;
 
 
+
+    // Disable Generate button for 5 seconds after click
     document.getElementById('line-generate-btn').disabled = true;
     setTimeout(() => {
         document.getElementById('line-generate-btn').disabled = false;
@@ -69,13 +75,33 @@ export function generateLineScript () {
 
 
 
-    // TODO: 3. Duckify values
+    // Hide 'Nothing yet'
+    document.getElementById('line-rien').className = 'd-none';
 
-    // TODO: 4. Concat
+    
+    
+    // Remove existing script from page
+    removeFormerScript(linePreTag);
 
-    // TODO: 5. Enable dl
 
-    // TODO: 6. Update Generated status
+
+    // Get duckified script and prepare render
+    const scriptFinal = duckifyAndCodify(instructions);
+
+
+
+    // Show rendered script on page
+    linePreTag.className = 'line-numbers elegant-color-dark py-3 animated fadeIn faster';
+    
+
+    // Prepare dl
+    if (!generatedLine) {
+        prepDownload(scriptFinal);
+    }
+
+
+    // Enable dl
+    document.getElementById('line-dl-btn').className = '';
 }
 
 
@@ -84,18 +110,50 @@ export function generateLineScript () {
 export function generateCompScript () {
     console.log('comp');
 
-    // 1.
+    // TODO
 }
 
 
 
 
+// Remove previously generated script on page
+function removeFormerScript (tag) {
 
-// Starting download on click of the 'Download' button
-$('#dl-btn').click(function() {
-    $(this).attr('href', window.URL.createObjectURL(blob));
-    $(this).attr('download', 'script.txt');
-});
+    const kiddies = tag.children[0].children;
+    
+    if (kiddies.length > 0) {
+        for (const child of kiddies) {
+            child.remove();
+        }
+    }
+}
+
+
+
+let generatedLine = false;
+
+// Prepares script download
+function prepDownload (script) {
+
+    blob = new Blob([script], {type: "text/plain;charset=utf-8"});
+    generatedLine = true;
+}
+
+
+
+// Handle download for script
+export function downloadScript (type) {
+    document.getElementById(`${type}-dl-btn`).href = window.URL.createObjectURL(blob);
+    document.getElementById(`${type}-dl-btn`).download = `script-${type}${generateHexString(4)}-dh.txt`;
+}
+
+
+
+
+// Generate random hexa string
+function generateHexString (length) {
+    return [...Array(length)].map(() => Math.floor(Math.random() * 16).toString(16)).join('');
+}
 
 
 // Detecting changes in the checkboxes' status by parsing each checkbox
