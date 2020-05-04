@@ -223,15 +223,39 @@
                     <h4 class="black-text py-3">Script généré :</h4>
 
                     <div id="line-generated-code">
-                        <h4 id="line-rien" class="black-text py-2">Rien pour le moment.</h4>
+                      <h4 id="line-rien" class="black-text py-2">Rien pour le moment.</h4>
 
-                        <div class="pb-3 pt-1">
-                          <pre class="d-none"><code id="line-script-render" class="white-text"></code></pre>
-                        </div>
+                      <div class="pb-3 pt-1">
+                        <pre class="d-none"><code id="line-script-render" class="white-text"></code></pre>
+                      </div>
+                    </div>
+
+                    <div id="line-dl-alert" class="d-none orange-text pb-3">
+                      <h4>Attention !</h4>
+
+                      <div id="line-input-alert" class="d-none">
+                        Un des champs de texte a changé depuis la dernière génération.<br>
+                        Cliquez de nouveau sur <strong>Générer</strong> pour générer un script à jour.
+                      </div>
+
+                      <div id="line-select-alert" class="d-none">
+                        Un des champs déroulants a changé depuis la dernière génération.<br>
+                        Cliquez de nouveau sur <strong>Générer</strong> pour générer un script à jour.
+                      </div>
+
+                      <div id="line-remove-alert" class="d-none">
+                        Une (ou plusieurs) des lignes ont été supprimées depuis la dernière génération.<br>
+                        Cliquez de nouveau sur <strong>Générer</strong> pour générer un script à jour.
+                      </div>
+
+                      <div id="line-add-alert" class="d-none">
+                        Une (ou plusieurs) ligne ont été ajoutées depuis la dernière génération.<br>
+                        Cliquez de nouveau sur <strong>Générer</strong> pour générer un script à jour.
+                      </div>
                     </div>
             
                     <a id="line-dl-btn" class="d-none" download>
-                        <button type="button" class="btn ducky-blue white-text">Télécharger</button>
+                      <button type="button" class="btn ducky-blue white-text">Télécharger</button>
                     </a>
                   </div>
                 </div>
@@ -337,8 +361,12 @@
                     <div id="selected-list">
                         <p>Rien pour le moment.</p>
                     </div>
+
+                    <div id="comp-dl-alert" class="d-none orange-text pb-3">
+                      <h4>Attention !</h4>
+                    </div>
             
-                    <a id="dl-btn" style="display:none" download>
+                    <a id="comp-dl-btn" class='d-none' download>
                         <button type="button" class="btn ducky-blue white-text">Télécharger</button>
                     </a>
                   </div>
