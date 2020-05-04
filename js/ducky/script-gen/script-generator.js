@@ -19,6 +19,9 @@ for (const btn of Array.from(document.getElementsByClassName('generate-btn'))) {
 
             // Click detected for Line Script
             case 'line-generate-btn':
+
+                removeAlerts('line');
+
                 generatedLine = generateLineScript();
                 
                 if (generatedLine) {
@@ -28,6 +31,10 @@ for (const btn of Array.from(document.getElementsByClassName('generate-btn'))) {
             
             // Click detected for Complex Script
             case 'comp-generate-btn':
+
+                removeAlerts('comp');
+
+
                 generatedComp = generateCompScript();
                 break;
 
@@ -40,9 +47,141 @@ for (const btn of Array.from(document.getElementsByClassName('generate-btn'))) {
 
 
 
+// TODO: Warn user on change after generation
+document.addEventListener('change', (e) => {
+
+    if (generatedLine) {
+
+        const alDl = document.getElementById('line-dl-alert');
+
+        if (e.target.name === 'line-text' || e.target.className.includes('keyword-list')) {
+
+
+            if (e.target.name === 'line-text') {
+
+                if (!currentAlerts.some(a => a.spot === e.target.parentElement.children[1])) {
+
+                    showAlert('line', 'input', e.target);
+
+                } else if (e.target.value === lineState.find(s => s.line === e.target.parentElement.parentElement.children[0].children[0].innerHTML).input) {
+
+                    removeAlert({script: 'line', type: 'input', spot: e.target.parentElement.children[1]});
+                        
+                    alDl.className = 'd-none ' + alDl.className;
+
+                }
+
+            } else if (e.target.className.includes('keyword-list')) {
+
+                if (!currentAlerts.some(a => a.spot === e.target.parentElement.parentElement.children[2].children[1])) {
+
+                    showAlert('line', 'select', e.target);
+
+                } else if (e.target.value === lineState.find(s => s.line === e.target.parentElement.parentElement.children[0].children[0].innerHTML).select) {
+
+                    removeAlert({script: 'line', type: 'select', spot: e.target.parentElement.parentElement.children[2].children[1]});
+
+                    alDl.className = 'd-none ' + alDl.className;
+                }
+
+            }
+        }
+    }
+
+
+    // FIXME
+    if (generatedComp) {
+
+        if (e.target.type === 'radio' || e.target.type === checkbox) {
+            alert = document.getElementById('comp-dl-alert');
+            alert.className = alert.className.split('d-none ')[1];
+
+            console.log('change chakal');
+        }
+    }
+});
+
+
+
+
+// TODO: Show alert on page
+let currentAlerts = [];
+
+function showAlert (script, type, target) {
+
+    let div = document.createElement('div');
+    div.className = 'text-left line-error orange-text';
+    div.innerText = 'Cette ligne a changé depuis la dernière génération.'
+
+    switch (type) {
+        case 'input':
+            target.parentElement.appendChild(div);
+            break;
+
+        case 'select':
+            target.parentElement.parentElement.children[2].appendChild(div);
+            break;
+
+        default:    // Do nothing
+    }
+    
+
+
+
+    let msg = document.getElementById(`${script}-${type}-alert`);
+    msg.className = msg.className.split('d-none');
+
+
+    let alert = document.getElementById(`${script}-dl-alert`);
+    alert.className = 'orange-text pb-3 animated tada';
+
+
+    currentAlerts.push({script: script, type: type, spot: div});
+}
+
+
+// Remove all alerts for a specified script
+function removeAlerts (scr) {
+
+    for (const alert of currentAlerts) {
+
+        if (alert.script === scr) {
+
+            removeAlert(alert);
+        }
+    }
+
+    if (currentAlerts.length === 0) {
+        let a = document.getElementById(`${scr}-dl-alert`);
+        a.className = 'd-none ' + a.className;
+    }
+}
+
+
+// Removes a single specific alert on page
+function removeAlert (alert) {
+
+    let a = document.getElementById(`${alert.script}-${alert.type}-alert`);
+    a.className = 'd-none ' + a.className;
+    alert.spot.remove();
+
+    currentAlerts.splice(alert);
+}
+
+
+
+
 /*
     ####    FOR LINE SCRIPT    ####
 */
+
+
+// Define generation state for line script
+let generatedLine = false;
+// Define state of each line on generation
+let lineState;
+
+
 
 
 // Add new line on click
@@ -107,18 +246,38 @@ function captureLineStates () {
     for (let i=0; i< lines.length; i++) {
 
         state[i] = {
+            line: lines[i].children[0].children[0].innerHTML,
             select: lines[i].children[1].children[0].value,
             input: lines[i].children[2].children[0].value
         };
     }
 
-    console.log(state);
     return state;
 }
+
 
 
 
 // Handle line script download on click
 document.getElementById('line-dl-btn').addEventListener('click', () => {
     downloadScript('line');
+});
+
+
+
+
+/*
+    ####    FOR COMPLEX SCRIPT    ####
+*/
+
+
+// Define generation state for complex script
+let generatedComp = false;
+
+
+
+
+// Handle complex script download on click
+document.getElementById('comp-dl-btn').addEventListener('click', () => {
+    downloadScript('comp');
 });
