@@ -114,6 +114,8 @@ export function generateCompScript () {
     console.log('comp');
 
     // TODO
+
+    return true;
 }
 
 

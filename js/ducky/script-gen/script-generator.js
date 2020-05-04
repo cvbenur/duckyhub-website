@@ -8,11 +8,6 @@ import { generateLineScript, generateCompScript, downloadScript } from './gen/ge
     ####    FOR BOTH SCRIPTS    ####
 */
 
-let generatedLine = false;
-let lineState;
-
-let generatedComp = false;
-
 
 // Generating script on Generate button click
 for (const btn of Array.from(document.getElementsByClassName('generate-btn'))) {
