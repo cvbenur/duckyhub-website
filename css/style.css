@@ -17,13 +17,11 @@
 .page-footer a:hover { text-decoration: underline; }
 
 pre.line-numbers code span.new-line {
-    white-space: pre-wrap;
-    margin-left: 4em;
+    white-space: nowrap;
+    margin-left: 2em;
 }
 
-pre.line-numbers code:before {
-    counter-reset: listing;
-}
+pre.line-numbers code:before { counter-reset: listing; }
 
 pre.line-numbers code span.new-line {
     counter-increment: listing;
