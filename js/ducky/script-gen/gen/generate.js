@@ -91,7 +91,7 @@ export function generateLineScript () {
 
 
     // Show rendered script on page
-    linePreTag.className = 'line-numbers mdb-color darken-3 py-3 animated fadeIn faster';
+    linePreTag.className = 'line-numbers mdb-color darken-3 py-3 animated fadeIn';
     
 
     // Prepare dl
