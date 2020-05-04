@@ -2,56 +2,56 @@ import $ from "jquery";
 import { duckifyAndCodify } from './duckify';
 import { checkValidity, removeErrorWarnings } from '../forms/line-script.js';
 
-var text = "";
+
 
 var generated = false;
-var warned = false;
 let blob;
 
 
-// Generating the item list on click of the 'Generate' button
-$('#generate-btn').click(function() {
-    text="";
 
-    let empty = false;
-    let checked = false;
+/*
+    ####    FOR BOTH SCRIPTS    ####
+*/
 
-    // Parsing checkboxes
-    $('input[type="checkbox"]').each(function() {
 
-        // If the box is checked
-        if ($(this).prop('checked')) {
-            checked = true;
-            
-            // Emptying the list in order to let it contain only our selected items
-            if (!empty) {
-                $("#selected-list").empty();
-                empty = true;
-            }
-           
-            // Displaying selected items
-            $("#selected-list").append("<p>" + duckify($(this).attr('value')) + "</p>");
-            text += $(this).attr('value') + '\n';
-        }
-    });
+// Remove previously generated script on page
+function removeFormerScript (tag) {
 
-    // If any boxes are checked
-    if (checked) {
-        warned = false;
-        
-        // Generating file
-        blob = new Blob([text], {type: "text/plain;charset=utf-8"});
-        generated = true;
-
-        // Display the 'Download' button
-        $('#dl-btn').css('display', "");
+    while (tag.firstChild) {
+        tag.removeChild(tag.firstChild);
     }
-});
+}
+
+
+// Prepares script download
+function prepDownload (script) {
+    blob = new Blob([script], {type: "text/plain;charset=utf-8"});
+}
 
 
 
+// Handle download for script
+export function downloadScript (type) {
+    document.getElementById(`${type}-dl-btn`).href = window.URL.createObjectURL(blob);
+    document.getElementById(`${type}-dl-btn`).download = `script-${type}${generateHexString(4)}-dh.txt`;
+}
 
-const linePreTag = document.getElementById('line-script-render').parentElement;
+
+
+// Generate random hexa string
+function generateHexString (length) {
+    return [...Array(length)].map(() => Math.floor(Math.random() * 16).toString(16)).join('');
+}
+
+
+
+/*
+    ####    FOR LINE SCRIPT     ####
+*/
+
+
+// Define tag in which to render the line script
+const lineCodeTag = document.getElementById('line-script-render');
 
 // Generating script from line generator
 export function generateLineScript () {
@@ -81,7 +81,7 @@ export function generateLineScript () {
     
     
     // Remove existing script from page
-    removeFormerScript(linePreTag);
+    removeFormerScript(lineCodeTag);
 
 
 
@@ -91,7 +91,7 @@ export function generateLineScript () {
 
 
     // Show rendered script on page
-    linePreTag.className = 'line-numbers mdb-color darken-3 py-3 animated fadeIn';
+    lineCodeTag.parentElement.className = 'line-numbers mdb-color darken-3 py-3 animated fadeIn';
     
 
     // Prepare dl
@@ -109,6 +109,10 @@ export function generateLineScript () {
 
 
 
+
+// Define tag in whitch to render the complex script
+const compCodeTag = document.getElementById('comp-script-render');
+
 // TODO: Generating script from complex generator
 export function generateCompScript () {
     console.log('comp');
@@ -119,46 +123,6 @@ export function generateCompScript () {
 }
 
 
-
-
-// Remove previously generated script on page
-function removeFormerScript (tag) {
-
-    const kiddies = tag.children[0].children;
-    
-    if (kiddies.length > 0) {
-        for (const child of kiddies) {
-            child.remove();
-        }
-    }
-}
-
-
-
-let generatedLine = false;
-
-// Prepares script download
-function prepDownload (script) {
-
-    blob = new Blob([script], {type: "text/plain;charset=utf-8"});
-    generatedLine = true;
-}
-
-
-
-// Handle download for script
-export function downloadScript (type) {
-    document.getElementById(`${type}-dl-btn`).href = window.URL.createObjectURL(blob);
-    document.getElementById(`${type}-dl-btn`).download = `script-${type}${generateHexString(4)}-dh.txt`;
-}
-
-
-
-
-// Generate random hexa string
-function generateHexString (length) {
-    return [...Array(length)].map(() => Math.floor(Math.random() * 16).toString(16)).join('');
-}
 
 
 // Detecting changes in the checkboxes' status by parsing each checkbox
