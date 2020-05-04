@@ -111,7 +111,7 @@ function showAlert (script, type, target) {
 
     let div = document.createElement('div');
     div.className = 'text-left line-error orange-text';
-    div.innerText = 'Cette ligne a changé depuis la dernière génération.'
+    div.innerText = 'Ligne modifiée.'
 
     switch (type) {
         case 'input':
