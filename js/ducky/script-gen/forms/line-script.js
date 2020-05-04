@@ -98,7 +98,6 @@ export function createNewScriptLine () {
     button.type = "button";
     button.disabled = true;
     button.className = "btn red white-text py-2 my-0 px-3 btn-line-remove";
-    button.onclick = () => { removeLineOnClick(event) };
 
 
     // Append i to button
@@ -129,20 +128,7 @@ export function createNewScriptLine () {
 
 
 // Remove line on click
-export function removeLineOnClick (e) {
-    e.preventDefault();
-    e.stopPropagation();
-
-    // Setting variables
-    const elt = e.target;
-    let parent = elt.parentElement;
-
-
-    // Getting the right div to remove
-    while (parent.className != "line-form-row row pt-2") {
-        parent = parent.parentElement;
-    }
-
+export function removeLineOnClick (parent) {
 
     // Actually removing the div
     parent.remove();

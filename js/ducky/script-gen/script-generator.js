@@ -78,8 +78,27 @@ document.getElementById('add-line-btn').addEventListener('click', () => {
 
 
 
-// TODO: Warn user on change after generation
-// Array.from(document.getElementsByClassName())
+
+// Remove line on click
+document.addEventListener('click', (e) => {
+
+    if (e.target.className.includes('btn-line-remove') || e.target.parentElement.className.includes('btn-line-remove')) {
+
+        e.preventDefault();
+        e.stopPropagation();
+
+
+        let parent = e.target.parentElement;
+
+        // Getting the right div to remove
+        while (parent.className != "line-form-row row pt-2") {
+            parent = parent.parentElement;
+        }
+
+        removeLineOnClick(parent);
+    }
+})
+
 
 
 
