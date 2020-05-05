@@ -1,46 +1,23 @@
-.card-comments img{ width:4rem }
+.card-comments img{width:4rem} 
 
-.dropdown .dropdown-menu .dropdown-item:active, .dropdown .dropdown-menu .dropdown-item:hover{ background-color: #81B1E0 !important; }
+.dropdown .dropdown-menu .dropdown-item:active, .dropdown .dropdown-menu .dropdown-item:hover{background-color: #81B1E0 !important;} 
 
-.ducky-blue{ background-color: #08549E !important; }
+.ducky-blue{background-color: #08549E !important;} .ducky-skyblue{background-color: #81B1E0 !important;} 
 
-.ducky-skyblue{ background-color: #81B1E0 !important; }
+.ducky-skyblue-text {color: #81B1E0 !important;} .ducky-blue-text {color: #08549E !important;} 
 
-.ducky-skyblue-text{ color: #81B1E0 !important; }
+.navbar .nav-item:hover{background-color: #0E4880 !important;} 
 
-.ducky-blue-text{ color: #08549E !important; }
+.navbar .nav-item.active>.nav-link{background-color: #0E4880 !important;} 
 
-.navbar .nav-item:hover{ background-color: #0D4D8B !important; }
+.page-footer a:hover{text-decoration: underline;} 
 
-.navbar .nav-item.active>.nav-link{ background-color: #0E4880 !important; }
+.teampage-item{ display: flex;justify-content: center;flex-wrap: wrap;}
 
-.page-footer a:hover{ text-decoration: underline; }
+.teambox-item{width: 500px;text-align: center;padding: 1% 1% 1% 1%;margin: 1% 1% 1% 1%;}
 
-.collapsible-item {
-    background-color:inherit;
-    cursor: pointer;
-    width: 800px;
-    border: none;
-    border-bottom: 1px solid #08549E;
-    text-align: left;
-    outline: none;
-}
+.portrait-item{width: 300px;height: 300px;border-radius: 50%;box-shadow: 5px 5px 20px black;display: inline-block;}
 
-.active:after { content: "\2212"; }
+.nom-team{font-size: 30px;text-align: center;display: block;margin-bottom: 10px;margin-top: 30px;}
 
-.active, .collapsible-item:hover {
-    color: rgb(5, 45, 85);
-    border-bottom: 1px solid rgb(7, 62, 117);
-}
-
-.collapsible-item:after {
-    content: '\002B';
-    float: right;
-    margin-left: 5px;
-}
-
-.collapsible-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-}
+.texte-role-team{text-align: center;margin-top: 5px;margin-bottom: 5px;}

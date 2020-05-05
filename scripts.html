@@ -44,8 +44,8 @@
           <ul class="navbar-nav mr-auto">
 
             <!-- Accueil -->
-            <li class="nav-item active">
-              <a class="nav-link waves-effect white-text px-2" href="#"><strong>Accueil</strong>
+            <li class="nav-item">
+              <a class="nav-link waves-effect white-text px-2" href="./index.html"><strong>Accueil</strong>
                 <span class="sr-only">(current)</span>
               </a>
             </li>
@@ -63,14 +63,14 @@
             <!-- Apprendre -->
 
             <!-- Scripts -->
-            <li class="nav-item px-2">
+            <li class="nav-item px-2 active">
               <a class="nav-link waves-effect white-text" href="#">Scripts</a>
             </li>
             <!-- Scripts -->
 
             <!-- Générateur -->
             <li class="nav-item px-2">
-              <a class="nav-link waves-effect white-text" href="#">Générateur</a>
+              <a class="nav-link waves-effect white-text" href="./generateur.html">Générateur</a>
             </li>
             <!-- Générateur -->
           </ul>
@@ -114,7 +114,7 @@
         </li>
       </ul>
 
-      <div class="tab-content" id="myTabContent">
+      <div class="tab-content pt-5" id="myTabContent">
 
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
           
@@ -131,22 +131,65 @@
         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
           <!--Contenu de catégories de scripts-->
+            <!-- Accordion -->
+            <div class="accordion" id="accordion">
 
-          <button class="collapsible-item ducky-blue-text h2">Nom de catégorie 1</button>
-          <div class="collapsible-content"> <br/>
-            <h3 class="h3 ducky-blue-text">Script 1</h3>
-            <p class="ducky-blue-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tincidunt eros, vitae convallis est. Morbi tincidunt arcu nec lacinia gravida. Mauris posuere tortor lorem, eu dignissim nisl vehicula et. Quisque efficitur velit eu elit porttitor, eu fringilla felis ullamcorper. Phasellus interdum, urna ac laoreet maximus, purus dui venenatis nisl, vitae pulvinar turpis urna ac tellus. Fusce non facilisis ex. Curabitur hendrerit consectetur scelerisque. Curabitur dapibus aliquam laoreet.</p>
-            <h3 class="h3 ducky-blue-text">Script 2</h3>
-            <p class="ducky-blue-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tincidunt eros, vitae convallis est. Morbi tincidunt arcu nec lacinia gravida. Mauris posuere tortor lorem, eu dignissim nisl vehicula et. Quisque efficitur velit eu elit porttitor, eu fringilla felis ullamcorper. Phasellus interdum, urna ac laoreet maximus, purus dui venenatis nisl, vitae pulvinar turpis urna ac tellus. Fusce non facilisis ex. Curabitur hendrerit consectetur scelerisque. Curabitur dapibus aliquam laoreet.</p>
-          </div>
-          <button class="collapsible-item ducky-blue-text h2">Nom de catégorie 2</button>
-          <div class="collapsible-content"> <br/>
-            <h3 class="h3 ducky-blue-text">Script 1</h3>
-            <p class="ducky-blue-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tincidunt eros, vitae convallis est. Morbi tincidunt arcu nec lacinia gravida. Mauris posuere tortor lorem, eu dignissim nisl vehicula et. Quisque efficitur velit eu elit porttitor, eu fringilla felis ullamcorper. Phasellus interdum, urna ac laoreet maximus, purus dui venenatis nisl, vitae pulvinar turpis urna ac tellus. Fusce non facilisis ex. Curabitur hendrerit consectetur scelerisque. Curabitur dapibus aliquam laoreet.</p>
-            <h3 class="h3 ducky-blue-text">Script 2</h3>
-            <p class="ducky-blue-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tincidunt eros, vitae convallis est. Morbi tincidunt arcu nec lacinia gravida. Mauris posuere tortor lorem, eu dignissim nisl vehicula et. Quisque efficitur velit eu elit porttitor, eu fringilla felis ullamcorper. Phasellus interdum, urna ac laoreet maximus, purus dui venenatis nisl, vitae pulvinar turpis urna ac tellus. Fusce non facilisis ex. Curabitur hendrerit consectetur scelerisque. Curabitur dapibus aliquam laoreet.</p>
-          </div>
+              <!-- Tab 1 -->
+              <div class="card z-depth-0" bordered>
 
+                <div class="card-header ducky-blue" id="headingOne2">
+                  <h5 class="mb-0">
+                    <button style="font-size: 85%; font-weight: bold;" class="btn btn-link dyc white-text" type="button" data-toggle="collapse" data-target="#accordion-row1"
+                    aria-expanded="true" aria-controls="accordion-row1">
+                      Catégorie de Script 1
+                    </button>
+                  </h5>
+                </div>
+
+
+                <div id="accordion-row1" class="collapse" aria-labelledby="headingOne2"
+                  data-parent="#accordion">
+
+                  <div class="card-body">
+                    <!-- Contenu Tab 1 -->
+                    <h3 class="h3 ducky-blue-text">Script 1</h3>
+                    <p class="ducky-blue-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tincidunt eros, vitae convallis est. Morbi tincidunt arcu nec lacinia gravida. Mauris posuere tortor lorem, eu dignissim nisl vehicula et. Quisque efficitur velit eu elit porttitor, eu fringilla felis ullamcorper. Phasellus interdum, urna ac laoreet maximus, purus dui venenatis nisl, vitae pulvinar turpis urna ac tellus. Fusce non facilisis ex. Curabitur hendrerit consectetur scelerisque. Curabitur dapibus aliquam laoreet.</p>
+                    <h3 class="h3 ducky-blue-text">Script 2</h3>
+                    <p class="ducky-blue-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tincidunt eros, vitae convallis est. Morbi tincidunt arcu nec lacinia gravida. Mauris posuere tortor lorem, eu dignissim nisl vehicula et. Quisque efficitur velit eu elit porttitor, eu fringilla felis ullamcorper. Phasellus interdum, urna ac laoreet maximus, purus dui venenatis nisl, vitae pulvinar turpis urna ac tellus. Fusce non facilisis ex. Curabitur hendrerit consectetur scelerisque. Curabitur dapibus aliquam laoreet.</p>
+                    <!-- Contenu Tab 1 -->
+                  </div>
+                </div>
+              </div>
+              <!-- Tab 1 -->
+              <!-- Tab 2 -->
+              <div class="card z-depth-0" bordered>
+
+                <div class="card-header ducky-blue" id="headingOne2">
+                  <h5 class="mb-0">
+                    <button style="font-size: 85%; font-weight: bold;" class="btn btn-link dyc white-text" type="button" data-toggle="collapse" data-target="#accordion-row2"
+                    aria-expanded="true" aria-controls="accordion-row2">
+                      Catégorie de Script 2
+                    </button>
+                  </h5>
+                </div>
+
+
+                <div id="accordion-row2" class="collapse" aria-labelledby="headingOne2"
+                  data-parent="#accordion">
+
+                  <div class="card-body">
+                    <!-- Contenu Tab 2 -->
+                    <h3 class="h3 ducky-blue-text">Script 1</h3>
+                    <p class="ducky-blue-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tincidunt eros, vitae convallis est. Morbi tincidunt arcu nec lacinia gravida. Mauris posuere tortor lorem, eu dignissim nisl vehicula et. Quisque efficitur velit eu elit porttitor, eu fringilla felis ullamcorper. Phasellus interdum, urna ac laoreet maximus, purus dui venenatis nisl, vitae pulvinar turpis urna ac tellus. Fusce non facilisis ex. Curabitur hendrerit consectetur scelerisque. Curabitur dapibus aliquam laoreet.</p>
+                    <h3 class="h3 ducky-blue-text">Script 2</h3>
+                    <p class="ducky-blue-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non tincidunt eros, vitae convallis est. Morbi tincidunt arcu nec lacinia gravida. Mauris posuere tortor lorem, eu dignissim nisl vehicula et. Quisque efficitur velit eu elit porttitor, eu fringilla felis ullamcorper. Phasellus interdum, urna ac laoreet maximus, purus dui venenatis nisl, vitae pulvinar turpis urna ac tellus. Fusce non facilisis ex. Curabitur hendrerit consectetur scelerisque. Curabitur dapibus aliquam laoreet.</p>
+                    <!-- Contenu Tab 2 -->
+                  </div>
+                </div>
+              </div>
+              <!-- Tab 2 -->
+            </div>
+            <!-- Accordion -->
           <!--Contenu de catégories de scripts-->
 
         </div>
