@@ -94,9 +94,7 @@ export function generateLineScript () {
 
 
     // Prepare dl
-    if (!generatedLine) {
-        prepDownload(scriptFinal);
-    }
+    prepDownload(scriptFinal);
 
     
 
