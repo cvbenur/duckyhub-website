@@ -29,13 +29,11 @@ function prepDownload (script) {
 }
 
 
-
 // Handle download for script
 export function downloadScript (type) {
     document.getElementById(`${type}-dl-btn`).href = window.URL.createObjectURL(blob);
     document.getElementById(`${type}-dl-btn`).download = `script-${type}${generateHexString(4)}-dh.txt`;
 }
-
 
 
 // Generate random hexa string
@@ -94,11 +92,13 @@ export function generateLineScript () {
     lineCodeTag.parentElement.className = 'line-numbers mdb-color darken-3 py-3 animated fadeIn';
     
 
+
     // Prepare dl
     if (!generatedLine) {
         prepDownload(scriptFinal);
     }
 
+    
 
     // Enable dl
     document.getElementById('line-dl-btn').className = '';
