@@ -4,7 +4,6 @@ import { checkValidity, removeErrorWarnings } from '../forms/line-script.js';
 
 
 
-var generated = false;
 let blob;
 
 

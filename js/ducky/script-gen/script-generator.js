@@ -172,8 +172,6 @@ function showAlert (script, type, target) {
     let alert = document.getElementById(`${script}-dl-alert`);
     alert.className = 'orange-text pb-3 animated tada';
 
-
-    line_dl_alert = true;
     currentAlerts.push({script: script, type: type, spot: parent});
 }
 
@@ -241,8 +239,6 @@ function removeAlert (alert) {
 let generatedLine = false;
 // Define state of each line on generation
 let lineState;
-// Define download alert state
-let line_dl_alert = false;
 
 
 
