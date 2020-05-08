@@ -197,7 +197,7 @@
 
                     <div>
                       <div class="pt-5">
-                        <button type="button" id="add-line-btn" class="btn ducky-blue white-text py-2 my-0">
+                        <button type="button" id="add-line-btn" class="btn ducky-blue rounded white-text py-2 my-0">
                           <i class="fas fa-plus"></i>
                           Commencer votre script
                         </button>
@@ -206,7 +206,7 @@
                       <br class="pt-5">
                       
                       <div class="py-5">
-                        <button type="button" class="btn ducky-blue white-text submit generate-btn" id="line-generate-btn" disabled>
+                        <button type="button" class="btn ducky-blue rounded white-text submit generate-btn" id="line-generate-btn" disabled>
                           Générer
                         </button>
 
@@ -236,22 +236,22 @@
                     <div id="line-dl-alert" class="d-none orange-text pb-3">
                       <h4>Attention !</h4>
 
-                      <div id="line-input-alert" class="d-none">
+                      <div id="line-input-alert" class="d-none pt-1">
                         Un des champs de texte a changé depuis la dernière génération.<br>
                         Cliquez de nouveau sur <strong>Générer</strong> pour générer un script à jour.
                       </div>
 
-                      <div id="line-select-alert" class="d-none">
+                      <div id="line-select-alert" class="d-none pt-1">
                         Un des champs déroulants a changé depuis la dernière génération.<br>
                         Cliquez de nouveau sur <strong>Générer</strong> pour générer un script à jour.
                       </div>
 
-                      <div id="line-remove-alert" class="d-none">
+                      <div id="line-remove-alert" class="d-none pt-1">
                         Une (ou plusieurs) des lignes ont été supprimées depuis la dernière génération.<br>
                         Cliquez de nouveau sur <strong>Générer</strong> pour générer un script à jour.
                       </div>
 
-                      <div id="line-add-alert" class="d-none">
+                      <div id="line-add-alert" class="d-none pt-1">
                         Une (ou plusieurs) ligne ont été ajoutées depuis la dernière génération.<br>
                         Cliquez de nouveau sur <strong>Générer</strong> pour générer un script à jour.
                       </div>
@@ -260,7 +260,7 @@
             
                     <!-- Bouton de téléchargement -->
                     <a id="line-dl-btn" class="d-none" download>
-                      <button type="button" class="btn ducky-blue white-text">Télécharger</button>
+                      <button type="button" class="btn ducky-blue rounded white-text">Télécharger</button>
                     </a>
                     <!-- Bouton de téléchargement -->
                   </div>
@@ -318,9 +318,9 @@
                     <div id="comp-actions">
                       <h4 class="pt-5 pb-3">Choisir une action à exécuter :</h4>
 
-                      <!-- Row 1 -->
+                      <!-- Rangée 1 -->
                       <div class="row">
-                        <div class="col text-left">
+                        <div class="col-sm-4 text-left">
                           <div class="custom-control custom-checkbox p-2">
                             <input type="checkbox" class="custom-control-input comp-action comp-action-mac" id="action1" disabled>
                             <label class="custom-control-label" for="action1">Action 1 - macOs</label>
@@ -342,7 +342,7 @@
                           </div>
                         </div>
                       </div>
-                      <!-- Row 1 -->
+                      <!-- Rangée 1 -->
 
                     </div>
                     <!-- Actions -->
@@ -351,7 +351,7 @@
                     <br class="pt-5">
                   
                     <div class="py-4">
-                      <button type="button" class="btn ducky-blue white-text generate-btn" id="comp-generate-btn" disabled>
+                      <button type="button" class="btn ducky-blue rounded white-text generate-btn" id="comp-generate-btn" disabled>
                         Générer
                       </button>
                     </div>
@@ -359,22 +359,52 @@
                   </form>
                   <!-- Form: Script Complexe -->
 
-                  <hr class="pb-4">
+                  <hr>
           
-                  <div id="generated-line" class="ducky-blue-text">
-                    <p>Script généré :</p>
+                  <div class="ducky-blue-text">
+                    <h4 class="black-text py-3">Script généré :</h4>
 
-                    <div id="selected-list">
-                        <p>Rien pour le moment.</p>
+                    <!-- Code Généré -->
+                    <div id="comp-generated-code">
+                      <h4 id="comp-rien" class="black-text py-2">Rien pour le moment.</h4>
+
+                      <div class="pb-3 pt-1">
+                        <pre class="d-none"><code id="comp-script-render" class="white-text"></code></pre>
+                      </div>
                     </div>
+                    <!-- Code Généré -->
 
+                    <!-- Messages d'alerte -->
                     <div id="comp-dl-alert" class="d-none orange-text pb-3">
                       <h4>Attention !</h4>
+
+                      <div id="comp-os-alert" class="d-none">
+                        Le système d'exploitation choisi a changé depuis la dernière génération.<br>
+                        Cliquez de nouveau sur <strong>Générer</strong> pour générer un script à jour.
+                      </div>
+
+                      <div id="comp-action-alert" class="d-none">
+                        La liste des blocs choisis a changé depuis la dernière génération.<br>
+                        Cliquez de nouveau sur <strong>Générer</strong> pour générer un script à jour.
+                      </div>
+
+                      <div id="comp-remove-alert" class="d-none">
+                        Un (ou plusieurs) blocs ont été supprimés depuis la dernière génération.<br>
+                        Cliquez de nouveau sur <strong>Générer</strong> pour générer un script à jour.
+                      </div>
+
+                      <div id="comp-add-alert" class="d-none">
+                        Un (ou plusieurs) blocs ont été ajoutés depuis la dernière génération.<br>
+                        Cliquez de nouveau sur <strong>Générer</strong> pour générer un script à jour.
+                      </div>
                     </div>
+                    <!-- Messages d'alerte -->
             
-                    <a id="comp-dl-btn" class='d-none' download>
-                        <button type="button" class="btn ducky-blue white-text">Télécharger</button>
+                    <!-- Bouton de téléchargement -->
+                    <a id="comp-dl-btn" class="d-none" download>
+                      <button type="button" class="btn ducky-blue rounded white-text">Télécharger</button>
                     </a>
+                    <!-- Bouton de téléchargement -->
                   </div>
                 </div>
               </div>
