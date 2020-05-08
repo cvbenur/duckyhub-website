@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+  <title>DuckyHub - Tutoriels</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.min.css" rel="stylesheet">
+</head>
+
+<body class="light-blue-skin">
+
+  <!--Main Navigation-->
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light ducky-blue scrolling-navbar">
+      <div class="container">
+
+        <!-- Brand -->
+        <a class="navbar-brand waves-effect" href="#">
+          <img src="./img/ducky/logo.png" height="35" alt="DuckyHub Logo">
+          <strong class="white-text">DuckyHub</strong>
+        </a>
+
+        <!-- Collapse -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <!-- Left -->
+          <ul class="navbar-nav mr-auto">
+
+            <!-- Accueil -->
+            <li class="nav-item">
+              <a class="nav-link waves-effect white-text px-2" href="./index.html"><strong>Accueil</strong>
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <!-- Accueil -->
+
+            <!-- Apprendre -->
+            <li class="nav-item active px-2 dropdown">
+              <a class="white-text nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">Apprendre  </a>
+              <div class="dropdown-menu ducky-blue" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item white-text" href="./apprendre.html">Tutoriels</a>
+                <a class="dropdown-item white-text" href="./apprendre.html">Ressources</a>
+              </div>
+            </li>
+            <!-- Apprendre -->
+
+            <!-- Scripts -->
+            <li class="nav-item px-2">
+              <a class="nav-link waves-effect white-text" href="./scripts.html">Scripts</a>
+            </li>
+            <!-- Scripts -->
+
+            <!-- Générateur -->
+            <li class="nav-item px-2">
+              <a class="nav-link waves-effect white-text" href="#">Générateur</a>
+            </li>
+            <!-- Générateur -->
+          </ul>
+
+          <!-- Right -->
+          <ul class="navbar-nav nav-flex-icons">
+            <li class="nav-item">
+              <a href="https://github.com/cvbenur/duckyhub-website" class="nav-link border border-light rounded waves-effect white-text"
+                target="_blank">
+                <i class="fab fa-github mr-2"></i>DuckyHub GitHub
+              </a>
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+    </nav>
+    <!-- Navbar -->
+
+  </header>
+  <!--Main Navigation-->
+
+  <!--Main layout-->
+  <main class="mt-5 pt-5">
+    <div class="container">
+      <!-- barre de recherche -->
+      <section>
+        <div class="row">
+          <h1 class="mb-4 py-5 px-5 my-5 col-4 ducky-blue-text">
+            <strong>Apprendre</strong>
+          </h1>
+          <h2 class="py-5 px-5 my-5">
+            <ul class="nav nav-tabs col-12" id="myTab" role="tablist">
+              <li class="nav-item px-5">
+                <a class="nav-link active tab" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                  aria-selected="true">Tutoriels</a>
+              </li>
+              <li class="nav-item px-5">
+                <a class="nav-link tab" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+                  aria-selected="false">Ressources</a>
+              </li>
+            </ul>
+          </h2>
+        </div>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+              <!--Section 2 - Generalites & qu est ce que le DuckyScript -->
+              <section class="wow fadeIn" id="intro">
+        
+                <!-- Content -->
+                <div class="blue-text py-5 px-5 my-5">
+        
+                  <h1 class="mb-4">
+                    <strong class="ducky-blue-text">Généralités</strong>
+                  </h1>
+                  <div>
+                    <h2>
+                      <strong class="ducky-blue-text">Qu'est-ce que le DuckyScript ?</strong>
+                    </h2>
+                    Le DuckyScript (DS) est un langage de script déstiné aux clés USB programmables, créant des actions à faire suivre par sa machine lorsque la clé est branchée. <br/> 
+                    Simple d'accès, il peut être généré via n'importe quel éditeur de texte type Notepad. 
+                    
+                    <br/> <br/> <br/>
+
+                    <h2>
+                      <strong class="ducky-blue-text">Pourquoi s'en servir ?</strong>
+                    </h2>
+                    Si vous êtes amenés à régulièrement initialiser des ordinateurs, que ce soit la même machine que vous réinstallez à chaque fois, ou une nouvelle, vous savez qu'il est long et répétitif de réaliser ces configurations.
+                    Il y a une liste de logiciels indispensable, et parfois des indésirables.
+                    Il y a une foule de réglages à qualibrer pour retrouver votre zone de confort ou de travail.
+                    Une clé DuckyHub, armée de quelques lignes de Ducky Script, s'occupera de tout ceci en un mouvement.
+
+                    <br/> <br/> <br/> <br/>
+                  </div>
+                  <h1 class="mb-4">
+                    <strong class="ducky-blue-text">Programmer en DuckyScript</strong>
+                  </h1>
+                  <div>
+                    Important! Les commandes sont écrites en MAJUSCULES, les arguments en minuscule. Chaque ligne représente une commande suivie de ses arguments.<br/>
+                    <br/>
+                    REM (suivi de texte) : Créer une ligne de commentaire<br/>
+                    DELAY X/ DEFAULTDELAY X/ REPEAT X: Instaurer un temps d'attente X entre les différentes oppérations du script, répeter X fois ...<br/>
+                    STRING : Rédaction d'une chaine de caractères (string), permettant d'éviter de tapper "manuellement" chaque touche<br/>
+                    <br/>
+                    TOUCHES VIRTUELLES UTILISEES PAR LE DS :<br/>
+                    Tu trouveras ci-contre la syntaxe des differentes touches du clavier émulées par le script<br/><br/>
+
+                    <table class="table">
+                      <tr>
+                        <td>
+                          <strong style="font-weight: bold;">Keywords</strong>
+                        </td>
+                        <td>
+                          <strong style="font-weight: bold;">Category</strong>
+                        </td>
+                        <td>
+                          <strong style="font-weight: bold;">Behaviour</strong>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          REM
+                        </td>
+                        <td>
+                          Comment
+                        </td>
+                        <td>
+                          Turns the line into a comment
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          STRING
+                        </td>
+                        <td>
+                          Variable
+                        </td>
+                        <td>
+                          Detects the following value as a string
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          DELAY
+                        </td>
+                        <td>
+                          Variable
+                        </td>
+                        <td>
+                          Detects the following value as a number
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          DEFAULTDELAY or DEFAULT_DELAY
+                        </td>
+                        <td>
+                          Variable
+                        </td>
+                        <td>
+                          Detects the following value as a number
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          REPEAT
+                        </td>
+                        <td>
+                          Variable
+                        </td>
+                        <td>
+                          Detects the following value as a number
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          GUI
+                        </td>
+                        <td>
+                          Key
+                        </td>
+                        <td>
+                          Detects a keyboard key
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          WINDOWS
+                        </td>
+                        <td>
+                          Key
+                        </td>
+                        <td>
+                          Detects a keyboard key
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          APP
+                        </td>
+                        <td>
+                          Key
+                        </td>
+                        <td>
+                          Detects a keyboard key
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          MENU
+                        </td>
+                        <td>
+                          Key
+                        </td>
+                        <td>
+                          Detects a keyboard key
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          SHIFT
+                        </td>
+                        <td>
+                          Key
+                        </td>
+                        <td>
+                          Detects a keyboard key
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          ALT
+                        </td>
+                        <td>
+                          Key
+                        </td>
+                        <td>
+                          Detects a keyboard key
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          CTRL or CONTROL
+                        </td>
+                        <td>
+                          Key
+                        </td>
+                        <td>
+                          Detects a keyboard key
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          DOWNARROW or DOWN
+                        </td>
+                        <td>
+                          Key
+                        </td>
+                        <td>
+                          Detects a keyboard key
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          UPARROW or UP
+                        </td>
+                        <td>
+                          Key
+                        </td>
+                        <td>
+                          Detects a keyboard key
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          LEFTARROW or LEFT
+                        </td>
+                        <td>
+                          Key
+                        </td>
+                        <td>
+                          Detects a keyboard key
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          RIGHTARROW or RIGHT
+                        </td>
+                        <td>
+                          Key
+                        </td>
+                        <td>
+                          Detects a keyboard key
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          BREAK
+                        </td>
+                        <td>
+                          Key
+                        </td>
+                        <td>
+                          Detects a keyboard key
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          PAUSE
+                        </td>
+                        <td>
+                          Key
+                        </td>
+                        <td>
+                          Detects a keyboard key
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          CAPSLOCK
+                        </td>
+                        <td>
+                          Key
+                        </td>
+                        <td>
+                          Detects a keyboard key
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          END
+                        </td>
+                        <td>
+                          Key
+                        </td>
+                        <td>
+                          Detects a keyboard key
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          ENTER
+                        </td>
+                        <td>
+                          Key
+                        </td>
+                        <td>
+                          Detects a keyboard key
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          ESCAPE or ESC
+                        </td>
+                        <td>
+                          Key
+                        </td>
+                        <td>
+                          Detects a keyboard key
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          HOME
+                        </td>
+                        <td>
+                          Key
+                        </td>
+                        <td>
+                          Detects a keyboard key
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          INSERT
+                        </td>
+                        <td>
+                          Key
+                        </td>
+                        <td>
+                          Detects a keyboard key
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          NUMLOCK
+                        </td>
+                        <td>
+                          Key
+                        </td>
+                        <td>
+                          Detects a keyboard key
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          PAGEUP
+                        </td>
+                        <td>
+                          Key
+                        </td>
+                        <td>
+                          Detects a keyboard key
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          PAGEDOWN
+                        </td>
+                        <td>
+                          Key
+                        </td>
+                        <td>
+                          Detects a keyboard key
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          PRINTSCREEN
+                        </td>
+                        <td>
+                          Key
+                        </td>
+                        <td>
+                          Detects a keyboard key
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          SCROLLLOCK
+                        </td>
+                        <td>
+                          Key
+                        </td>
+                        <td>
+                          Detects a keyboard key
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          SPACE
+                        </td>
+                        <td>
+                          Key
+                        </td>
+                        <td>
+                          Detects a keyboard key
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          TAB
+                        </td>
+                        <td>
+                          Key
+                        </td>
+                        <td>
+                          Detects a keyboard key
+                        </td>
+                      </tr>
+                    </table>
+
+                  </div>
+                </div>
+                <!-- Content -->
+              </section>
+              <!--Section 2 -->
+        
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+              <section class="wow fadeIn" id="intro">
+                <!-- Content -->
+                <div class="blue-text py-5 px-5 my-5">
+        
+                  <h1 class="mb-4">
+                    <strong class="ducky-blue-text">Ressources</strong>
+                  </h1>
+                  <div>
+                    Ci-joint notre extension pour programmer sur Visual Studio Code. <br/>
+                    <a href="https://github.com/cvbenur/ducky-script-lang-vscode">Extension VScode</a>
+                    <br/> <br/>
+                    Lien utile : <br/> 
+                    <a href="https://github.com/hak5darren/USB-Rubber-Ducky/wiki/Duckyscript">Ressources (en anglais)</a>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+      </section>
+      <!-- barre de recherche -->
+
+      
+
+    </div>
+  </main>
+  <!--Main layout-->
+
+  <!--Footer-->
+  <footer class="page-footer text-center font-small ducky-blue mt-4 wow fadeIn">
+
+    <!-- Links -->
+    <div class="py-3">
+      <a class="px-2" href="">Lien 1</a>
+      <a class="px-2" href="">Lien 2</a>
+      <a class="px-2" href="">Lien 3</a>
+    </div>
+    <!-- Links -->
+
+    <!--Copyright-->
+    <div class="footer-copyright white-text py-3">
+      © 2020 Copyright : DuckyHub </a>
+    </div>
+    <!--/.Copyright-->
+
+  </footer>
+  <!--/.Footer-->
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Initializations -->
+  <script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+
+  </script>
+</body>
+
+</html>
