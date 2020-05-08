@@ -8,6 +8,9 @@ import { generateLineScript, generateCompScript, downloadScript } from './gen/ge
     ####    FOR BOTH SCRIPTS    ####
 */
 
+// Define an array storing all current alerts
+let currentAlerts = [];
+
 
 // Generating script on Generate button click
 for (const btn of Array.from(document.getElementsByClassName('generate-btn'))) {
@@ -50,38 +53,45 @@ for (const btn of Array.from(document.getElementsByClassName('generate-btn'))) {
 // TODO: Warn user on change after generation
 document.addEventListener('change', (e) => {
 
+    // If a line script has already been generated
     if (generatedLine) {
 
-        const alDl = document.getElementById('line-dl-alert');
-
+        // In the case of a change in the inputs or selects
         if (e.target.name === 'line-text' || e.target.className.includes('keyword-list')) {
 
 
+            // In the case of an input change
             if (e.target.name === 'line-text') {
 
+                // If this line doesn't already have an alert displayed
                 if (!currentAlerts.some(a => a.spot === e.target.parentElement.children[1])) {
 
+                    // Show alert on this line
                     showAlert('line', 'input', e.target);
 
+
+                // Else, if the change is the user going back to the state captured on generation
                 } else if (e.target.value === lineState.find(s => s.line === e.target.parentElement.parentElement.children[0].children[0].innerHTML).input) {
 
+                    // Remove the alert on this line
                     removeAlert({script: 'line', type: 'input', spot: e.target.parentElement.children[1]});
-                        
-                    alDl.className = 'd-none ' + alDl.className;
-
                 }
 
+            
+            // Else, in the case of a select change
             } else if (e.target.className.includes('keyword-list')) {
 
+                // If this line doesn't already have an alert displayed
                 if (!currentAlerts.some(a => a.spot === e.target.parentElement.parentElement.children[2].children[1])) {
 
+                    // Show alert on this line
                     showAlert('line', 'select', e.target);
 
+                // Else, if the chande is the user going back to the state captured on generation
                 } else if (e.target.value === lineState.find(s => s.line === e.target.parentElement.parentElement.children[0].children[0].innerHTML).select) {
 
+                    // Remove the alert on this line
                     removeAlert({script: 'line', type: 'select', spot: e.target.parentElement.parentElement.children[2].children[1]});
-
-                    alDl.className = 'd-none ' + alDl.className;
                 }
 
             }
@@ -89,12 +99,16 @@ document.addEventListener('change', (e) => {
     }
 
 
-    // FIXME
+    // TODO: If a complex script has already been generated
     if (generatedComp) {
 
-        if (e.target.type === 'radio' || e.target.type === checkbox) {
-            alert = document.getElementById('comp-dl-alert');
-            alert.className = alert.className.split('d-none ')[1];
+
+        // In case of a change in the radios or checkboxes
+        if (e.target.type === 'radio' || e.target.type === 'checkbox') {
+
+
+
+            // TODO
 
             console.log('change chakal');
         }
@@ -104,27 +118,50 @@ document.addEventListener('change', (e) => {
 
 
 
-// TODO: Show alert on page
-let currentAlerts = [];
-
+// Show alert on page
 function showAlert (script, type, target) {
 
     let div = document.createElement('div');
     div.className = 'text-left line-error orange-text';
-    div.innerText = 'Ligne modifiée.'
+
+
+    let parent = target;
+    while (parent.className !== "line-form-row row pt-2") {
+        parent = parent.parentElement;
+    }
+
+    
+    const existing = currentAlerts.find(a => a.spot === parent);
+    if (existing !== undefined) {
+        if (typeof existing === []) {
+            for (const ex of existing) {
+                removeAlert(ex);
+            }
+        } else {
+            removeAlert(existing);
+        }
+    }
+    
 
     switch (type) {
         case 'input':
-            target.parentElement.appendChild(div);
+            div.innerText = 'Ligne modifiée.';
             break;
 
         case 'select':
-            target.parentElement.parentElement.children[2].appendChild(div);
+            div.innerText = 'Ligne modifiée.';
             break;
+        
+        case 'remove':
+            div.innerText = 'Ligne suivante supprimée';
+
+        case 'add':
+            div.innerText = 'Nouvelle ligne';
 
         default:    // Do nothing
     }
     
+    parent.children[2].appendChild(div);
 
 
 
@@ -136,7 +173,8 @@ function showAlert (script, type, target) {
     alert.className = 'orange-text pb-3 animated tada';
 
 
-    currentAlerts.push({script: script, type: type, spot: div});
+    line_dl_alert = true;
+    currentAlerts.push({script: script, type: type, spot: parent});
 }
 
 
@@ -150,11 +188,6 @@ function removeAlerts (scr) {
             removeAlert(alert);
         }
     }
-
-    if (currentAlerts.length === 0) {
-        let a = document.getElementById(`${scr}-dl-alert`);
-        a.className = 'd-none ' + a.className;
-    }
 }
 
 
@@ -163,9 +196,37 @@ function removeAlert (alert) {
 
     let a = document.getElementById(`${alert.script}-${alert.type}-alert`);
     a.className = 'd-none ' + a.className;
-    alert.spot.remove();
 
+
+    alert.spot.children[2].lastChild.remove();
     currentAlerts.splice(alert);
+
+
+    if (!currentAlerts.some(a => a.script === alert.script && a.type === alert.type)) {
+        document.getElementById(`${alert.script}-${alert.type}-alert`).className = 'd-none';
+    }
+
+
+    if (!currentAlerts.some(a => a.script === alert.script)) {
+
+        if (alert.script === 'line') {
+
+            document.getElementById('line-add-alert').className = 'd-none';
+            document.getElementById('line-remove-alert').className = 'd-none';
+            document.getElementById('line-input-alert').className = 'd-none';
+            document.getElementById('line-select-alert').className = 'd-none';
+
+        } else {
+
+            document.getElementById('comp-os-alert').className = 'd-none';
+            document.getElementById('comp-action-alert').className = 'd-none';
+            document.getElementById('comp-add-alert').className = 'd-none';
+            document.getElementById('comp-remove-alert').className = 'd-none';
+        }
+
+        const al = document.getElementById(`${alert.script}-dl-alert`);
+        al.className = 'd-none ' + al.className;
+    }
 }
 
 
@@ -180,6 +241,8 @@ function removeAlert (alert) {
 let generatedLine = false;
 // Define state of each line on generation
 let lineState;
+// Define download alert state
+let line_dl_alert = false;
 
 
 
@@ -208,6 +271,11 @@ document.getElementById('add-line-btn').addEventListener('click', () => {
             btn.disabled = false;
         }
     }
+
+
+    if (generatedLine) {
+        showAlert('line', 'add', document.getElementById('line-lines').lastChild);
+    }
 });
 
 
@@ -224,10 +292,47 @@ document.addEventListener('click', (e) => {
 
         let parent = e.target.parentElement;
 
+
         // Getting the right div to remove
-        while (parent.className != "line-form-row row pt-2") {
+        while (parent.className !== "line-form-row row pt-2") {
             parent = parent.parentElement;
         }
+
+        const line = parseInt(parent.parentElement.parentElement.children[0].children[0].innerText.split('.')[0], 10);
+        const olderSibling = Array.from(document.getElementsByClassName('line-form-row')).find(l => parseInt(l.children[0].children[0].innerText.split('.')[0], 10) === line);
+
+
+        // If a script has already been generated
+        if (generatedLine) {
+
+            // If the deleted line was empty
+            if ((parent.children[1].children[0].value === 'none') || (parent.children[2].children[0].value.trim() === '')) {
+                
+                // Remove the alert from the currentAlerts array
+                removeAlert(currentAlerts.find(a => parseInt(a.spot.parentElement.parentElement.children[0].children[0].innerText, 10) === line));
+
+            // Else if there already was an alert on the removed line
+            } else if (currentAlerts.some(a => a.spot === parent)) {
+
+                // Remove all alerts linked to the deleted line
+                const existing = currentAlerts.find(a => a.spot === parent);
+                if (existing !== undefined) {
+                    if (typeof existing === []) {
+                        for (const ex of existing) {
+                            removeAlert(ex);
+                        }
+                    } else {
+                        removeAlert(ex);
+                    }
+                }
+
+            } else {
+
+                showAlert('line', 'remove', olderSibling);
+
+            }
+        }
+
 
         removeLineOnClick(parent);
     }
