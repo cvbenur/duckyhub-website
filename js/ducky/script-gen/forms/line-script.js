@@ -97,7 +97,7 @@ export function createNewScriptLine () {
     let button = document.createElement('button');
     button.type = "button";
     button.disabled = true;
-    button.className = "btn red white-text py-2 my-0 px-3 btn-line-remove";
+    button.className = "btn red white-text rounded waves-effect py-2 my-0 px-3 btn-line-remove";
 
 
     // Append i to button
@@ -218,6 +218,14 @@ const errors = [
     {
         name: 'empty',
         body: '<div class="red-text">La ligne est vide</div>'
+    },
+    {
+        name: 'xss-js',
+        body: '<div class="purple-text">Tiens donc, ça ressemble à du JavaScript!</div>'
+    },
+    {
+        name: 'xss-sql',
+        body: '<div class="purple-text">Tiens donc, ça ressemble à du SQL!</div>'
     }
 ];
 
@@ -241,9 +249,10 @@ function checkLineValidity (line) {
 
         // Handle STRING
         case 'string':
-            // Do nothing
+            
+            // Input sanitization
             lineInfo.instruction = select.value;
-            lineInfo.body = input.value;
+            lineInfo.body = sanitize(input);
             break;
 
 
@@ -294,15 +303,16 @@ function checkLineValidity (line) {
         
         // Handle REM
         case 'rem':
-            // Do nothing
-
+            
+            // Input sanitization
             lineInfo.instruction = select.value;
-            lineInfo.body = input.value;
+            lineInfo.body = sanitize(input);
             break;
 
         
         // Handle empty line
         default:
+
             // Output error under erroneous input field
             displayError(input, 'empty');
             return null;
@@ -310,6 +320,44 @@ function checkLineValidity (line) {
 
 
     return lineInfo;
+}
+
+
+
+// Define input issues
+const sanityIssues = {
+    jsStart: new RegExp('<script>', 'gi'),
+    jsEnd: new RegExp('</script>', 'gi'),
+    sqlSelect: new RegExp('select', 'gi'),
+    sqlFrom: new RegExp('from', 'gi')
+}
+
+// Sanitize inputs
+function sanitize (input) {
+
+    // Check for XSS attempts
+    if (input.value.match(sanityIssues.jsStart) !== null || input.value.match(sanityIssues.jsEnd) !== null) {
+
+        displayError(input, 'xss-js');
+    
+    } else if (input.value.match(sanityIssues.sqlSelect) !== null && input.value.match(sanityIssues.sqlFrom) !== null) {
+
+        displayError(input, 'xss-sql');
+    }
+
+
+    const map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#x27;',
+        "/": '&#x2F;',
+        '`': '&grave'
+    };
+
+    const reg = /[&<>"'`/]/ig;
+    return input.value.replace(reg, (match) => (map[match]));
 }
 
 
