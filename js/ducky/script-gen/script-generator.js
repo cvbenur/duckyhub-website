@@ -1,5 +1,4 @@
 import { createNewScriptLine, removeLineOnClick } from './forms/line-script.js';
-import * as Comp from './forms/complex-script.js';
 import { generateLineScript, generateCompScript, downloadScript } from './gen/generate.js';
 
 
