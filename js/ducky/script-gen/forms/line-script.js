@@ -298,7 +298,7 @@ function checkLineValidity (line) {
             }
 
             lineInfo.instruction = select.value;
-            lineInfo.body = parseInt(input.value, 10);
+            lineInfo.body = input.value;
             break;
         
         
@@ -313,7 +313,7 @@ function checkLineValidity (line) {
             }
 
             lineInfo.instruction = select.value;
-            lineInfo.body = parseInt(input.value, 10);
+            lineInfo.body = input.value;
             break;
         
         
