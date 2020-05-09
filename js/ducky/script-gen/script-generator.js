@@ -37,8 +37,11 @@ for (const btn of Array.from(document.getElementsByClassName('generate-btn'))) {
 
                 removeAlerts('comp');
 
-
                 generatedComp = generateCompScript();
+
+                if (generatedComp) {
+                    compState = captureCompStates();
+                }
                 break;
 
             // Safety
@@ -376,6 +379,41 @@ document.getElementById('line-dl-btn').addEventListener('click', () => {
 let generatedComp = false;
 // Define state of each block on generation
 let compState;
+
+
+
+
+// Capture states for complex script on generation
+function captureCompStates () {
+
+    let state = {
+        os: '',
+        ticked: []
+    };
+
+    let os = '';
+
+
+    // Getting the selected OS
+    const radios = Array.from(document.getElementsByClassName('custom-radio'));
+    for (const radio of radios) {
+        if (radio.children[0].checked) {
+            os = radio.children[0].id.split('comp-')[1];
+        }
+    }
+
+
+    // Retrieving the checked boxes
+    const actions = Array.from(document.getElementsByClassName(`comp-action-${os}`));
+    for (const action of actions) {
+        if (action.checked) {
+            state.ticked.push(action);
+        }
+    }
+
+
+    return state;
+}
 
 
 
