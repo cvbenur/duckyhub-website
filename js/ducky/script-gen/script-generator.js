@@ -395,10 +395,10 @@ function captureCompStates () {
 
 
     // Getting the selected OS
-    const radios = Array.from(document.getElementsByClassName('custom-radio'));
+    const radios = Array.from(document.getElementsByClassName('comp-radio'));
     for (const radio of radios) {
-        if (radio.children[0].checked) {
-            os = radio.children[0].id.split('comp-')[1];
+        if (radio.checked) {
+            os = radio.id.split('comp-')[1];
         }
     }
 
