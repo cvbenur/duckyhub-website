@@ -1,15 +1,20 @@
 // Ensuring only OS-compatible actions are made available to click
 let search = "";
 
-for (const radio of document.getElementsByClassName('custom-control-input')) {
+for (const radio of document.getElementsByClassName('comp-radio')) {
     radio.addEventListener('change', (e) => {
         
         e.preventDefault();
         e.stopPropagation();
+
+
+        console.log('ziakos');
         
+    
         // Getting all comp-actions element
         const actions = document.getElementsByClassName('comp-action');
 
+    
         // Setting the current OS to the one selected
         switch (e.target.id) {
             case 'comp-win':
@@ -27,6 +32,7 @@ for (const radio of document.getElementsByClassName('custom-control-input')) {
             default:
         }
 
+
         // Incidentally enabling and disabling corresponding checkboxes
         for (const action of actions) {
 
@@ -38,10 +44,12 @@ for (const radio of document.getElementsByClassName('custom-control-input')) {
             }
         }
 
+
         // Disabling the 'Generate' button
         document.getElementById('comp-generate-btn').disabled = true;
     });
 }
+
 
 
 
@@ -53,14 +61,18 @@ for (const box of actions) {
     // Detecting change in checkbox
     box.addEventListener('change', (e) => {
 
+        e.preventDefault();
+        e.stopPropagation();
+
+
         // If this particular checkbox gets checked
         if (e.target.checked) {
 
             // Enable Generate button
             document.getElementById('comp-generate-btn').disabled = false;
 
-        // Else, if no ckeckbox is left checked
-        } else if (!Array.from(actions).find(b => { b.checked })) {
+        // Else, if there are no more checked boxes
+        } else if (!Array.from(actions).some(b => b.checked)) {
 
             // Disable Generate button
             document.getElementById('comp-generate-btn').disabled = true;
