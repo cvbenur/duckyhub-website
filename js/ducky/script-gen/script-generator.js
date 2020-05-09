@@ -108,11 +108,7 @@ document.addEventListener('change', (e) => {
         // In case of a change in the radios or checkboxes
         if (e.target.type === 'radio' || e.target.type === 'checkbox') {
 
-
-
             // TODO
-
-            console.log('change chakal');
         }
     }
 });
