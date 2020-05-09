@@ -197,7 +197,6 @@ export function checkValidityLine () {
         let numbers = '';
 
         for (let i=0; i < invalid.length; i++) {
-
             numbers += `${invalid[i]}`;
 
             if (i < invalid.length - 1) {

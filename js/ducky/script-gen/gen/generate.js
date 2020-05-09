@@ -1,8 +1,10 @@
 import { duckifyAndCodify } from './duckify';
-import { checkValidity, removeErrorWarnings } from '../forms/line-script.js';
+import { checkValidityLine, removeErrorWarnings } from '../forms/line-script.js';
+import { checkValidityComp } from '../forms/complex-script.js';
 
 
 
+// Define the blob for the downloadable script
 let blob;
 
 
@@ -31,6 +33,8 @@ function prepDownload (script) {
 export function downloadScript (type) {
     document.getElementById(`${type}-dl-btn`).href = window.URL.createObjectURL(blob);
     document.getElementById(`${type}-dl-btn`).download = `script-${type}${generateHexString(4)}-dh.txt`;
+
+    blob = null;
 }
 
 
@@ -58,7 +62,7 @@ export function generateLineScript () {
 
 
     // Parse lines and check validity for the form
-    const instructions = checkValidity();
+    const instructions = checkValidityLine();
     if (instructions.some(i => i === null)) return false;
 
 
@@ -113,7 +117,9 @@ const compCodeTag = document.getElementById('comp-script-render');
 export function generateCompScript () {
     console.log('comp');
 
-    // TODO
+    // Parse lines and check validity for the form
+    const instructions = checkValidityComp();
+    if (instructions.some(i => i === null)) return false;
 
     return true;
 }
