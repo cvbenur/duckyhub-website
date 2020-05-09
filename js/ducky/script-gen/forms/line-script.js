@@ -163,7 +163,7 @@ export function removeLineOnClick (parent) {
 
 
 // Form validation
-export function checkValidity () {
+export function checkValidityLine () {
 
     let instructions = [];
     let invalid = [];
@@ -191,6 +191,23 @@ export function checkValidity () {
         // Show status OK
         warning.className = 'd-block pt-3 green-text animated fadeIn faster';
         warning.innerText = 'Aucun problème détecté dans le code.';
+
+    } else if (invalid.length > 1) {
+
+        let numbers = '';
+
+        for (let i=0; i < invalid.length; i++) {
+
+            numbers += `${invalid[i]}`;
+
+            if (i < invalid.length - 1) {
+                numbers += `, `;
+            }
+        }
+
+        // Show error in code
+        warning.innerText = `Erreurs détectées aux lignes ${numbers}.`;
+        warning.className = 'd-block pt-3 red-text animated bounceIn faster';
 
     } else {
 
