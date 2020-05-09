@@ -1,3 +1,54 @@
+import { script as script1 } from '../../../../actions/win/change-wp.js';
+import { script as script2 } from '../../../../actions/win/exec-from-pwsh.js';
+import { script as script3 } from '../../../../actions/win/launch-cmd.js';
+import { script as script4 } from '../../../../actions/mac/launch-term.js';
+import { script as script5 } from '../../../../actions/lin/launch-term.js';
+import { script as script6 } from '../../../../actions/win/open-webpg.js';
+import { script as script7 } from '../../../../actions/mac/open-webpg.js';
+import { script as script8 } from '../../../../actions/lin/open-webpg.js';
+
+import { keypresses } from '../gen/duckify.js';
+
+
+// Define value correspondance between actions and files
+const actionFiles = [
+    {
+        id: 'action1',
+        script: script1,
+    },
+    {
+        id: 'action2',
+        script: script2,
+    },
+    {
+        id: 'action3',
+        script: script3,
+    },
+    {
+        id: 'action4',
+        script: script4,
+    },
+    {
+        id: 'action5',
+        script: script5,
+    },
+    {
+        id: 'action6',
+        script: script6,
+    },
+    {
+        id: 'action7',
+        script: script7,
+    },
+    {
+        id: 'action8',
+        script: script8,
+    },
+]
+
+
+
+
 // Ensuring only OS-compatible actions are made available to click
 let search = "";
 
@@ -6,9 +57,6 @@ for (const radio of document.getElementsByClassName('comp-radio')) {
         
         e.preventDefault();
         e.stopPropagation();
-
-
-        console.log('ziakos');
         
     
         // Getting all comp-actions element
@@ -83,42 +131,6 @@ for (const box of actions) {
 
 
 
-// Define value correspondance between actions and files
-const actionFiles = [
-    {
-        id: 'action1',
-        filename: '../../../../actions/win/change-wp',
-    },
-    {
-        id: 'action2',
-        filename: '../../../../actions/win/exec-from-pwsh',
-    },
-    {
-        id: 'action3',
-        filename: '../../../../actions/win/launch-cmd',
-    },
-    {
-        id: 'action4',
-        filename: '../../../../actions/mac/launch-term',
-    },
-    {
-        id: 'action5',
-        filename: '../../../../actions/lin/launch-term',
-    },
-    {
-        id: 'action6',
-        filename: '../../../../actions/win/open-webpg',
-    },
-    {
-        id: 'action7',
-        filename: '../../../../actions/mac/open-webpg',
-    },
-    {
-        id: 'action8',
-        filename: '../../../../actions/lin/open-webpg',
-    },
-]
-
 // Checking validity for the complex script
 export function checkValidityComp () {
 
@@ -126,6 +138,7 @@ export function checkValidityComp () {
 
     let bchecked = 0;
     let achecked = 0;
+    let rad = null;
 
     const warning = document.getElementById('comp-script-invalid');
 
@@ -136,6 +149,7 @@ export function checkValidityComp () {
     for (const radio of radios) {
         if (radio.checked) {
             bchecked ++;
+            rad = radio;
         }
     }
 
@@ -150,7 +164,7 @@ export function checkValidityComp () {
     }
 
     // Get the selected OS
-    os = radio.id.split('comp-')[1];
+    const os = rad.id.split('comp-')[1];
 
 
 
@@ -188,8 +202,58 @@ export function checkValidityComp () {
         warning.className = 'd-block pt-3 red-text animated bounceIn faster';
 
         return null;
+
+    } else {
+
+        // Show status OK
+        warning.className = 'd-block pt-3 green-text animated fadeIn faster';
+        warning.innerText = 'Aucun problème détecté dans la sélection.';
+    }
+
+    return instructify(blocks);
+}
+
+
+
+
+// Turn blocks into instructions
+function instructify (blocks) {
+
+    let instructions = [];
+
+
+    // For each of the selected blocks
+    for (const block of blocks) {
+
+        // For each line of the corresponding script
+        for( const line of block.script) {
+
+            // Retrieve instruction and body
+            let inst = line.split(' ')[0];
+            let bod = line.split(' ').splice(1).join(' ');
+
+
+            if (keypresses.find(k => k === inst)) {
+                bod = `${inst} ${bod}`;
+                inst = 'KEY';
+            }
+
+
+            instructions.push({instruction: inst, body: bod});
+        }
     }
 
 
-    return blocks;
+    return instructions;
+}
+
+
+
+
+// Remove any error warnings in the code
+export function removeCompErrorWarnings () {
+
+    const warn = document.getElementById('comp-script-invalid');
+    warn.innerText = '';
+    warn.className = 'd-none';
 }

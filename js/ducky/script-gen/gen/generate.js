@@ -57,13 +57,14 @@ const lineCodeTag = document.getElementById('line-script-render');
 export function generateLineScript () {
 
     // Remove existing error warnings
-    removeErrorWarnings();
+    removeLineErrorWarnings();
 
 
 
     // Parse lines and check validity for the form
     const instructions = checkValidityLine();
     if (instructions.some(i => i === null)) return false;
+    
 
 
 
@@ -72,6 +73,7 @@ export function generateLineScript () {
     setTimeout(() => {
         document.getElementById('line-generate-btn').disabled = false;
     }, 5000);
+
 
 
 
@@ -86,7 +88,7 @@ export function generateLineScript () {
 
 
     // Get duckified script and prepare render
-    const scriptFinal = duckifyAndCodify(instructions);
+    const scriptFinal = duckifyAndCodify(instructions, 'line');
 
 
 
@@ -113,13 +115,57 @@ export function generateLineScript () {
 // Define tag in whitch to render the complex script
 const compCodeTag = document.getElementById('comp-script-render');
 
-// TODO: Generating script from complex generator
+// Generating script from complex generator
 export function generateCompScript () {
-    console.log('comp');
+
+    // Remove any error warnings
+    removeCompErrorWarnings();
+
+
 
     // Parse lines and check validity for the form
     const instructions = checkValidityComp();
     if (instructions.some(i => i === null)) return false;
+
+
+
+
+    // Disable Generate button for 5 seconds after click
+    document.getElementById('comp-generate-btn').disabled = true;
+    setTimeout(() => {
+        document.getElementById('comp-generate-btn').disabled = false;
+    }, 5000);
+
+
+
+    // Hide 'Nothing yet'
+    document.getElementById('comp-rien').className = 'd-none';
+
+
+
+    // Remove existing script from page
+    removeFormerScript(compCodeTag);
+
+
+
+    // Get duckified script and prepare render
+    const scriptFinal = duckifyAndCodify(instructions, 'comp');
+
+
+
+    // Show rendered script on page
+    compCodeTag.parentElement.className = 'line-numbers mdb-color darken-3 py-3 animated fadeIn';
+    
+
+
+    // Prepare dl
+    prepDownload(scriptFinal);
+
+    
+
+    // Enable dl
+    document.getElementById('comp-dl-btn').className = '';
+
 
     return true;
 }
