@@ -372,8 +372,10 @@ document.getElementById('line-dl-btn').addEventListener('click', () => {
 */
 
 
-// Define generation state for complex script
+// Define generation state for comp script
 let generatedComp = false;
+// Define state of each block on generation
+let compState;
 
 
 
