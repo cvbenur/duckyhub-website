@@ -1,5 +1,6 @@
 // Define array of keypresses
 export const keypresses = [
+    // Special keys
     'GUI',
     'WINDOWS',
     'APP',
@@ -8,17 +9,14 @@ export const keypresses = [
     'ALT',
     'CTRL',
     'CONTROL',
-    'DOWNARROW',
-    'DOWN',
-    'UPARROW',
-    'UP',
-    'LEFTARROW',
-    'LEFT',
+    'DOWNARROW', 'DOWN',
+    'UPARROW', 'UP',
+    'LEFTARROW', 'LEFT',
+    'RIGHTARROW', 'RIGHT',
     'BREAK',
     'PAUSE',
     'CAPSLOCK',
-    'DELETE',
-    'DEL',
+    'DELETE', 'DEL',
     'END',
     'ENTER',
     'ESCAPE',
@@ -30,7 +28,16 @@ export const keypresses = [
     'PRINTSCREEN',
     'SCROLLLOCK',
     'SPACE',
-    'TAB'
+    'TAB',
+
+    // Alphabet
+    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+
+    // Numbers
+    '1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
+
+    // F keys
+    'F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 'F10', 'F11', 'F12'
 ];
 
 // Converting comments into 'REM' strings
