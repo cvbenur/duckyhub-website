@@ -404,7 +404,7 @@ function checkKeypressValidity (string) {
 
 
 // Remove error warnings in the code
-export function removeErrorWarnings () {
+export function removeLineErrorWarnings () {
     Array.from(document.getElementsByClassName('line-error')).forEach(div => {
         const parent = div.parentElement;
         parent.removeChild(div);

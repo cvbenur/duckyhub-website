@@ -1,6 +1,6 @@
 import { duckifyAndCodify } from './duckify';
-import { checkValidityLine, removeErrorWarnings } from '../forms/line-script.js';
-import { checkValidityComp } from '../forms/complex-script.js';
+import { checkValidityLine, removeLineErrorWarnings } from '../forms/line-script.js';
+import { checkValidityComp, removeCompErrorWarnings } from '../forms/complex-script.js';
 
 
 
