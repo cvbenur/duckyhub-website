@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+  <title>Générateur</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.min.css" rel="stylesheet">
+</head>
+
+<body class="light-blue-skin">
+
+  <!--Main Navigation-->
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light ducky-blue scrolling-navbar">
+      <div class="container">
+
+        <!-- Brand -->
+        <a class="navbar-brand waves-effect" href="#">
+          <img src="./img/ducky/logo.png" height="35" alt="DuckyHub Logo">
+          <strong class="white-text">DuckyHub</strong>
+        </a>
+
+        <!-- Collapse -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <!-- Left -->
+          <ul class="navbar-nav mr-auto">
+
+            <!-- Accueil -->
+            <li class="nav-item">
+              <a class="nav-link waves-effect white-text px-2" href="./index.html"><strong>Accueil</strong>
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <!-- Accueil -->
+
+            <!-- Apprendre -->
+            <li class="nav-item px-2 dropdown">
+              <a class="white-text nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">Apprendre  </a>
+              <div class="dropdown-menu ducky-blue" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item white-text" href="./apprendre.html">Tutoriels</a>
+                <a class="dropdown-item white-text" href="./apprendre.html">Ressources</a>
+              </div>
+            </li>
+            <!-- Apprendre -->
+
+            <!-- Scripts -->
+            <li class="nav-item px-2">
+              <a class="nav-link waves-effect white-text" href="./scripts.html">Scripts</a>
+            </li>
+            <!-- Scripts -->
+
+            <!-- Générateur -->
+            <li class="nav-item px-2 active">
+              <a class="nav-link waves-effect white-text" href="#">Générateur</a>
+            </li>
+            <!-- Générateur -->
+          </ul>
+
+          <!-- Right -->
+          <ul class="navbar-nav nav-flex-icons">
+            <li class="nav-item">
+              <a href="https://github.com/cvbenur/duckyhub-website" class="nav-link border border-light rounded waves-effect white-text"
+                target="_blank">
+                <i class="fab fa-github mr-2"></i>DuckyHub GitHub
+              </a>
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+    </nav>
+    <!-- Navbar -->
+
+  </header>
+  <!--Main Navigation-->
+
+  <!--Main layout-->
+  <main class="mt-5 pt-5">
+    <div class="container">
+
+      <!-- Description -->
+      <section>
+
+        <h1 class="my-4 text-center ducky-blue-text">
+          <strong>Générateur de scripts</strong>
+        </h1>
+
+        <hr class="my-5" />
+        
+        <div>
+          <div>
+            <h3 class="pb-3 ducky-skyblue-text">
+              <strong>Générez vos propres scripts DuckyScript, facilement !</strong>
+            </h3>
+    
+            <div class="my-3 ducky-blue-text text-justify">
+              <p>
+                Concevoir et écrire du DuckyScript se montre souvent peu intuitif les premières fois. Pour cette raison,
+                nous avons mis au point cet outil gratuit de génération de scripts DuckyScript.
+              </p>
+              
+              <p>
+                Cet outil est facile d'utilisation, puisque vous n'avez qu'à cocher les cases des fonctionnalités désirées, 
+                cliquer sur le bouton "<strong>Générer</strong>", et télécharger le résultat.
+              </p>
+  
+              <p class="pb-2">
+                Nous nous occupons du reste.
+              </p>
+            </div>
+          </div>
+
+          <br class="my-5">
+
+          <div>
+            <h3 class="pb-3 ducky-skyblue-text">
+              <strong>Instructions d'utilisation</strong>
+            </h3>
+    
+            <div class="my-3 ducky-blue-text text-justify">
+              <p>
+                Une fois avoir construit votre script DuckyScript et l'avoir téléchargé, vous vous retrouverez en 
+                possession d'un fichier au nom commençant par "<strong>script-</strong>" et terminant par <strong>-dh.txt</strong>".
+              </p>
+              
+              <p>
+                Il vous suffit de renommer ce fichier en "<strong>script.txt</strong>", et de le déposer sur la carte SD de votre 
+                dispositif Rubber Ducky.
+              </p>
+  
+              <p class="pb-2">
+                La dernière étape est de brancher votre dispositif Rubber Ducky à votre ordinateur, et d'observer votre script à 
+                l'oeuvre !
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Description -->
+
+      <hr class="mt-5" />
+
+      <!-- Génération de scripts -->
+      <section class="py-5">
+
+        <!-- Accordion -->
+        <div class="accordion" id="accordion">
+
+          <!-- Générateur de script simple -->
+          <div class="card z-depth-0">
+            
+            <div class="card-header" id="headingOne2">
+              <h5 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#accordion-row1"
+                  aria-expanded="true" aria-controls="accordion-row1">
+                  Générateur de script simple
+                </button>
+              </h5>
+            </div>
+
+
+            <div id="accordion-row1" class="collapse" aria-labelledby="headingOne2"
+              data-parent="#accordion">
+
+              <div class="card-body">
+                <div class="text-center">
+                  <h4 class="py-3">Ecrivez votre script ligne par ligne !</h4>
+
+                  <!-- Form: Script Simple -->
+                  <form id="line-form" class="line-needs-validation" novalidate>
+
+                    <!-- Lignes générées -->
+                    <div id="line-lines">
+                    </div>
+                    <!-- Lignes générées -->
+
+
+                    <div>
+                      <div class="pt-5">
+                        <button type="button" id="add-line-btn" class="btn ducky-blue rounded white-text py-2 my-0">
+                          <i class="fas fa-plus"></i>
+                          Commencer votre script
+                        </button>
+                      </div>
+    
+                      <br class="pt-5">
+                      
+                      <div class="py-5">
+                        <button type="button" class="btn ducky-blue rounded white-text submit generate-btn" id="line-generate-btn" disabled>
+                          Générer
+                        </button>
+
+                        <h4 id="line-script-invalid" class="d-none"></h4>
+                      </div>
+                    </div>
+                  </form>
+                  <!-- Form: Script Simple -->
+
+          
+                  <hr>
+          
+                  <div class="ducky-blue-text">
+                    <h4 class="black-text py-3">Script généré :</h4>
+
+                    <!-- Code Généré -->
+                    <div id="line-generated-code">
+                      <h4 id="line-rien" class="black-text py-2">Rien pour le moment.</h4>
+
+                      <div class="pb-3 pt-1">
+                        <pre class="d-none"><code id="line-script-render" class="white-text"></code></pre>
+                      </div>
+                    </div>
+                    <!-- Code Généré -->
+
+                    <!-- Messages d'alerte -->
+                    <div id="line-dl-alert" class="d-none orange-text pb-3">
+                      <h4>Attention !</h4>
+
+                      <div id="line-input-alert" class="d-none pt-1">
+                        Un des champs de texte a changé depuis la dernière génération.<br>
+                        Cliquez de nouveau sur <strong>Générer</strong> pour générer un script à jour.
+                      </div>
+
+                      <div id="line-select-alert" class="d-none pt-1">
+                        Un des champs déroulants a changé depuis la dernière génération.<br>
+                        Cliquez de nouveau sur <strong>Générer</strong> pour générer un script à jour.
+                      </div>
+
+                      <div id="line-remove-alert" class="d-none pt-1">
+                        Une (ou plusieurs) des lignes ont été supprimées depuis la dernière génération.<br>
+                        Cliquez de nouveau sur <strong>Générer</strong> pour générer un script à jour.
+                      </div>
+
+                      <div id="line-add-alert" class="d-none pt-1">
+                        Une (ou plusieurs) ligne ont été ajoutées depuis la dernière génération.<br>
+                        Cliquez de nouveau sur <strong>Générer</strong> pour générer un script à jour.
+                      </div>
+                    </div>
+                    <!-- Messages d'alerte -->
+            
+                    <!-- Bouton de téléchargement -->
+                    <a id="line-dl-btn" class="d-none" download>
+                      <button type="button" class="btn ducky-blue rounded white-text">Télécharger</button>
+                    </a>
+                    <!-- Bouton de téléchargement -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Générateur de script simple -->
+
+          <!-- Générateur de script complexe -->
+          <div class="card z-depth-0">
+            <div class="card-header" id="headingTwo2">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                  data-target="#accordion-row2" aria-expanded="false" aria-controls="accordion-row2">
+                  Générateur de script complexe
+                </button>
+              </h5>
+            </div>
+
+
+            <div id="accordion-row2" class="collapse" aria-labelledby="headingTwo2"
+              data-parent="#accordion">
+
+              <div class="card-body">
+                <div class="text-center">
+
+                  <!-- Form: Script Complexe -->
+                  <form id="script-comp-form" class="pt-5 comp-needs-validation">
+
+                    <!-- OS -->
+                    <div id="comp-os">
+                      <h4 class="pb-3">Sélectionner le système d'exploitation de l'ordinateur cible :</h4>
+
+                      <div class="row">
+                        <div class="custom-control custom-radio col">
+                          <input type="radio" class="custom-control-input" id="comp-win" name="compOsRadios">
+                          <label class="custom-control-label" for="comp-win">Windows</label>
+                        </div>
+  
+                        <div class="custom-control custom-radio col">
+                          <input type="radio" class="custom-control-input" id="comp-mac" name="compOsRadios">
+                          <label class="custom-control-label" for="comp-mac">MacOS</label>
+                        </div>
+  
+                        <div class="custom-control custom-radio col">
+                          <input type="radio" class="custom-control-input" id="comp-lin" name="compOsRadios">
+                          <label class="custom-control-label" for="comp-lin">Linux</label>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- OS -->
+
+                    <!-- Actions -->
+                    <div id="comp-actions">
+                      <h4 class="pt-5 pb-3">Choisir une action à exécuter :</h4>
+
+                      <!-- Rangée 1 -->
+                      <div class="row">
+                        <div class="col-sm-4 text-left">
+                          <div class="custom-control custom-checkbox p-2">
+                            <input type="checkbox" class="custom-control-input comp-action comp-action-mac" id="action1" disabled>
+                            <label class="custom-control-label" for="action1">Action 1 - macOs</label>
+                          </div>
+
+                          <div class="custom-control custom-checkbox p-2">
+                            <input type="checkbox" class="custom-control-input comp-action comp-action-win" id="action2" disabled>
+                            <label class="custom-control-label" for="action2">Action 2 - Win</label>
+                          </div>
+
+                          <div class="custom-control custom-checkbox p-2">
+                            <input type="checkbox" class="custom-control-input comp-action comp-action-lin" id="action3" disabled>
+                            <label class="custom-control-label" for="action3">Action 3 - Lin</label>
+                          </div>
+
+                          <div class="custom-control custom-checkbox p-2">
+                            <input type="checkbox" class="custom-control-input comp-action comp-action-mac" id="action4" disabled>
+                            <label class="custom-control-label" for="action4">Action 4 - macOs</label>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Rangée 1 -->
+
+                    </div>
+                    <!-- Actions -->
+
+
+                    <br class="pt-5">
+                  
+                    <div class="py-4">
+                      <button type="button" class="btn ducky-blue rounded white-text generate-btn" id="comp-generate-btn" disabled>
+                        Générer
+                      </button>
+                    </div>
+
+                  </form>
+                  <!-- Form: Script Complexe -->
+
+                  <hr>
+          
+                  <div class="ducky-blue-text">
+                    <h4 class="black-text py-3">Script généré :</h4>
+
+                    <!-- Code Généré -->
+                    <div id="comp-generated-code">
+                      <h4 id="comp-rien" class="black-text py-2">Rien pour le moment.</h4>
+
+                      <div class="pb-3 pt-1">
+                        <pre class="d-none"><code id="comp-script-render" class="white-text"></code></pre>
+                      </div>
+                    </div>
+                    <!-- Code Généré -->
+
+                    <!-- Messages d'alerte -->
+                    <div id="comp-dl-alert" class="d-none orange-text pb-3">
+                      <h4>Attention !</h4>
+
+                      <div id="comp-os-alert" class="d-none">
+                        Le système d'exploitation choisi a changé depuis la dernière génération.<br>
+                        Cliquez de nouveau sur <strong>Générer</strong> pour générer un script à jour.
+                      </div>
+
+                      <div id="comp-action-alert" class="d-none">
+                        La liste des blocs choisis a changé depuis la dernière génération.<br>
+                        Cliquez de nouveau sur <strong>Générer</strong> pour générer un script à jour.
+                      </div>
+
+                      <div id="comp-remove-alert" class="d-none">
+                        Un (ou plusieurs) blocs ont été supprimés depuis la dernière génération.<br>
+                        Cliquez de nouveau sur <strong>Générer</strong> pour générer un script à jour.
+                      </div>
+
+                      <div id="comp-add-alert" class="d-none">
+                        Un (ou plusieurs) blocs ont été ajoutés depuis la dernière génération.<br>
+                        Cliquez de nouveau sur <strong>Générer</strong> pour générer un script à jour.
+                      </div>
+                    </div>
+                    <!-- Messages d'alerte -->
+            
+                    <!-- Bouton de téléchargement -->
+                    <a id="comp-dl-btn" class="d-none" download>
+                      <button type="button" class="btn ducky-blue rounded white-text">Télécharger</button>
+                    </a>
+                    <!-- Bouton de téléchargement -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Générateur de script complexe -->
+
+        </div>
+        <!-- Accordion -->
+
+      </section>
+      <!-- Génération de scripts -->
+
+    </div>
+  </main>
+  <!--Main layout-->
+
+  <!--Footer-->
+  <footer class="page-footer text-center font-small ducky-blue mt-4 wow fadeIn">
+
+    <!-- Links -->
+    <div class="py-3">
+      <a class="px-2" href="">Lien 1</a>
+      <a class="px-2" href="">Lien 2</a>
+      <a class="px-2" href="">Lien 3</a>
+    </div>
+    <!-- Links -->
+
+    <!--Copyright-->
+    <div class="footer-copyright white-text py-3">
+      © 2020 Copyright : DuckyHub </a>
+    </div>
+    <!--/.Copyright-->
+
+  </footer>
+  <!--/.Footer-->
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Custom DuckyHub JavaScript -->
+  <script src="./js/ducky/script-gen/script-generator.js"></script>
+  <!-- Initializations -->
+  <script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+
+  </script>
+</body>
+
+</html>
