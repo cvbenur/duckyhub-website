@@ -1,4 +1,3 @@
-import $ from "jquery";
 import { duckifyAndCodify } from './duckify';
 import { checkValidity, removeErrorWarnings } from '../forms/line-script.js';
 
@@ -118,30 +117,3 @@ export function generateCompScript () {
 
     return true;
 }
-
-
-
-
-// Detecting changes in the checkboxes' status by parsing each checkbox
-$('input[type="checkbox"]').each(function() {
-
-    // On checkbox status change
-    $(this).change(function() {
-        var changed = false;
-        
-        // If we detect ANY change in the checking of a particular box
-        if(this.checked) { changed = true; } else { changed = true; }
-
-        // If the user hasn't been warned of a change already
-        if (!warned) {
-
-            // If changes have been detected and the file has already been generated
-            if (changed && generated) {
-                
-                // Warning the user by appending a new <p> element
-                $('#selected-list').append('<p id="warning">WARNING: Some of the attributes of your script have changed. To take these changes into account, generate a new script by clicking the "Generate" button.</p>');
-                warned = true;
-            }
-        }
-    })
-});
