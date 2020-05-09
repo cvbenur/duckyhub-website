@@ -79,3 +79,117 @@ for (const box of actions) {
         }
     });
 }
+
+
+
+
+// Define value correspondance between actions and files
+const actionFiles = [
+    {
+        id: 'action1',
+        filename: '../../../../actions/win/change-wp',
+    },
+    {
+        id: 'action2',
+        filename: '../../../../actions/win/exec-from-pwsh',
+    },
+    {
+        id: 'action3',
+        filename: '../../../../actions/win/launch-cmd',
+    },
+    {
+        id: 'action4',
+        filename: '../../../../actions/mac/launch-term',
+    },
+    {
+        id: 'action5',
+        filename: '../../../../actions/lin/launch-term',
+    },
+    {
+        id: 'action6',
+        filename: '../../../../actions/win/open-webpg',
+    },
+    {
+        id: 'action7',
+        filename: '../../../../actions/mac/open-webpg',
+    },
+    {
+        id: 'action8',
+        filename: '../../../../actions/lin/open-webpg',
+    },
+]
+
+// Checking validity for the complex script
+export function checkValidityComp () {
+
+    let blocks = [];
+
+    let bchecked = 0;
+    let achecked = 0;
+
+    const warning = document.getElementById('comp-script-invalid');
+
+
+
+    // Getting the selected OS
+    const radios = Array.from(document.getElementsByClassName('comp-radio'));
+    for (const radio of radios) {
+        if (radio.checked) {
+            bchecked ++;
+        }
+    }
+
+    // If there are more than one checked OS
+    if (bchecked !== 1) {
+
+        // Show error in code
+        warning.innerText = `Un seul OS maximum doit être sélectionné.`;
+        warning.className = 'd-block pt-3 red-text animated bounceIn faster';
+
+        return null;
+    }
+
+    // Get the selected OS
+    os = radio.id.split('comp-')[1];
+
+
+
+    // Retrieving the checked boxes for this OS
+    const actions = Array.from(document.getElementsByClassName(`comp-action-${os}`));
+    for (const action of actions) {
+
+        // If this box was checked
+        if (action.checked) {
+            achecked ++;
+
+            const found = actionFiles.find(a => a.id === action.id);
+            if (found !== undefined) {
+                blocks.push(found);
+            } else {
+                blocks.push(null);
+            }
+        }
+    }
+
+
+    // If zero or too many actions were checked
+    if (achecked === 0) {
+
+        // Show error in code
+        warning.innerText = `Aucune action n'est sélectionnée.`;
+        warning.className = 'd-block pt-3 red-text animated bounceIn faster';
+
+        return null;
+    
+    } else if (achecked > actions.length) {
+
+        // Show error in code
+        warning.innerText = `Trop d'actions ont été sélectionnées.`;
+        warning.className = 'd-block pt-3 red-text animated bounceIn faster';
+
+        return null;
+    }
+
+
+    return blocks;
+}
