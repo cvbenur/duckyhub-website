@@ -96,33 +96,45 @@
 
   <!--Main layout-->
   <main class="mt-5 pt-5">
-  </br>
     <div class="container">
-      <h1 class="h1 ducky-blue-text">Créer une fausse page de mise à jour Windows.</h1>
-      </br>
-      <div class="row">
-        <div class="col-sm">
-          <h3 class="h3 ducky-blue-text">Informations </h3>
-          </br>
-          <div>
-            <h4 class="h4 ducky-blue-text">Système(s) d'exploitation </h4>
-            <p class="ducky-blue-text">Windows 10</p>
-          </div>
-          <div>
-          <h4 class="h4 ducky-blue-text">Fonctionnalité </h4>
-            <p class="ducky-blue-text">Avec ce script, tu pourras pousser un peu plus loin d'idée du précedent. </br>Dans cet exemple précis, la machine ouvrira le lien d'un site simulant une mise à jour windows.</p>
-          </div>
-          <div>
-            <h4 class="h4 ducky-blue-text">Déroulement du script</h4>
-            <p class="ducky-blue-text">Etape 1</p>
-            <p class="ducky-blue-text">Etape 2</p>
-            <p class="ducky-blue-text">Etape 3</p>
-          </div>
+      
+      <h3 class="ducky-blue-text pb-4">Windows Update</h3>
+
+      <div>
+        <div class="py-4">
+          <h4 class="ducky-blue-text">Système(s) d'exploitation :</h4>
+          <p class="ducky-blue-text"><i class="fab fa-windows"></i> Windows 7</p>
         </div>
-        <div class="col-sm">
+
+        <div class="py-4">
+          <h4 class="ducky-blue-text">Fonctionnalités :</h4>
+          <p class="ducky-blue-text">Affiche une page web imitant un écran de mise à jour Windows.</p>
+        </div>
+
+        <div class="py-4">
+          <h4 class="ducky-blue-text">Déroulement du script :</h4>
+
+          <ol>
+            <li class="ducky-blue-text">Ouverture d'une page Internet.</li>
+          </ol>
+        </div>
+
+        <div class="text-center py-4">
           <a href="../resources/scripts/dh-windows-update.txt" download>
             <button type="button" class="btn btn-primary ducky-blue rounded">Télécharger</button>
           </a>
+        </div>
+
+        <div class="py-4">
+          <h4 class="ducky-blue-text">Le script :</h4>
+
+          <pre class="line-numbers mdb-color darken-3"><code>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 3000</span>
+            <span class="new-line blue-text">GUI R</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 500</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> iexplore -k http://fakeupdate.net/win10/index.html</span>
+            <span class="new-line blue-text">ENTER</span>
+          </code></pre>
         </div>
       </div>
     </div>

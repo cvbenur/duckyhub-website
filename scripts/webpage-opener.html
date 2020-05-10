@@ -96,33 +96,63 @@
 
   <!--Main layout-->
   <main class="mt-5 pt-5">
-  </br>
     <div class="container">
-      <h1 class="h1 ducky-blue-text">Ouvrir une page Web</h1>
-      </br>
-      <div class="row">
-        <div class="col-sm">
-          <h3 class="h3 ducky-blue-text">Informations </h3>
-          </br>
-          <div>
-            <h4 class="h4 ducky-blue-text">Système(s) d'exploitation </h4>
-            <p class="ducky-blue-text">Tous</p>
-          </div>
-          <div>
-          <h4 class="h4 ducky-blue-text">Fonctionnalité </h4>
-            <p class="ducky-blue-text">Avec ce script, tu pourras ouvrir n'importe quelle URL automatiquement. </br>Selon ton Operating System, une des trois options se mettra en place. Dans tous les cas, une fenetre s'ouvrira où ton url sera écrite.</p>
-          </div>
-          <div>
-            <h4 class="h4 ducky-blue-text">Déroulement du script</h4>
-            <p class="ducky-blue-text">Etape 1</p>
-            <p class="ducky-blue-text">Etape 2</p>
-            <p class="ducky-blue-text">Etape 3</p>
-          </div>
+      
+      <h3 class="ducky-blue-text pb-4">Webpage Opener</h3>
+
+      <div>
+        <div class="py-4">
+          <h4 class="ducky-blue-text">Système(s) d'exploitation :</h4>
+          <p class="ducky-blue-text"><i class="fab fa-windows"></i> <i class="fab fa-apple"></i> <i class="fab fa-linux"></i> Tous</p>
         </div>
-        <div class="col-sm">
+
+        <div class="py-4">
+          <h4 class="ducky-blue-text">Fonctionnalités :</h4>
+          <p class="ducky-blue-text">Ouvre n'importe quelle URL automatiquement.</p>
+        </div>
+
+        <div class="py-4">
+          <h4 class="ducky-blue-text">Déroulement du script :</h4>
+
+          <ol>
+            <li class="ducky-blue-text">Ouverture du lanceur Linux</li>
+            <li class="ducky-blue-text">Ouverture du lanceur MacOS</li>
+            <li class="ducky-blue-text">Ouverture du lanceur Windows</li>
+            <li class="ducky-blue-text">Lancement de la page</li>
+          </ol>
+        </div>
+
+        <div class="text-center py-4">
           <a href="../resources/scripts/dh-webpage-opener.txt" download>
             <button type="button" class="btn btn-primary ducky-blue rounded">Télécharger</button>
           </a>
+        </div>
+
+        <div class="py-4">
+          <h4 class="ducky-blue-text">Le script :</h4>
+
+          <pre class="line-numbers mdb-color darken-3"><code>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 3000</span>
+            <span class="new-line grey-text">REM    ###    Lancement pour Linux</span>
+            <span class="new-line blue-text">ALT F2</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 200</span>
+            <span class="new-line grey-text">REM    ###    Lancement pour MacOS</span>
+            <span class="new-line blue-text">GUI SPACE</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 200</span>
+            <span class="new-line grey-text">REM    ###    Sur Windows, cela change le langage, donc on répète 3 fois</span>
+            <span class="new-line blue-text">GUI SPACE</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 200</span>
+            <span class="new-line blue-text">GUI SPACE</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 200</span>
+            <span class="new-line blue-text">GUI R</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 200</span>
+            <span class="new-line grey-text">REM    ###    Sur un autre OS, on pourrait obtenir "   r". On efface donc 4 caractères.</span>
+            <span class="new-line blue-text">DELETE</span>
+            <span class="new-line white-text"><span class="orange-text">REPEAT</span> 4</span>
+            <span class="new-line grey-text">REM    ###    Lancement de la page.</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> [VOTRE URL ICI]</span>
+            <span class="new-line blue-text">ENTER</span>
+          </code></pre>
         </div>
       </div>
     </div>

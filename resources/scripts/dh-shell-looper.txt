@@ -2,7 +2,7 @@ DELAY 3000
 REM     ###     Ouverture du terminal
 GUI
 DELAY 450
-REM	###	Pour Kali Linux, changer la ligne suivante en qterm
+REM	    ###	    Pour Kali Linux, changer la ligne suivante en qterm
 STRING gnome-terminal
 DELAY 200
 ENTER
