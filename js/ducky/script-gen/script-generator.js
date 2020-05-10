@@ -357,14 +357,6 @@ function captureLineStates () {
 
 
 
-// Handle line script download on click
-document.getElementById('line-dl-btn').addEventListener('click', () => {
-    downloadScript('line');
-});
-
-
-
-
 /*
     ####    FOR COMPLEX SCRIPT    ####
 */
@@ -409,11 +401,3 @@ function captureCompStates () {
 
     return state;
 }
-
-
-
-
-// Handle complex script download on click
-document.getElementById('comp-dl-btn').addEventListener('click', () => {
-    downloadScript('comp');
-});

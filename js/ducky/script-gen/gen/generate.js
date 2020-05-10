@@ -5,7 +5,10 @@ import { checkValidityComp, removeCompErrorWarnings } from '../forms/complex-scr
 
 
 // Define the blob for the downloadable script
-let blob;
+let blob = {
+    line: null,
+    comp: null
+};
 
 
 
@@ -24,17 +27,11 @@ function removeFormerScript (tag) {
 
 
 // Prepares script download
-function prepDownload (script) {
-    blob = new Blob([script], {type: "text/plain;charset=utf-8"});
-}
+function prepDownload (script, type) {
+    blob[`${script}`] = new Blob([script], {type: "text/plain;charset=utf-8"});
 
-
-// Handle download for script
-export function downloadScript (type) {
-    document.getElementById(`${type}-dl-btn`).href = window.URL.createObjectURL(blob);
+    document.getElementById(`${type}-dl-btn`).href = window.URL.createObjectURL(blob[`${script}`]);
     document.getElementById(`${type}-dl-btn`).download = `script-${type}${generateHexString(4)}-dh.txt`;
-
-    blob = null;
 }
 
 
@@ -98,7 +95,7 @@ export function generateLineScript () {
 
 
     // Prepare dl
-    prepDownload(scriptFinal);
+    prepDownload(scriptFinal, 'line');
 
     
 
@@ -159,7 +156,7 @@ export function generateCompScript () {
 
 
     // Prepare dl
-    prepDownload(scriptFinal);
+    prepDownload(scriptFinal, 'comp');
 
     
 
