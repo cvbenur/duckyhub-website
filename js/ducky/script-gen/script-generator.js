@@ -1,5 +1,5 @@
 import { createNewScriptLine, removeLineOnClick } from './forms/line-script.js';
-import { generateLineScript, generateCompScript, downloadScript } from './gen/generate.js';
+import { generateLineScript, generateCompScript } from './gen/generate.js';
 
 
 
