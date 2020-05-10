@@ -297,17 +297,17 @@
 
                       <div class="row">
                         <div class="custom-control custom-radio col">
-                          <input type="radio" class="custom-control-input comp-radio" id="comp-win" name="compOsRadios">
+                          <input type="radio" class="custom-control-input comp-radio" id="comp-win" name="compOsRadios" value='win'>
                           <label class="custom-control-label" for="comp-win">Windows</label>
                         </div>
   
                         <div class="custom-control custom-radio col">
-                          <input type="radio" class="custom-control-input comp-radio" id="comp-mac" name="compOsRadios">
+                          <input type="radio" class="custom-control-input comp-radio" id="comp-mac" name="compOsRadios" value='mac'>
                           <label class="custom-control-label" for="comp-mac">MacOS</label>
                         </div>
   
                         <div class="custom-control custom-radio col">
-                          <input type="radio" class="custom-control-input comp-radio" id="comp-lin" name="compOsRadios">
+                          <input type="radio" class="custom-control-input comp-radio" id="comp-lin" name="compOsRadios" value='lin'>
                           <label class="custom-control-label" for="comp-lin">Linux</label>
                         </div>
                       </div>
@@ -410,17 +410,12 @@
                         Cliquez de nouveau sur <strong>Générer</strong> pour générer un script à jour.
                       </div>
 
-                      <div id="comp-action-alert" class="d-none">
-                        La liste des blocs choisis a changé depuis la dernière génération.<br>
-                        Cliquez de nouveau sur <strong>Générer</strong> pour générer un script à jour.
-                      </div>
-
-                      <div id="comp-remove-alert" class="d-none">
+                      <div id="comp-uncheck-alert" class="d-none">
                         Un (ou plusieurs) blocs ont été supprimés depuis la dernière génération.<br>
                         Cliquez de nouveau sur <strong>Générer</strong> pour générer un script à jour.
                       </div>
 
-                      <div id="comp-add-alert" class="d-none">
+                      <div id="comp-check-alert" class="d-none">
                         Un (ou plusieurs) blocs ont été ajoutés depuis la dernière génération.<br>
                         Cliquez de nouveau sur <strong>Générer</strong> pour générer un script à jour.
                       </div>
