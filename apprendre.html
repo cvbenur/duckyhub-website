@@ -97,432 +97,469 @@
   <!--Main layout-->
   <main class="mt-5 pt-5">
     <div class="container">
-      <!-- barre de recherche -->
-      <section>
-        <div class="row">
-          <h1 class="mb-4 py-5 px-5 my-5 col-4 ducky-blue-text">
-            <strong>Apprendre</strong>
-          </h1>
-          <h2 class="py-5 px-5 my-5">
-            <ul class="nav nav-tabs col-12" id="myTab" role="tablist">
-              <li class="nav-item px-5">
-                <a class="nav-link active tab" id="tutoriels-tab" data-toggle="tab" href="#tutoriels" role="tab" aria-controls="tutoriels"
-                  aria-selected="true">Tutoriels</a>
-              </li>
-              <li class="nav-item px-5">
-                <a class="nav-link tab" id="ressources-tab" data-toggle="tab" href="#ressources" role="tab" aria-controls="ressources"
-                  aria-selected="false">Ressources</a>
-              </li>
-            </ul>
-          </h2>
-        </div>
-          <div class="tab-content" id="myTabContent">
+
+      <div>
+
+        <h1 class="my-4 ducky-blue-text">
+          <strong>Apprendre</strong>
+        </h1>
+
+        <div>
+          <ul class="nav nav-tabs pt-4" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active tab ducky-blue-text" id="tutoriels-tab" data-toggle="tab" href="#tutoriels" role="tab" aria-controls="tutoriels"
+                aria-selected="true"><h4>Tutoriels</h4></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link tab ducky-blue-text" id="ressources-tab" data-toggle="tab" href="#ressources" role="tab" aria-controls="ressources"
+                aria-selected="false"><h4>Ressources</h4></a>
+            </li>
+          </ul>
+
+          <div class="tab-content pt-5" id="myTabContent">
+
+            <!-- Tab 1 -->
             <div class="tab-pane fade show active" id="tutoriels" role="tabpanel" aria-labelledby="tutoriels-tab">
-              <!--Section 2 - Generalites & qu est ce que le DuckyScript -->
-              <section class="wow fadeIn" id="intro">
+              
+              <div class="wow fadeIn" id="intro">
         
                 <!-- Content -->
-                <div class="blue-text py-5 px-5 my-5">
+                <div class="ducky-blue-text">
         
-                  <h1 class="mb-4">
-                    <strong class="ducky-blue-text">Généralités</strong>
-                  </h1>
-                  <div>
-                    <h2>
-                      <strong class="ducky-blue-text">Qu'est-ce que le DuckyScript ?</strong>
-                    </h2>
-                    Le DuckyScript (DS) est un langage de script déstiné aux clés USB programmables, créant des actions à faire suivre par sa machine lorsque la clé est branchée. <br/> 
-                    Simple d'accès, il peut être généré via n'importe quel éditeur de texte type Notepad. 
-                    
-                    <br/> <br/> <br/>
+                  <div class="py-3">
+                    <h3 class="ducky-blue-text">
+                      <strong>Généralités</strong>
+                    </h3>
+  
+  
+                    <div class="ducky-skyblue-text text-justify">
+                      <h4 class="ducky-blue-text pt-3">
+                        <strong>Qu'est-ce que le DuckyScript ?</strong>
+                      </h4>
+                      
+                      <p class="py-3">
+                        Le DuckyScript est un langage de scripting, déstiné à des clés USB programmables, les "RubberDucky". Celles-ci simulent des frappes de clavier au moment où elles sont branchées à un ordinateur.<br/> 
+                        Simple d'accès, il peut être généré via n'importe quel éditeur de texte. 
+                      </p>
+  
+                      <h4 class="ducky-blue-text pb-3">
+                        <strong>Pourquoi s'en servir ?</strong>
+                      </h4>
+                      
+                      <p class="pb-3">
+                        Il existe de nombreux cas où l'on peut être amené à effectuer la même action sur un ordinateur un très grand nombre de fois.
+                        Réaliser toutes ces actions peut être long et fastidieux.<br/>
+                        Une clé RubberDucky, quelques lignes de DuckyScript, et il ne vous reste plus qu'à brancher la clé dans l'ordinateur et attendre.
+                      </p>
+  
+                      <p class="pb-3">
+                        De même, vous pouvez avoir besoin d'effectuer un certain nombre d'actions sur un ordinateur, mais avec un temps d'accès limité.
+                        De la même façon, un script DuckyScript, contenant une série d'instructions pré-programmées, peut être la solution à votre problème.
+                      </p>
+                    </div>
 
-                    <h2>
-                      <strong class="ducky-blue-text">Pourquoi s'en servir ?</strong>
-                    </h2>
-                    Si vous êtes amenés à régulièrement initialiser des ordinateurs, que ce soit la même machine que vous réinstallez à chaque fois, ou une nouvelle, vous savez qu'il est long et répétitif de réaliser ces configurations.
-                    Il y a une liste de logiciels indispensable, et parfois des indésirables.
-                    Il y a une foule de réglages à qualibrer pour retrouver votre zone de confort ou de travail.
-                    Une clé DuckyHub, armée de quelques lignes de Ducky Script, s'occupera de tout ceci en un mouvement.
 
-                    <br/> <br/> <br/> <br/>
+                    <div class="ducky-skyblue-text text-justify">
+                      <h4 class="ducky-blue-text pt-3">
+                        <strong>Programmer en DuckyScript</strong>
+                      </h4>
+    
+                      <div>
+                        <p class="py-3">
+                          Le DuckyScript est un ensemble d'instructions, simplifiées au maximum. Elles sont faites pour émuler des frappes de clavier.
+                          Les commandes sont composées d'un mot-clé, écrit en majuscule, et d'un argument, en minuscule.<br/>
+                          Chaque ligne représente une commande.
+                        </p>
+
+                        <p class="pb-3">
+                          Les commandes sont divisées en 3 catégories :
+                          <ul>
+                            <li>Les commentaires,</li>
+                            <li>Les variables,</li>
+                            <li>Les mots-clé.</li>
+                          </ul>
+                        </p>
+
+                        
+                        REM (suivi de texte) : Créer une ligne de commentaire<br/>
+                        DELAY X/ DEFAULTDELAY X/ REPEAT X: Instaurer un temps d'attente X entre les différentes oppérations du script, répeter X fois ...<br/>
+                        STRING : Rédaction d'une chaine de caractères (string), permettant d'éviter de tapper "manuellement" chaque touche<br/>
+                        <br/>
+                        TOUCHES VIRTUELLES UTILISEES PAR LE DS :<br/>
+                        Tu trouveras ci-contre la syntaxe des differentes touches du clavier émulées par le script<br/><br/>
+    
+                        <table class="table">
+                          <tr>
+                            <td>
+                              <strong style="font-weight: bold;">Mot-Clé</strong>
+                            </td>
+                            <td>
+                              <strong style="font-weight: bold;">Catégorie</strong>
+                            </td>
+                            <td>
+                              <strong style="font-weight: bold;">Comportement</strong>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              REM
+                            </td>
+                            <td>
+                              Commentaire
+                            </td>
+                            <td>
+                              Transforme la ligne en commentaire
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              STRING
+                            </td>
+                            <td>
+                              Variable
+                            </td>
+                            <td>
+                              Détecte la valeur qui suit en tant que chaîne de caractères
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              DELAY
+                            </td>
+                            <td>
+                              Variable
+                            </td>
+                            <td>
+                              Détecte la valeur qui suit en tant que nombre entier
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              DEFAULTDELAY ou DEFAULT_DELAY
+                            </td>
+                            <td>
+                              Variable
+                            </td>
+                            <td>
+                              Détecte la valeur qui suit en tant que nombre entier
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              REPEAT
+                            </td>
+                            <td>
+                              Variable
+                            </td>
+                            <td>
+                              Détecte la valeur qui suit en tant que nombre entier
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              GUI
+                            </td>
+                            <td>
+                              Key
+                            </td>
+                            <td>
+                              Détecte la pression d'une touche de clavier
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              WINDOWS
+                            </td>
+                            <td>
+                              Key
+                            </td>
+                            <td>
+                              Détecte la pression d'une touche de clavier
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              APP
+                            </td>
+                            <td>
+                              Key
+                            </td>
+                            <td>
+                              Détecte la pression d'une touche de clavier
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              MENU
+                            </td>
+                            <td>
+                              Key
+                            </td>
+                            <td>
+                              Détecte la pression d'une touche de clavier
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              SHIFT
+                            </td>
+                            <td>
+                              Key
+                            </td>
+                            <td>
+                              Détecte la pression d'une touche de clavier
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              ALT
+                            </td>
+                            <td>
+                              Key
+                            </td>
+                            <td>
+                              Détecte la pression d'une touche de clavier
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              CTRL ou CONTROL
+                            </td>
+                            <td>
+                              Key
+                            </td>
+                            <td>
+                              Détecte la pression d'une touche de clavier
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              DOWNARROW ou DOWN
+                            </td>
+                            <td>
+                              Key
+                            </td>
+                            <td>
+                              Détecte la pression d'une touche de clavier
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              UPARROW ou UP
+                            </td>
+                            <td>
+                              Key
+                            </td>
+                            <td>
+                              Détecte la pression d'une touche de clavier
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              LEFTARROW ou LEFT
+                            </td>
+                            <td>
+                              Key
+                            </td>
+                            <td>
+                              Détecte la pression d'une touche de clavier
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              RIGHTARROW ou RIGHT
+                            </td>
+                            <td>
+                              Key
+                            </td>
+                            <td>
+                              Détecte la pression d'une touche de clavier
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              BREAK
+                            </td>
+                            <td>
+                              Key
+                            </td>
+                            <td>
+                              Détecte la pression d'une touche de clavier
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              PAUSE
+                            </td>
+                            <td>
+                              Key
+                            </td>
+                            <td>
+                              Détecte la pression d'une touche de clavier
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              CAPSLOCK
+                            </td>
+                            <td>
+                              Key
+                            </td>
+                            <td>
+                              Détecte la pression d'une touche de clavier
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              END
+                            </td>
+                            <td>
+                              Key
+                            </td>
+                            <td>
+                              Détecte la pression d'une touche de clavier
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              ENTER
+                            </td>
+                            <td>
+                              Key
+                            </td>
+                            <td>
+                              Détecte la pression d'une touche de clavier
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              ESCAPE ou ESC
+                            </td>
+                            <td>
+                              Key
+                            </td>
+                            <td>
+                              Détecte la pression d'une touche de clavier
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              HOME
+                            </td>
+                            <td>
+                              Key
+                            </td>
+                            <td>
+                              Détecte la pression d'une touche de clavier
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              INSERT
+                            </td>
+                            <td>
+                              Key
+                            </td>
+                            <td>
+                              Détecte la pression d'une touche de clavier
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              NUMLOCK
+                            </td>
+                            <td>
+                              Key
+                            </td>
+                            <td>
+                              Détecte la pression d'une touche de clavier
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              PAGEUP
+                            </td>
+                            <td>
+                              Key
+                            </td>
+                            <td>
+                              Détecte la pression d'une touche de clavier
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              PAGEDOWN
+                            </td>
+                            <td>
+                              Key
+                            </td>
+                            <td>
+                              Détecte la pression d'une touche de clavier
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              PRINTSCREEN
+                            </td>
+                            <td>
+                              Key
+                            </td>
+                            <td>
+                              Détecte la pression d'une touche de clavier
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              SCROLLLOCK
+                            </td>
+                            <td>
+                              Key
+                            </td>
+                            <td>
+                              Détecte la pression d'une touche de clavier
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              SPACE
+                            </td>
+                            <td>
+                              Key
+                            </td>
+                            <td>
+                              Détecte la pression d'une touche de clavier
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              TAB
+                            </td>
+                            <td>
+                              Key
+                            </td>
+                            <td>
+                              Détecte la pression d'une touche de clavier
+                            </td>
+                          </tr>
+                        </table>
+    
+                      </div>
+                    </div>
                   </div>
-                  <h1 class="mb-4">
-                    <strong class="ducky-blue-text">Programmer en DuckyScript</strong>
-                  </h1>
-                  <div>
-                    Important! Les commandes sont écrites en MAJUSCULES, les arguments en minuscule. Chaque ligne représente une commande suivie de ses arguments.<br/>
-                    <br/>
-                    REM (suivi de texte) : Créer une ligne de commentaire<br/>
-                    DELAY X/ DEFAULTDELAY X/ REPEAT X: Instaurer un temps d'attente X entre les différentes oppérations du script, répeter X fois ...<br/>
-                    STRING : Rédaction d'une chaine de caractères (string), permettant d'éviter de tapper "manuellement" chaque touche<br/>
-                    <br/>
-                    TOUCHES VIRTUELLES UTILISEES PAR LE DS :<br/>
-                    Tu trouveras ci-contre la syntaxe des differentes touches du clavier émulées par le script<br/><br/>
 
-                    <table class="table">
-                      <tr>
-                        <td>
-                          <strong style="font-weight: bold;">Keywords</strong>
-                        </td>
-                        <td>
-                          <strong style="font-weight: bold;">Category</strong>
-                        </td>
-                        <td>
-                          <strong style="font-weight: bold;">Behaviour</strong>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          REM
-                        </td>
-                        <td>
-                          Comment
-                        </td>
-                        <td>
-                          Turns the line into a comment
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          STRING
-                        </td>
-                        <td>
-                          Variable
-                        </td>
-                        <td>
-                          Detects the following value as a string
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          DELAY
-                        </td>
-                        <td>
-                          Variable
-                        </td>
-                        <td>
-                          Detects the following value as a number
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          DEFAULTDELAY or DEFAULT_DELAY
-                        </td>
-                        <td>
-                          Variable
-                        </td>
-                        <td>
-                          Detects the following value as a number
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          REPEAT
-                        </td>
-                        <td>
-                          Variable
-                        </td>
-                        <td>
-                          Detects the following value as a number
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          GUI
-                        </td>
-                        <td>
-                          Key
-                        </td>
-                        <td>
-                          Detects a keyboard key
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          WINDOWS
-                        </td>
-                        <td>
-                          Key
-                        </td>
-                        <td>
-                          Detects a keyboard key
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          APP
-                        </td>
-                        <td>
-                          Key
-                        </td>
-                        <td>
-                          Detects a keyboard key
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          MENU
-                        </td>
-                        <td>
-                          Key
-                        </td>
-                        <td>
-                          Detects a keyboard key
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          SHIFT
-                        </td>
-                        <td>
-                          Key
-                        </td>
-                        <td>
-                          Detects a keyboard key
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          ALT
-                        </td>
-                        <td>
-                          Key
-                        </td>
-                        <td>
-                          Detects a keyboard key
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          CTRL or CONTROL
-                        </td>
-                        <td>
-                          Key
-                        </td>
-                        <td>
-                          Detects a keyboard key
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          DOWNARROW or DOWN
-                        </td>
-                        <td>
-                          Key
-                        </td>
-                        <td>
-                          Detects a keyboard key
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          UPARROW or UP
-                        </td>
-                        <td>
-                          Key
-                        </td>
-                        <td>
-                          Detects a keyboard key
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          LEFTARROW or LEFT
-                        </td>
-                        <td>
-                          Key
-                        </td>
-                        <td>
-                          Detects a keyboard key
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          RIGHTARROW or RIGHT
-                        </td>
-                        <td>
-                          Key
-                        </td>
-                        <td>
-                          Detects a keyboard key
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          BREAK
-                        </td>
-                        <td>
-                          Key
-                        </td>
-                        <td>
-                          Detects a keyboard key
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          PAUSE
-                        </td>
-                        <td>
-                          Key
-                        </td>
-                        <td>
-                          Detects a keyboard key
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          CAPSLOCK
-                        </td>
-                        <td>
-                          Key
-                        </td>
-                        <td>
-                          Detects a keyboard key
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          END
-                        </td>
-                        <td>
-                          Key
-                        </td>
-                        <td>
-                          Detects a keyboard key
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          ENTER
-                        </td>
-                        <td>
-                          Key
-                        </td>
-                        <td>
-                          Detects a keyboard key
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          ESCAPE or ESC
-                        </td>
-                        <td>
-                          Key
-                        </td>
-                        <td>
-                          Detects a keyboard key
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          HOME
-                        </td>
-                        <td>
-                          Key
-                        </td>
-                        <td>
-                          Detects a keyboard key
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          INSERT
-                        </td>
-                        <td>
-                          Key
-                        </td>
-                        <td>
-                          Detects a keyboard key
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          NUMLOCK
-                        </td>
-                        <td>
-                          Key
-                        </td>
-                        <td>
-                          Detects a keyboard key
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          PAGEUP
-                        </td>
-                        <td>
-                          Key
-                        </td>
-                        <td>
-                          Detects a keyboard key
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          PAGEDOWN
-                        </td>
-                        <td>
-                          Key
-                        </td>
-                        <td>
-                          Detects a keyboard key
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          PRINTSCREEN
-                        </td>
-                        <td>
-                          Key
-                        </td>
-                        <td>
-                          Detects a keyboard key
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          SCROLLLOCK
-                        </td>
-                        <td>
-                          Key
-                        </td>
-                        <td>
-                          Detects a keyboard key
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          SPACE
-                        </td>
-                        <td>
-                          Key
-                        </td>
-                        <td>
-                          Detects a keyboard key
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          TAB
-                        </td>
-                        <td>
-                          Key
-                        </td>
-                        <td>
-                          Detects a keyboard key
-                        </td>
-                      </tr>
-                    </table>
 
-                  </div>
+                  
                 </div>
                 <!-- Content -->
-              </section>
-              <!--Section 2 -->
-        
+              </div>
+              
             </div>
+            <!-- Tab 1 -->
+
+            <!-- Tab 2 -->
             <div class="tab-pane fade" id="ressources" role="tabpanel" aria-labelledby="ressources-tab">
-              <section class="wow fadeIn" id="intro">
+
+              <div class="wow fadeIn" id="intro">
                 <!-- Content -->
                 <div class="blue-text py-5 px-5 my-5">
         
@@ -537,14 +574,15 @@
                     <a href="https://github.com/hak5darren/USB-Rubber-Ducky/wiki/Duckyscript">Ressources (en anglais)</a>
                   </div>
                 </div>
-              </section>
+              </div>
+
             </div>
+            <!-- Tab 2 -->
+
           </div>
-      </section>
-      <!-- barre de recherche -->
+        </div>
 
-      
-
+      </div>
     </div>
   </main>
   <!--Main layout-->
