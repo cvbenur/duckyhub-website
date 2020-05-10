@@ -391,9 +391,10 @@ function captureCompStates () {
     const radios = Array.from(document.getElementsByClassName('comp-radio'));
     for (const radio of radios) {
         if (radio.checked) {
-            os = radio.id.split('comp-')[1];
+            os = radio.value;
         }
     }
+    state.os = os;
 
 
     // Retrieving the checked boxes
@@ -403,7 +404,6 @@ function captureCompStates () {
             state.ticked.push(action);
         }
     }
-
 
     return state;
 }
