@@ -4,7 +4,7 @@ import { checkValidityComp, removeCompErrorWarnings } from '../forms/complex-scr
 
 
 
-// Define the blob for the downloadable script
+// Define the blobs for the downloadable scripts
 let blob = {
     line: null,
     comp: null
