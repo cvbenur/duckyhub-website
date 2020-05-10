@@ -191,11 +191,18 @@ function removeAlerts (scr) {
 function removeAlert (alert) {
 
     let a = document.getElementById(`${alert.script}-${alert.type}-alert`);
-    a.className = 'd-none ' + a.className;
+    a.className = 'd-none' + a.className;
 
 
-    alert.spot.children[2].lastChild.remove();
-    currentAlerts.splice(alert);
+    if (alert.script === 'line') {
+
+        alert.spot.children[2].lastChild.remove();
+
+    } else {
+
+        alert.spot.lastChild.remove();
+    }
+    currentAlerts.splice(currentAlerts.indexOf(alert), 1);
 
 
     if (!currentAlerts.some(a => a.script === alert.script && a.type === alert.type)) {
@@ -215,9 +222,8 @@ function removeAlert (alert) {
         } else {
 
             document.getElementById('comp-os-alert').className = 'd-none';
-            document.getElementById('comp-action-alert').className = 'd-none';
-            document.getElementById('comp-add-alert').className = 'd-none';
-            document.getElementById('comp-remove-alert').className = 'd-none';
+            document.getElementById('comp-check-alert').className = 'd-none';
+            document.getElementById('comp-uncheck-alert').className = 'd-none';
         }
 
         const al = document.getElementById(`${alert.script}-dl-alert`);
