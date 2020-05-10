@@ -1,10 +1,14 @@
-import $ from "jquery";
 import { duckifyAndCodify } from './duckify';
-import { checkValidity, removeErrorWarnings } from '../forms/line-script.js';
+import { checkValidityLine, removeLineErrorWarnings } from '../forms/line-script.js';
+import { checkValidityComp, removeCompErrorWarnings } from '../forms/complex-script.js';
 
 
 
-let blob;
+// Define the blobs for the downloadable scripts
+let blob = {
+    line: null,
+    comp: null
+};
 
 
 
@@ -23,14 +27,10 @@ function removeFormerScript (tag) {
 
 
 // Prepares script download
-function prepDownload (script) {
-    blob = new Blob([script], {type: "text/plain;charset=utf-8"});
-}
+function prepDownload (script, type) {
+    blob[`${script}`] = new Blob([script], {type: "text/plain;charset=utf-8"});
 
-
-// Handle download for script
-export function downloadScript (type) {
-    document.getElementById(`${type}-dl-btn`).href = window.URL.createObjectURL(blob);
+    document.getElementById(`${type}-dl-btn`).href = window.URL.createObjectURL(blob[`${script}`]);
     document.getElementById(`${type}-dl-btn`).download = `script-${type}${generateHexString(4)}-dh.txt`;
 }
 
@@ -54,13 +54,14 @@ const lineCodeTag = document.getElementById('line-script-render');
 export function generateLineScript () {
 
     // Remove existing error warnings
-    removeErrorWarnings();
+    removeLineErrorWarnings();
 
 
 
     // Parse lines and check validity for the form
-    const instructions = checkValidity();
+    const instructions = checkValidityLine();
     if (instructions.some(i => i === null)) return false;
+    
 
 
 
@@ -69,6 +70,7 @@ export function generateLineScript () {
     setTimeout(() => {
         document.getElementById('line-generate-btn').disabled = false;
     }, 5000);
+
 
 
 
@@ -83,7 +85,7 @@ export function generateLineScript () {
 
 
     // Get duckified script and prepare render
-    const scriptFinal = duckifyAndCodify(instructions);
+    const scriptFinal = duckifyAndCodify(instructions, 'line');
 
 
 
@@ -93,7 +95,7 @@ export function generateLineScript () {
 
 
     // Prepare dl
-    prepDownload(scriptFinal);
+    prepDownload(scriptFinal, 'line');
 
     
 
@@ -110,38 +112,57 @@ export function generateLineScript () {
 // Define tag in whitch to render the complex script
 const compCodeTag = document.getElementById('comp-script-render');
 
-// TODO: Generating script from complex generator
+// Generating script from complex generator
 export function generateCompScript () {
-    console.log('comp');
 
-    // TODO
+    // Remove any error warnings
+    removeCompErrorWarnings();
+
+
+
+    // Parse lines and check validity for the form
+    const instructions = checkValidityComp();
+    if (instructions.some(i => i === null)) return false;
+
+
+
+
+    // Disable Generate button for 5 seconds after click
+    document.getElementById('comp-generate-btn').disabled = true;
+    setTimeout(() => {
+        document.getElementById('comp-generate-btn').disabled = false;
+    }, 5000);
+
+
+
+    // Hide 'Nothing yet'
+    document.getElementById('comp-rien').className = 'd-none';
+
+
+
+    // Remove existing script from page
+    removeFormerScript(compCodeTag);
+
+
+
+    // Get duckified script and prepare render
+    const scriptFinal = duckifyAndCodify(instructions, 'comp');
+
+
+
+    // Show rendered script on page
+    compCodeTag.parentElement.className = 'line-numbers mdb-color darken-3 py-3 animated fadeIn';
+    
+
+
+    // Prepare dl
+    prepDownload(scriptFinal, 'comp');
+
+    
+
+    // Enable dl
+    document.getElementById('comp-dl-btn').className = '';
+
 
     return true;
 }
-
-
-
-
-// Detecting changes in the checkboxes' status by parsing each checkbox
-$('input[type="checkbox"]').each(function() {
-
-    // On checkbox status change
-    $(this).change(function() {
-        var changed = false;
-        
-        // If we detect ANY change in the checking of a particular box
-        if(this.checked) { changed = true; } else { changed = true; }
-
-        // If the user hasn't been warned of a change already
-        if (!warned) {
-
-            // If changes have been detected and the file has already been generated
-            if (changed && generated) {
-                
-                // Warning the user by appending a new <p> element
-                $('#selected-list').append('<p id="warning">WARNING: Some of the attributes of your script have changed. To take these changes into account, generate a new script by clicking the "Generate" button.</p>');
-                warned = true;
-            }
-        }
-    })
-});

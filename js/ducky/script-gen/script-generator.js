@@ -1,6 +1,5 @@
 import { createNewScriptLine, removeLineOnClick } from './forms/line-script.js';
-import * as Comp from './forms/complex-script.js';
-import { generateLineScript, generateCompScript, downloadScript } from './gen/generate.js';
+import { generateLineScript, generateCompScript } from './gen/generate.js';
 
 
 
@@ -37,8 +36,11 @@ for (const btn of Array.from(document.getElementsByClassName('generate-btn'))) {
 
                 removeAlerts('comp');
 
-
                 generatedComp = generateCompScript();
+
+                if (generatedComp) {
+                    compState = captureCompStates();
+                }
                 break;
 
             // Safety
@@ -50,8 +52,8 @@ for (const btn of Array.from(document.getElementsByClassName('generate-btn'))) {
 
 
 
-// TODO: Warn user on change after generation
-document.addEventListener('change', (e) => {
+// Warn user on change after script generation
+document.addEventListener('input', (e) => {
 
     // If a line script has already been generated
     if (generatedLine) {
@@ -99,21 +101,102 @@ document.addEventListener('change', (e) => {
     }
 
 
-    // TODO: If a complex script has already been generated
+    // If a complex script has already been generated
     if (generatedComp) {
+
+        let planned = false;
 
 
         // In case of a change in the radios or checkboxes
         if (e.target.type === 'radio' || e.target.type === 'checkbox') {
 
 
+            // If the target is a radio button
+            if (e.target.type === 'radio') {
 
-            // TODO
 
-            console.log('change chakal');
+                // Removing all OS alerts
+                for (const a of currentAlerts.filter(a => a.script === 'comp' && a.type === 'os')) {
+                    removeAlert(a);
+                }
+
+                // Removing all checkbox alerts
+                for (const a of currentAlerts.filter(a => a.script === 'comp' && a.type === 'check')) {
+                    removeAlert(a);
+                }
+
+
+
+                // If the selected OS is not the captured one
+                if (e.target.value !== compState.os) {
+
+                    showAlert('comp', 'os', e.target);
+
+                // Else, if we're coming back to the captured OS
+                } else {
+
+                    planned = true;
+
+                    // For each of the actions
+                    for (const box of Array.from(document.getElementsByClassName('comp-action'))) {
+
+                        // If the action was checked at generation
+                        if (compState.ticked.some(b => b.id === box.id)) {
+
+                            // Check it again
+                            box.checked = true;
+
+                        }
+                    }
+
+                    planned = false;
+                }
+            }
+
+
+
+
+            // If the target is a checkbox
+            if (e.target.type === 'checkbox') {
+
+                if (!planned) {
+
+                    // If the selected checkbox was not checked on generation
+                    if (!compState.ticked.some(b => b.id === e.target.id)) {
+
+
+                        // If this box is getting checked
+                        if (e.target.checked) {
+
+                            showAlert('comp', 'check', e.target);
+
+                        // Else
+                        } else {
+
+                            removeAlert(currentAlerts.find(a => a.type === 'check' && a.spot.children[0].id === e.target.id));
+                        }
+
+                    // Else
+                    } else {
+
+
+                        // If this box is getting unchecked
+                        if (!e.target.checked) {
+
+                            showAlert('comp', 'uncheck', e.target);
+
+                        // Else
+                        } else {
+
+                            removeAlert(currentAlerts.find(a => a.type === 'uncheck' && a.spot.children[0].id === e.target.id));
+                        }
+                    }
+                }
+            }
         }
     }
 });
+
 
 
 
@@ -122,46 +205,77 @@ document.addEventListener('change', (e) => {
 function showAlert (script, type, target) {
 
     let div = document.createElement('div');
-    div.className = 'text-left line-error orange-text';
-
-
     let parent = target;
-    while (parent.className !== "line-form-row row pt-2") {
-        parent = parent.parentElement;
-    }
 
-    
-    const existing = currentAlerts.find(a => a.spot === parent);
-    if (existing !== undefined) {
-        if (typeof existing === []) {
-            for (const ex of existing) {
-                removeAlert(ex);
-            }
-        } else {
-            removeAlert(existing);
+
+
+    if (script === 'line') {
+
+        div.className = 'text-left line-error orange-text';
+
+
+        while (parent.className !== "line-form-row row pt-2") {
+            parent = parent.parentElement;
         }
-    }
-    
 
-    switch (type) {
-        case 'input':
-            div.innerText = 'Ligne modifiée.';
-            break;
-
-        case 'select':
-            div.innerText = 'Ligne modifiée.';
-            break;
         
-        case 'remove':
-            div.innerText = 'Ligne suivante supprimée';
+        const existing = currentAlerts.find(a => a.spot === parent);
+        if (existing !== undefined) {
+            if (typeof existing === []) {
+                for (const ex of existing) {
+                    removeAlert(ex);
+                }
+            } else {
+                removeAlert(existing);
+            }
+        }
+        
 
-        case 'add':
-            div.innerText = 'Nouvelle ligne';
+        switch (type) {
+            case 'input':
+                div.innerText = 'Ligne modifiée.';
+                break;
 
-        default:    // Do nothing
+            case 'select':
+                div.innerText = 'Ligne modifiée.';
+                break;
+            
+            case 'remove':
+                div.innerText = 'Ligne suivante supprimée';
+
+            case 'add':
+                div.innerText = 'Nouvelle ligne';
+
+            default:    // Do nothing
+        }
+
+        parent.children[2].appendChild(div);
+
+    } else {
+
+        parent = target.parentElement;
+
+        switch (type) {
+            case 'os':
+                div.innerText = 'OS cible modifié.';
+                div.className = 'text-center line-error orange-text';
+                break;
+
+            case 'check':
+                div.innerText = 'Action ajoutée.';
+                div.className = 'text-left line-error orange-text';
+                break;
+
+            case 'uncheck':
+                div.innerText = 'Action retirée.';
+                div.className = 'text-left line-error orange-text';
+                break;
+
+            default:    // Do nothing
+        }
+
+        parent.appendChild(div);
     }
-    
-    parent.children[2].appendChild(div);
 
 
 
@@ -193,11 +307,18 @@ function removeAlerts (scr) {
 function removeAlert (alert) {
 
     let a = document.getElementById(`${alert.script}-${alert.type}-alert`);
-    a.className = 'd-none ' + a.className;
+    a.className = 'd-none' + a.className;
 
 
-    alert.spot.children[2].lastChild.remove();
-    currentAlerts.splice(alert);
+    if (alert.script === 'line') {
+
+        alert.spot.children[2].lastChild.remove();
+
+    } else {
+
+        alert.spot.lastChild.remove();
+    }
+    currentAlerts.splice(currentAlerts.indexOf(alert), 1);
 
 
     if (!currentAlerts.some(a => a.script === alert.script && a.type === alert.type)) {
@@ -217,9 +338,8 @@ function removeAlert (alert) {
         } else {
 
             document.getElementById('comp-os-alert').className = 'd-none';
-            document.getElementById('comp-action-alert').className = 'd-none';
-            document.getElementById('comp-add-alert').className = 'd-none';
-            document.getElementById('comp-remove-alert').className = 'd-none';
+            document.getElementById('comp-check-alert').className = 'd-none';
+            document.getElementById('comp-uncheck-alert').className = 'd-none';
         }
 
         const al = document.getElementById(`${alert.script}-dl-alert`);
@@ -359,26 +479,47 @@ function captureLineStates () {
 
 
 
-// Handle line script download on click
-document.getElementById('line-dl-btn').addEventListener('click', () => {
-    downloadScript('line');
-});
-
-
-
-
 /*
     ####    FOR COMPLEX SCRIPT    ####
 */
 
 
-// Define generation state for complex script
+// Define generation state for comp script
 let generatedComp = false;
+// Define state of each block on generation
+let compState;
 
 
 
 
-// Handle complex script download on click
-document.getElementById('comp-dl-btn').addEventListener('click', () => {
-    downloadScript('comp');
-});
+// Capture states for complex script on generation
+function captureCompStates () {
+
+    let state = {
+        os: '',
+        ticked: []
+    };
+
+    let os = '';
+
+
+    // Getting the selected OS
+    const radios = Array.from(document.getElementsByClassName('comp-radio'));
+    for (const radio of radios) {
+        if (radio.checked) {
+            os = radio.value;
+        }
+    }
+    state.os = os;
+
+
+    // Retrieving the checked boxes
+    const actions = Array.from(document.getElementsByClassName(`comp-action-${os}`));
+    for (const action of actions) {
+        if (action.checked) {
+            state.ticked.push(action);
+        }
+    }
+
+    return state;
+}

@@ -1,5 +1,6 @@
 // Define array of keypresses
 export const keypresses = [
+    // Special keys
     'GUI',
     'WINDOWS',
     'APP',
@@ -8,17 +9,14 @@ export const keypresses = [
     'ALT',
     'CTRL',
     'CONTROL',
-    'DOWNARROW',
-    'DOWN',
-    'UPARROW',
-    'UP',
-    'LEFTARROW',
-    'LEFT',
+    'DOWNARROW', 'DOWN',
+    'UPARROW', 'UP',
+    'LEFTARROW', 'LEFT',
+    'RIGHTARROW', 'RIGHT',
     'BREAK',
     'PAUSE',
     'CAPSLOCK',
-    'DELETE',
-    'DEL',
+    'DELETE', 'DEL',
     'END',
     'ENTER',
     'ESCAPE',
@@ -30,7 +28,16 @@ export const keypresses = [
     'PRINTSCREEN',
     'SCROLLLOCK',
     'SPACE',
-    'TAB'
+    'TAB',
+
+    // Alphabet
+    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+
+    // Numbers
+    '1', '2', '3', '4', '5', '6', '7', '8', '9', '0',
+
+    // F keys
+    'F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 'F10', 'F11', 'F12'
 ];
 
 // Converting comments into 'REM' strings
@@ -68,7 +75,7 @@ function duckyPressKeys (parts) {
 
 
 // Concatenating all lines into the final script in the form of a String
-export function duckifyAndCodify (lines) {
+export function duckifyAndCodify (lines, script) {
     
     let duckified = "";
 
@@ -77,29 +84,29 @@ export function duckifyAndCodify (lines) {
 
         let currentLine = '';
 
-        switch (lines[i].instruction) {
+        switch (lines[i].instruction.toUpperCase()) {
 
-            case 'rem':
+            case 'REM':
                 currentLine = duckyREM(lines[i].body);
                 break;
             
-            case 'delay':
+            case 'DELAY':
                 currentLine = duckyDelay(lines[i].body);
                 break;
 
-            case 'defaultdelay':
+            case 'DEFAULTDELAY':
                 currentLine = duckyDefaultDelay(lines[i].body);
                 break;
 
-            case 'repeat':
+            case 'REPEAT':
                 currentLine = duckyRepeat(lines[i].body);
                 break;
             
-            case 'string':
+            case 'STRING':
                 currentLine = duckyString(lines[i].body);
                 break;
             
-            case 'key':
+            case 'KEY':
                 currentLine = duckyPressKeys(lines[i].body.split(' '));
                 break;
 
@@ -107,9 +114,8 @@ export function duckifyAndCodify (lines) {
         }
 
         duckified += `${currentLine.replace(/\\/g, '\\\\')}\n`;
-        codifyLine(currentLine, lines[i].instruction);
+        codifyLine(currentLine, lines[i].instruction, script);
     }
-
 
     return  watermarkScript(duckified);
 }
@@ -162,35 +168,33 @@ function watermarkScript (script) {
 
 
 
-// Defining the render destination for the line script
-const renderedLine = document.getElementById('line-script-render');
 
 // Codify line
-function codifyLine (line, type) {
+function codifyLine (line, type, script) {
 
     let spanLine = document.createElement('span');
     spanLine.className = 'new-line';
     let codified = '';
 
-    switch (type) {
+    switch (type.toUpperCase()) {
 
-        case 'string':
+        case 'STRING':
             codified = `<span class="cyan-text">STRING </span>${line.split('STRING ')[1]}`;
             break;
 
-        case 'rem':
+        case 'REM':
             codified = `<span class="grey-text">${line}</span>`;
             break;
 
-        case 'delay':
+        case 'DELAY':
             codified = `<span class="orange-text">DELAY </span>${line.split('DELAY ')[1]}`;
             break;
 
-        case 'repeat':
+        case 'REPEAT':
             codified = `<span class="orange-text">REPEAT </span>${line.split('REPEAT ')[1]}`;
             break;
 
-        case 'key':
+        case 'KEY':
             codified = `<span class="blue-text">${line}</span>`;
             break;
 
@@ -198,5 +202,5 @@ function codifyLine (line, type) {
     }
 
     spanLine.innerHTML = codified;
-    renderedLine.appendChild(spanLine);
+    document.getElementById(`${script}-script-render`).appendChild(spanLine);
 }
