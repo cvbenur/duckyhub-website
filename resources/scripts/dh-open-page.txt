@@ -1,0 +1,20 @@
+DELAY 3000
+REM	###	Lancement pour Linux
+ALT F2
+DELAY 200
+REM	###	Lancement pour MacOS
+GUI SPACE
+DELAY 200
+REM	###	Sur Windows, cela change le langage, donc on répète 3 fois
+GUI SPACE
+DELAY 200
+GUI SPACE
+DELAY 200
+GUI r
+DELAY 200
+REM	###	Sur un autre OS, on pourrait obtenir "   r". On efface donc 4 caractères.
+DELETE
+REPEAT 4
+REM	###	Lancement de la page
+STRING http://VOTRE URL ICI
+ENTER
