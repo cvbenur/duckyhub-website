@@ -98,31 +98,60 @@
   <main class="mt-5 pt-5">
   </br>
     <div class="container">
-      <h1 class="h1 ducky-blue-text">Ajouter une commande à son BASH</h1>
-      </br>
-      <div class="row">
-        <div class="col-sm">
-          <h3 class="h3 ducky-blue-text">Informations </h3>
-          </br>
-          <div>
-            <h4 class="h4 ducky-blue-text">Système(s) d'exploitation </h4>
-            <p class="ducky-blue-text">Linux (toute distribution utilisant BASH)</p>
-          </div>
-          <div>
-          <h4 class="h4 ducky-blue-text">Fonctionnalité </h4>
-            <p class="ducky-blue-text">Avec ce script, tu pourras programmer une commande dans ton BASH en tant qu'alias.</p>
-          </div>
-          <div>
-            <h4 class="h4 ducky-blue-text">Déroulement du script</h4>
-            <p class="ducky-blue-text">Etape 1</p>
-            <p class="ducky-blue-text">Etape 2</p>
-            <p class="ducky-blue-text">Etape 3</p>
-          </div>
+      
+      <h3 class="ducky-blue-text pb-4">Ajouter une commande à son BASH</h3>
+
+      <div>
+        <div class="py-4">
+          <h4 class="ducky-blue-text">Système(s) d'exploitation :</h4>
+          <p class="ducky-blue-text"><i class="fab fa-linux"></i> Linux (toute distribution utilisant BASH)</p>
         </div>
-        <div class="col-sm">
-          <a href="../resources/scripts/dh-bash-command.txt" download>
+
+        <div class="py-4">
+          <h4 class="ducky-blue-text">Fonctionnalités :</h4>
+          <p class="ducky-blue-text">Programme une nouvelle commande dans le BASH en tant qu'alias.</p>
+        </div>
+
+        <div class="py-4">
+          <h4 class="ducky-blue-text">Déroulement du script :</h4>
+
+          <ol>
+            <li class="ducky-blue-text">Ouverture du terminal</li>
+            <li class="ducky-blue-text">Ajout de l'alias au fichier de configuration du BASH</li>
+            <li class="ducky-blue-text">Recompilation des fichiers de configuration du BASH</li>
+          </ol>
+        </div>
+
+        <div class="text-center py-4">
+          <a href="../resources/scripts/dh-alias-bash.txt" download>
             <button type="button" class="btn btn-primary ducky-blue rounded">Télécharger</button>
           </a>
+        </div>
+
+        <div class="py-4">
+          <h4 class="ducky-blue-text">Le script :</h4>
+
+          <pre class="line-numbers mdb-color darken-3"><code>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 3000</span>
+            <span class="new-line grey-text">REM     ###     Ouverture du terminal</span>
+            <span class="new-line blue-text">GUI</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 450</span>
+            <span class="new-line grey-text">REM     ###     Au besoin, changer le nom du programme de terminal</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> term</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 200</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 450</span>
+            <span class="new-line grey-text">REM     ###     Ajout de l'alias au fichier '.bashrc'</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> echo "alias [NOM DE L'ALIAS ICI]='[LA COMMANDE ICI]'" >> ~/.bashrc</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 200</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 450</span>
+            <span class="new-line grey-text">REM     ###     Recompilation du fichier '.bashrc'</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> source .bashrc</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 200</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 450</span>
+          </code></pre>
         </div>
       </div>
     </div>
@@ -133,10 +162,10 @@
   <footer class="page-footer text-center font-small ducky-blue mt-4 wow fadeIn">
 
     <!-- Links -->
-    <div class="py-2 row">
-      <a class="py-1 px-2 col-sm-4" href="https://github.com/cvbenur/duckyhub-website/"><i class="fab fa-github white-text"></i> DuckyHub sur GitHub</a>
-      <a class="py-1 px-2 col-sm-4" href="../team.html"><i class="fas fa-users white-text"></i> L'équipe</a>
-      <a class="py-1 px-2 col-sm-4" href="https://github.com/cvbenur/duckyhub-website/issues"><i class="fas fa-exclamation-circle white-text"></i> Signaler un bug</a>
+    <div class="py-2 row justify-content-center">
+      <a class="py-1 px-2 col-sm-2" href="https://github.com/cvbenur/duckyhub-website/"><i class="fab fa-github white-text"></i> DuckyHub sur GitHub</a>
+      <a class="py-1 px-2 col-sm-2" href="../team.html"><i class="fas fa-users white-text"></i> L'équipe</a>
+      <a class="py-1 px-2 col-sm-2" href="https://github.com/cvbenur/duckyhub-website/issues"><i class="fas fa-exclamation-circle white-text"></i> Signaler un bug</a>
     </div>
     <!-- Links -->
 

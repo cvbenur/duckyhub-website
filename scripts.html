@@ -100,17 +100,19 @@
   <!--Main layout-->
   <main class="mt-5 pt-5">
     <div class="container">
-      <h1 class="h1 ducky-blue-text">Scripts en blanc</h1>
-      <br/>
 
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <h1 class="ducky-blue-text my-4">
+        <strong>Scripts en blanc</strong>
+      </h1>
+
+      <ul class="nav nav-tabs pt-4" id="myTab" role="tablist">
         <li class="nav-item">
           <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-            aria-selected="true">Tous les scripts</a>
+            aria-selected="true"><h4>Tous les scripts</h4></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-            aria-selected="false">Catégories de script</a>
+            aria-selected="false"><h4>Scripts classés par OS</h4></a>
         </li>
       </ul>
 
@@ -119,26 +121,75 @@
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
           
           <!--Contenu de tous les scripts-->
-          <a class="h3 ducky-blue-text" href="./scripts/background.html">Changer son fond d'écran</a>
-          <p class="ducky-blue-text">Avec ce script, tu pourras faire automatiquement changer le fond d'écran de ta machine en n'importe quelle image en ligne! </br>Le script ouvre d'abord ton lien, enregistre l'image, l'ouvre dans paint puis la définit en tant que background.</p>
-          <a class="h3 ducky-blue-text" href="./scripts/open-page.html">Ouvrir une page Web</a>
-          <p class="ducky-blue-text">Avec ce script, tu pourras ouvrir n'importe quelle URL automatiquement. </br>Selon ton Operating System, une des trois options se mettra en place. Dans tous les cas, une fenetre s'ouvrira où ton url sera écrite.</p>
-          <a class="h3 ducky-blue-text" href="./scripts/windows-update.html">Créer une fausse page de mise à jour Windows.</a>
-          <p class="ducky-blue-text">Avec ce script, tu pourras pousser un peu plus loin d'idée du précedent. </br>Dans cet exemple précis, la machine ouvrira le lien d'un site simulant une mise à jour windows.</p>
-          <a class="h3 ducky-blue-text" href="./scripts/host-site.html">Rediriger les sites webs vers un host</a>
-          <p class="ducky-blue-text">Avec ce script, tu pourras rediriger les liens vers un hôte, par exemple un portail d'entreprise. </br>Ce script altère le driver d'hosting afin d'injecter le lien souhaité.</p>
-          <a class="h3 ducky-blue-text" href="./scripts/internet-app.html">Executer une application depuis internet</a>
-          <p class="ducky-blue-text">Avec ce script, tu pourras télécharger puis executer les applications de ton choix depuis Internet! </br>Le script ouvre d'abord une interface de commande, puis génère un vbscript qui pourra, dans la machine, télécharger puis executer un document depuis une n'importe quelle adresse URL. </p>        
-          <a class="h3 ducky-blue-text" href="./scripts/sudo.html">Sudo pour tous!</a>
-          <p class="ducky-blue-text">Avec ce script, tu pourras contourner la nécessité des mots de passe pour un accès administrateur à ta machine Apple. Pratique quand tu l'as oublié mais que des documents importants s'y trouvent! </br>Ce script rajoute une ligne dans etc/sudoers qui permet à tout utilisateur d'utiliser l'argument sudo sans avoir à entrer de mot de passe</p>
-          <a class="h3 ducky-blue-text" href="./scripts/auto-youtube.html">Auto-Youtube</a>
-          <p class="ducky-blue-text">Avec ce script, tu pourras automtiquement mettre le volume de ton mac à celui souhaité, puis lancer n'importe quelle vidéo!</br>Le volume est d'abord initialisé, puis le lien est lancé.</p>
-          <a class="h3 ducky-blue-text" href="./scripts/imessages.html">Archiver ses iMessages</a>
-          <p class="ducky-blue-text">Avec ce script, tu pourras extraire tes messages dans un fichier à ton nom.</p>
-          <a class="h3 ducky-blue-text" href="./scripts/shell-command.html">Exécuter une commande shell en boucle</a>
-          <p class="ducky-blue-text">Avec ce script, tu pourras programmer une commande à exécuter en boucle, le nombre de fois souhaité.</p>
-          <a class="h3 ducky-blue-text" href="./scripts/bash-command.html">Ajouter une commande à son BASH</a>
-          <p class="ducky-blue-text">Avec ce script, tu pourras programmer une commande dans ton BASH en tant qu'alias.</p>
+          <div class="py-3">
+            <a class="h5 ducky-blue-text" href="./scripts/alias-bash.html"><i class="fab fa-linux"></i> Alias BASH</a>
+            <p class="ducky-skyblue-text pt-2">
+              Programme une nouvelle commande dans le BASH en tant qu'alias.
+            </p>
+          </div>
+
+          <div class="py-2">
+            <a class="h5 ducky-blue-text" href="./scripts/auto-youtube.html"><i class="fab fa-apple"></i> Auto-Youtube</a>
+            <p class="ducky-skyblue-text pt-2">
+              Règle automtiquement le volume d'un mac à celui souhaité, puis lance n'importe quelle vidéo.
+            </p>
+          </div>
+
+          <div class="py-2">
+            <a class="h5 ducky-blue-text" href="./scripts/background.html"><i class="fab fa-windows"></i> Background</a>
+            <p class="ducky-skyblue-text pt-2">
+              Change automatiquement le fond d'écran de ta machine vers n'importe quelle image en ligne.
+            </p>
+          </div>
+
+          <div class="py-2">
+            <a class="h5 ducky-blue-text" href="./scripts/host-redirect.html"><i class="fab fa-windows"></i> Host Redirect</a>
+            <p class="ducky-skyblue-text pt-2">
+              Redirige les liens vers un hôte, par exemple un portail d'entreprise.
+            </p>
+          </div>
+
+          <div class="py-2">
+            <a class="h5 ducky-blue-text" href="./scripts/imessage-archiver.html"><i class="fab fa-apple"></i> iMessage Archiver</a>
+            <p class="ducky-skyblue-text pt-2">
+              Extrait des messages vers un fichier au choix.
+            </p>
+          </div>
+
+          <div class="py-2">
+            <a class="h5 ducky-blue-text" href="./scripts/shell-looper.html"><i class="fab fa-linux"></i> Shell Looper</a>
+            <p class="ducky-skyblue-text pt-2">
+              Programme une commande à exécuter en boucle, le nombre de fois souhaité.
+            </p>
+          </div>
+
+          <div class="py-2">
+            <a class="h5 ducky-blue-text" href="./scripts/sudo-for-all.html"><i class="fab fa-apple"></i> Sudo For All</a>
+            <p class="ducky-skyblue-text pt-2">
+              Permet de contourner la nécessité des mots de passe pour un accès administrateur à une machine Apple. Pratique en cas d'oubli de mot de passe.
+            </p>
+          </div>
+
+          <div class="py-2">
+            <a class="h5 ducky-blue-text" href="./scripts/webpage-opener.html"><i class="fab fa-windows"></i> <i class="fab fa-apple"></i> <i class="fab fa-linux"></i> Webpage Opener</a>
+            <p class="ducky-skyblue-text pt-2">
+              Ouvre n'importe quelle URL automatiquement.
+            </p>
+          </div>
+
+          <div class="py-2">
+            <a class="h5 ducky-blue-text" href="./scripts/webrun.html"><i class="fab fa-windows"></i> WebRun</a>
+            <p class="ducky-skyblue-text pt-2">
+              Télécharge puis exécute une application depuis Internet.
+            </p>
+          </div>
+
+          <div class="py-2">
+            <a class="h5 ducky-blue-text" href="./scripts/windows-update.html"><i class="fab fa-windows"></i> Windows Update</a>
+            <p class="ducky-skyblue-text pt-2">
+              Affiche une page web imitant un écran de mise à jour Windows.
+            </p>
+          </div>
           <!--Contenu de tous les scripts-->
 
         </div>
@@ -146,9 +197,16 @@
         
         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
+          <div class="py-3">
+            <h4 class="ducky-blue-text">Tous les scripts</h4>
+            <p class="ducky-skyblue-text">
+              Nous avons classés ici tous nos scripts par OS, afin de faciliter la recherche.
+            </p>
+          </div>
+
           <!--Contenu de catégories de scripts-->
             <!-- Accordion -->
-            <div class="accordion" id="accordion">
+            <div class="accordion pt-2 pb-5" id="accordion">
 
               <!-- Tab 1 -->
               <div class="card z-depth-0" bordered>
@@ -157,24 +215,43 @@
                   <h5 class="mb-0">
                     <button style="font-size: 85%; font-weight: bold;" class="btn btn-link dyc white-text" type="button" data-toggle="collapse" data-target="#accordion-row1"
                     aria-expanded="true" aria-controls="accordion-row1">
-                      Windows
+                    <i class="fab fa-windows"></i> Windows
                     </button>
                   </h5>
                 </div>
 
 
-                <div id="accordion-row1" class="collapse" aria-labelledby="headingOne2"
+                <div id="accordion-row1" class="collapse show" aria-labelledby="headingOne2"
                   data-parent="#accordion">
                   <div class="card-body">
                     <!-- Contenu Tab 1 -->
-                    <a class="h3 ducky-blue-text" href="./scripts/background.html">Changer son fond d'écran</a>
-                    <p class="ducky-blue-text">Avec ce script, tu pourras faire automatiquement changer le fond d'écran de ta machine en n'importe quelle image en ligne! </br>Le script ouvre d'abord ton lien, enregistre l'image, l'ouvre dans paint puis la définit en tant que background.</p>
-                    <a class="h3 ducky-blue-text" href="./scripts/windows-update.html">Créer une fausse page de mise à jour Windows.</a>
-                    <p class="ducky-blue-text">Avec ce script, tu pourras pousser un peu plus loin d'idée du précedent. </br>Dans cet exemple précis, la machine ouvrira le lien d'un site simulant une mise à jour windows.</p>
-                    <a class="h3 ducky-blue-text" href="./scripts/host-site.html">Rediriger les sites webs vers un host</a>
-                    <p class="ducky-blue-text">Avec ce script, tu pourras rediriger les liens vers un hôte, par exemple un portail d'entreprise. </br>Ce script altère le driver d'hosting afin d'injecter le lien souhaité.</p>
-                    <a class="h3 ducky-blue-text" href="./scripts/internet-app.html">Executer une application depuis internet</a>
-                    <p class="ducky-blue-text">Avec ce script, tu pourras télécharger puis executer les applications de ton choix depuis Internet! </br>Le script ouvre d'abord une interface de commande, puis génère un vbscript qui pourra, dans la machine, télécharger puis executer un document depuis une n'importe quelle adresse URL. </p>
+                    <div class="py-2">
+                      <a class="h5 ducky-blue-text" href="./scripts/background.html"><i class="fab fa-windows"></i> Background</a>
+                      <p class="ducky-skyblue-text pt-2">
+                        Change automatiquement le fond d'écran de ta machine vers n'importe quelle image en ligne.
+                      </p>
+                    </div>
+
+                    <div class="py-2">
+                      <a class="h5 ducky-blue-text" href="./scripts/windows-update.html"><i class="fab fa-windows"></i> Windows Update</a>
+                      <p class="ducky-skyblue-text pt-2">
+                        Affiche une page web imitant un écran de mise à jour Windows.
+                      </p>
+                    </div>
+
+                    <div class="py-2">
+                      <a class="h5 ducky-blue-text" href="./scripts/host-redirect.html"><i class="fab fa-windows"></i> Host Redirect</a>
+                      <p class="ducky-skyblue-text pt-2">
+                        Redirige les liens vers un hôte, par exemple un portail d'entreprise.
+                      </p>
+                    </div>
+
+                    <div class="py-2">
+                      <a class="h5 ducky-blue-text" href="./scripts/webrun.html"><i class="fab fa-windows"></i> WebRun</a>
+                      <p class="ducky-skyblue-text pt-2">
+                        Télécharge puis exécute une application depuis Internet.
+                      </p>
+                    </div>
                     <!-- Contenu Tab 1 -->
                   </div>
                 </div>
@@ -187,7 +264,7 @@
                   <h5 class="mb-0">
                     <button style="font-size: 85%; font-weight: bold;" class="btn btn-link dyc white-text" type="button" data-toggle="collapse" data-target="#accordion-row2"
                     aria-expanded="true" aria-controls="accordion-row2">
-                      OSX
+                    <i class="fab fa-apple"></i> OSX
                     </button>
                   </h5>
                 </div>
@@ -198,12 +275,26 @@
 
                   <div class="card-body">
                     <!-- Contenu Tab 2 -->
-                    <a class="h3 ducky-blue-text" href="./scripts/sudo.html">Sudo pour tous!</a>
-                    <p class="ducky-blue-text">Avec ce script, tu pourras contourner la nécessité des mots de passe pour un accès administrateur à ta machine Apple. Pratique quand tu l'as oublié mais que des documents importants s'y trouvent! </br>Ce script rajoute une ligne dans etc/sudoers qui permet à tout utilisateur d'utiliser l'argument sudo sans avoir à entrer de mot de passe</p>
-                    <a class="h3 ducky-blue-text" href="./scripts/auto-youtube.html">Auto-Youtube</a>
-                    <p class="ducky-blue-text">Avec ce script, tu pourras automtiquement mettre le volume de ton mac à celui souhaité, puis lancer n'importe quelle vidéo!</br>Le volume est d'abord initialisé, puis le lien est lancé.</p>
-                    <a class="h3 ducky-blue-text" href="./scripts/imessages.html">Archiver ses iMessages</a>
-                    <p class="ducky-blue-text">Avec ce script, tu pourras extraire tes messages dans un fichier à ton nom.</p>
+                    <div class="py-2">
+                      <a class="h5 ducky-blue-text" href="./scripts/sudo-for-all.html"><i class="fab fa-apple"></i> Sudo For All</a>
+                      <p class="ducky-skyblue-text pt-2">
+                        Permet de contourner la nécessité des mots de passe pour un accès administrateur à une machine Apple. Pratique en cas d'oubli de mot de passe.
+                      </p>
+                    </div>
+                    
+                    <div class="py-2">
+                      <a class="h5 ducky-blue-text" href="./scripts/auto-youtube.html"><i class="fab fa-apple"></i> Auto-Youtube</a>
+                      <p class="ducky-skyblue-text pt-2">
+                        Règle automtiquement le volume d'un mac à celui souhaité, puis lance n'importe quelle vidéo.
+                      </p>
+                    </div>
+                    
+                    <div class="py-2">
+                      <a class="h5 ducky-blue-text" href="./scripts/imessage-archiver.html"><i class="fab fa-apple"></i> iMessage Archiver</a>
+                      <p class="ducky-skyblue-text pt-2">
+                        Extrait des messages vers un fichier au choix.
+                      </p>
+                    </div>
                     <!-- Contenu Tab 2 -->
                   </div>
                 </div>
@@ -216,7 +307,7 @@
                   <h5 class="mb-0">
                     <button style="font-size: 85%; font-weight: bold;" class="btn btn-link dyc white-text" type="button" data-toggle="collapse" data-target="#accordion-row3"
                     aria-expanded="true" aria-controls="accordion-row3">
-                      Linux
+                    <i class="fab fa-linux"></i> Linux
                     </button>
                   </h5>
                 </div>
@@ -227,10 +318,19 @@
 
                   <div class="card-body">
                     <!-- Contenu Tab 3 -->
-                    <a class="h3 ducky-blue-text" href="./scripts/shell-command.html">Exécuter une commande shell en boucle</a>
-                    <p class="ducky-blue-text">Avec ce script, tu pourras programmer une commande à exécuter en boucle, le nombre de fois souhaité.</p>
-                    <a class="h3 ducky-blue-text" href="./scripts/bash-command.html">Ajouter une commande à son BASH</a>
-                    <p class="ducky-blue-text">Avec ce script, tu pourras programmer une commande dans ton BASH en tant qu'alias.</p>
+                    <div class="py-2">
+                      <a class="h5 ducky-blue-text" href="./scripts/shell-looper.html"><i class="fab fa-linux"></i> Shell Looper</a>
+                      <p class="ducky-skyblue-text pt-2">
+                        Programme une commande à exécuter en boucle, le nombre de fois souhaité.
+                      </p>
+                    </div>
+                    
+                    <div class="py-2">
+                      <a class="h5 ducky-blue-text" href="./scripts/alias-bash.html"><i class="fab fa-linux"></i> Alias BASH</a>
+                      <p class="ducky-skyblue-text pt-2">
+                        Programme une nouvelle commande dans le BASH en tant qu'alias.
+                      </p>
+                    </div>
                     <!-- Contenu Tab 3 -->
                   </div>
                 </div>
@@ -254,8 +354,12 @@
 
                   <div class="card-body">
                     <!-- Contenu Tab 4 -->
-                    <a class="h3 ducky-blue-text" href="./scripts/open-page.html">Ouvrir une page Web</a>
-                    <p class="ducky-blue-text">Avec ce script, tu pourras ouvrir n'importe quelle URL automatiquement. </br>Selon ton Operating System, une des trois options se mettra en place. Dans tous les cas, une fenetre s'ouvrira où ton url sera écrite.</p>
+                    <div class="py-2">
+                      <a class="h5 ducky-blue-text" href="./scripts/webpage-opener.html"><i class="fab fa-windows"></i> <i class="fab fa-apple"></i> <i class="fab fa-linux"></i> Webpage Opener</a>
+                      <p class="ducky-skyblue-text pt-2">
+                        Ouvre n'importe quelle URL automatiquement.
+                      </p>
+                    </div>
                     <!-- Contenu Tab 4 -->
                   </div>
                 </div>
@@ -279,10 +383,10 @@
   <footer class="page-footer text-center font-small ducky-blue mt-4 wow fadeIn">
 
     <!-- Links -->
-    <div class="py-2 row">
-      <a class="py-1 px-2 col-sm-4" href="https://github.com/cvbenur/duckyhub-website/"><i class="fab fa-github white-text"></i> DuckyHub sur GitHub</a>
-      <a class="py-1 px-2 col-sm-4" href="./team.html"><i class="fas fa-users white-text"></i> L'équipe</a>
-      <a class="py-1 px-2 col-sm-4" href="https://github.com/cvbenur/duckyhub-website/issues"><i class="fas fa-exclamation-circle white-text"></i> Signaler un bug</a>
+    <div class="py-2 row justify-content-center">
+      <a class="py-1 px-2 col-sm-2" href="https://github.com/cvbenur/duckyhub-website/"><i class="fab fa-github white-text"></i> DuckyHub sur GitHub</a>
+      <a class="py-1 px-2 col-sm-2" href="./team.html"><i class="fas fa-users white-text"></i> L'équipe</a>
+      <a class="py-1 px-2 col-sm-2" href="https://github.com/cvbenur/duckyhub-website/issues"><i class="fas fa-exclamation-circle white-text"></i> Signaler un bug</a>
     </div>
     <!-- Links -->
 
