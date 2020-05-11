@@ -19,7 +19,7 @@ export const keypresses = [
     'DELETE', 'DEL',
     'END',
     'ENTER',
-    'ESCAPE',
+    'ESCAPE', 'ESC',
     'HOME',
     'INSERT',
     'NUMLOCK',
