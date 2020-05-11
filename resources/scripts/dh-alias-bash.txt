@@ -1,3 +1,5 @@
+REM ### Script téléchargé sur DuckyHub : https://duckyhub.efrei.tech/
+REM ### DEBUT DU SCRIPT
 DELAY 3000
 REM     ###     Ouverture du terminal
 GUI
@@ -17,3 +19,4 @@ STRING source .bashrc
 DELAY 200
 ENTER
 DELAY 450
+REM ### FIN DU SCRIPT
