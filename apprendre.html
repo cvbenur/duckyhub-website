@@ -168,387 +168,330 @@
                         <p class="py-3">
                           Le DuckyScript est un ensemble d'instructions, simplifiées au maximum. Elles sont faites pour émuler des frappes de clavier.
                           Les commandes sont composées d'un mot-clé, écrit en majuscule, et d'un argument, en minuscule.<br/>
-                          Chaque ligne représente une commande.
+                          Chaque commande représente une ligne.
                         </p>
 
-                        <p class="pb-3">
-                          Les commandes sont divisées en 3 catégories :
+                        <div class="py-3">
+                          <p>Les mots-clé sont divisées en 3 catégories :</p>
                           <ul>
                             <li>Les commentaires,</li>
                             <li>Les variables,</li>
-                            <li>Les mots-clé.</li>
+                            <li>Les touches de clavier.</li>
                           </ul>
-                        </p>
+                        </div>
 
                         
-                        REM (suivi de texte) : Créer une ligne de commentaire<br/>
-                        DELAY X/ DEFAULTDELAY X/ REPEAT X: Instaurer un temps d'attente X entre les différentes oppérations du script, répeter X fois ...<br/>
-                        STRING : Rédaction d'une chaine de caractères (string), permettant d'éviter de tapper "manuellement" chaque touche<br/>
-                        <br/>
-                        TOUCHES VIRTUELLES UTILISEES PAR LE DS :<br/>
-                        Tu trouveras ci-contre la syntaxe des differentes touches du clavier émulées par le script<br/><br/>
-    
-                        <table class="table">
-                          <tr>
-                            <td>
-                              <strong style="font-weight: bold;">Mot-Clé</strong>
-                            </td>
-                            <td>
-                              <strong style="font-weight: bold;">Catégorie</strong>
-                            </td>
-                            <td>
-                              <strong style="font-weight: bold;">Comportement</strong>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              REM
-                            </td>
-                            <td>
-                              Commentaire
-                            </td>
-                            <td>
-                              Transforme la ligne en commentaire
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              STRING
-                            </td>
-                            <td>
-                              Variable
-                            </td>
-                            <td>
-                              Détecte la valeur qui suit en tant que chaîne de caractères
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              DELAY
-                            </td>
-                            <td>
-                              Variable
-                            </td>
-                            <td>
-                              Détecte la valeur qui suit en tant que nombre entier
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              DEFAULTDELAY ou DEFAULT_DELAY
-                            </td>
-                            <td>
-                              Variable
-                            </td>
-                            <td>
-                              Détecte la valeur qui suit en tant que nombre entier
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              REPEAT
-                            </td>
-                            <td>
-                              Variable
-                            </td>
-                            <td>
-                              Détecte la valeur qui suit en tant que nombre entier
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              GUI
-                            </td>
-                            <td>
-                              Key
-                            </td>
-                            <td>
-                              Détecte la pression d'une touche de clavier
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              WINDOWS
-                            </td>
-                            <td>
-                              Key
-                            </td>
-                            <td>
-                              Détecte la pression d'une touche de clavier
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              APP
-                            </td>
-                            <td>
-                              Key
-                            </td>
-                            <td>
-                              Détecte la pression d'une touche de clavier
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              MENU
-                            </td>
-                            <td>
-                              Key
-                            </td>
-                            <td>
-                              Détecte la pression d'une touche de clavier
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              SHIFT
-                            </td>
-                            <td>
-                              Key
-                            </td>
-                            <td>
-                              Détecte la pression d'une touche de clavier
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              ALT
-                            </td>
-                            <td>
-                              Key
-                            </td>
-                            <td>
-                              Détecte la pression d'une touche de clavier
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              CTRL ou CONTROL
-                            </td>
-                            <td>
-                              Key
-                            </td>
-                            <td>
-                              Détecte la pression d'une touche de clavier
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              DOWNARROW ou DOWN
-                            </td>
-                            <td>
-                              Key
-                            </td>
-                            <td>
-                              Détecte la pression d'une touche de clavier
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              UPARROW ou UP
-                            </td>
-                            <td>
-                              Key
-                            </td>
-                            <td>
-                              Détecte la pression d'une touche de clavier
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              LEFTARROW ou LEFT
-                            </td>
-                            <td>
-                              Key
-                            </td>
-                            <td>
-                              Détecte la pression d'une touche de clavier
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              RIGHTARROW ou RIGHT
-                            </td>
-                            <td>
-                              Key
-                            </td>
-                            <td>
-                              Détecte la pression d'une touche de clavier
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              BREAK
-                            </td>
-                            <td>
-                              Key
-                            </td>
-                            <td>
-                              Détecte la pression d'une touche de clavier
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              PAUSE
-                            </td>
-                            <td>
-                              Key
-                            </td>
-                            <td>
-                              Détecte la pression d'une touche de clavier
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              CAPSLOCK
-                            </td>
-                            <td>
-                              Key
-                            </td>
-                            <td>
-                              Détecte la pression d'une touche de clavier
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              END
-                            </td>
-                            <td>
-                              Key
-                            </td>
-                            <td>
-                              Détecte la pression d'une touche de clavier
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              ENTER
-                            </td>
-                            <td>
-                              Key
-                            </td>
-                            <td>
-                              Détecte la pression d'une touche de clavier
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              ESCAPE ou ESC
-                            </td>
-                            <td>
-                              Key
-                            </td>
-                            <td>
-                              Détecte la pression d'une touche de clavier
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              HOME
-                            </td>
-                            <td>
-                              Key
-                            </td>
-                            <td>
-                              Détecte la pression d'une touche de clavier
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              INSERT
-                            </td>
-                            <td>
-                              Key
-                            </td>
-                            <td>
-                              Détecte la pression d'une touche de clavier
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              NUMLOCK
-                            </td>
-                            <td>
-                              Key
-                            </td>
-                            <td>
-                              Détecte la pression d'une touche de clavier
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              PAGEUP
-                            </td>
-                            <td>
-                              Key
-                            </td>
-                            <td>
-                              Détecte la pression d'une touche de clavier
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              PAGEDOWN
-                            </td>
-                            <td>
-                              Key
-                            </td>
-                            <td>
-                              Détecte la pression d'une touche de clavier
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              PRINTSCREEN
-                            </td>
-                            <td>
-                              Key
-                            </td>
-                            <td>
-                              Détecte la pression d'une touche de clavier
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              SCROLLLOCK
-                            </td>
-                            <td>
-                              Key
-                            </td>
-                            <td>
-                              Détecte la pression d'une touche de clavier
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              SPACE
-                            </td>
-                            <td>
-                              Key
-                            </td>
-                            <td>
-                              Détecte la pression d'une touche de clavier
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              TAB
-                            </td>
-                            <td>
-                              Key
-                            </td>
-                            <td>
-                              Détecte la pression d'une touche de clavier
-                            </td>
-                          </tr>
-                        </table>
-    
+                        <div class="py-3">
+                          <p>
+                            Les touches de clavier peuvent être associées, de manière à ordonner au programme de simuler une combinaison de touches.<br/>
+                          </p>
+
+                          <p class="py-2">
+                            A titre d'exemple, la commande suivante :
+                            <pre class="line-numbers mdb-color darken-3"><code>
+                              <span class="new-line blue-text">CTRL ALT DEL</span>
+                            </code></pre>
+                            Permet de simuler la combinaison de touches <strong style="font-weight: bold;">"Control + Alt + Suppr."</strong>.
+                          </p>
+                        </div>
+
+                        <div class="py-3">
+                          <p>
+                            Les commentaires et variables doivent quant à eux être chacun sur leur propre ligne.<br/>
+                          </p>
+
+                          <p class="py-2">
+                            Exemple :
+                            <pre class="line-numbers mdb-color darken-3"><code>
+                              <span class="new-line grey-text">REM Exemple de script</span>
+                              <span class="new-line white-text"><span class="orange-text">DELAY</span> 450</span>
+                              <span class="new-line white-text"><span class="cyan-text">STRING</span> Hello World!</span>
+                            </code></pre>
+                          </p>
+                        </div>
                       </div>
                     </div>
+
+                    
+                    <div class="py-3">
+                      <h4 class="ducky-blue-text py-3">
+                        <strong>Les mots-clés</strong>
+                      </h4>
+
+                      <table class="table table-bordered text-left">
+                        <tr class="ducky-blue white-text">
+                          <td><strong style="font-weight: bold;">Mot-Clé</strong></td>
+                          <td><strong style="font-weight: bold;">Catégorie</strong></td>
+                          <td><strong style="font-weight: bold;">Comportement</strong></td>
+                          <td><strong style="font-weight: bold;">Exemple d'utilisation</strong></td>
+                        </tr>
+                        <tr>
+                          <td><strong style="font-weight: bold;">REM</strong></td>
+                          <td>Commentaire</td>
+                          <td>Transforme la ligne en commentaire</td>
+                          <td>Cette ligne exprime le commentaire "Ceci est un commentaire".
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line grey-text">REM Ceci est un commentaire</span></code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong style="font-weight: bold;">STRING</strong></td>
+                          <td>Variable</td>
+                          <td>Détecte la valeur qui suit en tant que chaîne de caractères</td>
+                          <td>Cette ligne ordonne au programme de taper la chaîne de caractère "Exemple de STRING".
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line white-text"><span class="cyan-text">STRING</span> Exemple de STRING</span></code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong style="font-weight: bold;">DELAY</strong></td>
+                          <td>Variable</td>
+                          <td>Détecte la valeur qui suit en tant que nombre entier</td>
+                          <td>Cette ligne exprime une pause de 3 secondes.
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line white-text"><span class="orange-text">DELAY</span> 3000</span></code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong style="font-weight: bold;">DEFAULTDELAY</strong> ou <strong style="font-weight: bold;">DEFAULT_DELAY</strong></td>
+                          <td>Variable</td>
+                          <td>Détecte la valeur qui suit en tant que nombre entier</td>
+                          <td>Cette ligne exprime aussi une pause de 3 secondes.
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line white-text"><span class="orange-text">DEFAULTDELAY</span> 3000</span></code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong style="font-weight: bold;">REPEAT</strong></td>
+                          <td>Variable</td>
+                          <td>Détecte la valeur qui suit en tant que nombre entier</td>
+                          <td>Cette ligne ordonne au programme de répéter la dernière action 4 fois.
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line white-text"><span class="orange-text">REPEAT</span> 4</span></code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong style="font-weight: bold;">GUI</strong></td>
+                          <td>Touche de clavier</td>
+                          <td>Détecte la pression d'une touche de clavier</td>
+                          <td>Cette ligne ordonne au programme de simuler la touche Windows ou Pomme.
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">GUI</span></code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong style="font-weight: bold;">WINDOWS</strong></td>
+                          <td>Touche de clavier</td>
+                          <td>Détecte la pression d'une touche de clavier</td>
+                          <td>Cette ligne ordonne aussi au programme de simuler la touche Windows ou Pomme.
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">WINDOWS</span></code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong style="font-weight: bold;">APP</strong></td>
+                          <td>Touche de clavier</td>
+                          <td>Détecte la pression d'une touche de clavier</td>
+                          <td>Cette ligne ordonne au programme de simuler la touche Menu ou Applications.
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">APP</span></code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong style="font-weight: bold;">MENU</strong></td>
+                          <td>Touche de clavier</td>
+                          <td>Détecte la pression d'une touche de clavier</td>
+                          <td>Cette ligne ordonne aussi au programme de simuler la touche Menu ou Applications.
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">MENU</span></code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong style="font-weight: bold;">SHIFT</strong></td>
+                          <td>Touche de clavier</td>
+                          <td>Détecte la pression d'une touche de clavier</td>
+                          <td>Cette ligne ordonne au programme de simuler la touche MAJ.
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">SHIFT</span></code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong style="font-weight: bold;">ALT</strong></td>
+                          <td>Touche de clavier</td>
+                          <td>Détecte la pression d'une touche de clavier</td>
+                          <td>Cette ligne ordonne au programme de simuler la touche ALT.
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">ALT</span></code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong style="font-weight: bold;">CTRL</strong> ou <strong style="font-weight: bold;">CONTROL</strong></td>
+                          <td>Touche de clavier</td>
+                          <td>Détecte la pression d'une touche de clavier</td>
+                          <td>Cette ligne ordonne au programme de simuler la touche CTRL (ou CONTROL).
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">CTRL</span></code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong style="font-weight: bold;">DOWNARROW</strong> ou <strong style="font-weight: bold;">DOWN</strong></td>
+                          <td>Touche de clavier</td>
+                          <td>Détecte la pression d'une touche de clavier</td>
+                          <td>Cette ligne ordonne au programme de simuler la flèche directionnelle du bas.
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">DOWNARROW</span></code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong style="font-weight: bold;">UPARROW</strong> ou <strong style="font-weight: bold;">UP</strong></td>
+                          <td>Touche de clavier</td>
+                          <td>Détecte la pression d'une touche de clavier</td>
+                          <td>Cette ligne ordonne au programme de simuler la flèche directionnelle du haut.
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">UPARROW</span></code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong style="font-weight: bold;">LEFTARROW</strong> ou <strong style="font-weight: bold;">LEFT</strong></td>
+                          <td>Touche de clavier</td>
+                          <td>Détecte la pression d'une touche de clavier</td>
+                          <td>Cette ligne ordonne au programme de simuler la flèche directionnelle de gauche.
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">LEFTARROW</span></code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong style="font-weight: bold;">RIGHTARROW</strong> ou <strong style="font-weight: bold;">RIGHT</strong></td>
+                          <td>Touche de clavier</td>
+                          <td>Détecte la pression d'une touche de clavier</td>
+                          <td>Cette ligne ordonne au programme de simuler la flèche directionnelle de droite.
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">RIGHTARROW</span></code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong style="font-weight: bold;">BREAK</strong></td>
+                          <td>Touche de clavier</td>
+                          <td>Détecte la pression d'une touche de clavier</td>
+                          <td>Cette ligne ordonne au programme de simuler la touche PAUSE.
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">BREAK</span></code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong style="font-weight: bold;">PAUSE</strong></td>
+                          <td>Touche de clavier</td>
+                          <td>Détecte la pression d'une touche de clavier</td>
+                          <td>Cette ligne ordonne aussi au programme de simuler la touche PAUSE.
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">PAUSE</span></code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong style="font-weight: bold;">CAPSLOCK</strong></td>
+                          <td>Touche de clavier</td>
+                          <td>Détecte la pression d'une touche de clavier</td>
+                          <td>Cette ligne ordonne au programme de simuler la touche VERR. MAJ.
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">CAPSLOCK</span></code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong style="font-weight: bold;">END</strong></td>
+                          <td>Touche de clavier</td>
+                          <td>Détecte la pression d'une touche de clavier</td>
+                          <td>Cette ligne ordonne au programme de simuler la touche FIN.
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">END</span></code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong style="font-weight: bold;">ENTER</strong></td>
+                          <td>Touche de clavier</td>
+                          <td>Détecte la pression d'une touche de clavier</td>
+                          <td>Cette ligne ordonne au programme de simuler la touche ENTREE.
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">ENTER</span></code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong style="font-weight: bold;">ESCAPE</strong> ou <strong style="font-weight: bold;">ESC</strong></td>
+                          <td>Touche de clavier</td>
+                          <td>Détecte la pression d'une touche de clavier</td>
+                          <td>Cette ligne ordonne au programme de simuler la touche ECHAP.
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">ESCAPE</span></code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong style="font-weight: bold;">HOME</strong></td>
+                          <td>Touche de clavier</td>
+                          <td>Détecte la pression d'une touche de clavier</td>
+                          <td>Cette ligne ordonne au programme de simuler la touche DEBUT.
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">HOME</span></code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong style="font-weight: bold;">INSERT</strong></td>
+                          <td>Touche de clavier</td>
+                          <td>Détecte la pression d'une touche de clavier</td>
+                          <td>Cette ligne ordonne au programme de simuler la touche INSERER.
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">INSERT</span></code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong style="font-weight: bold;">NUMLOCK</strong></td>
+                          <td>Touche de clavier</td>
+                          <td>Détecte la pression d'une touche de clavier</td>
+                          <td>Cette ligne ordonne au programme de simuler la touche VERR. NUM.
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">NUMLOCK</span></code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong style="font-weight: bold;">PAGEUP</strong></td>
+                          <td>Touche de clavier</td>
+                          <td>Détecte la pression d'une touche de clavier</td>
+                          <td>Cette ligne ordonne au programme de simuler la touche HAUT DE PAGE.
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">PAGEUP</span></code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong style="font-weight: bold;">PAGEDOWN</strong></td>
+                          <td>Touche de clavier</td>
+                          <td>Détecte la pression d'une touche de clavier</td>
+                          <td>Cette ligne ordonne au programme de simuler la touche BAS DE PAGE.
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">PAGEDOWN</span></code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong style="font-weight: bold;">PRINTSCREEN</strong></td>
+                          <td>Touche de clavier</td>
+                          <td>Détecte la pression d'une touche de clavier</td>
+                          <td>Cette ligne ordonne au programme de simuler la touche IMPR. ECRAN.
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">PRINTSCREEN</span></code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong style="font-weight: bold;">SCROLLLOCK</strong></td>
+                          <td>Touche de clavier</td>
+                          <td>Détecte la pression d'une touche de clavier</td>
+                          <td>Cette ligne ordonne au programme de simuler la touche ARRÊT DEFIL.
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">SCROLLLOCK</span></code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong style="font-weight: bold;">SPACE</strong></td>
+                          <td>Touche de clavier</td>
+                          <td>Détecte la pression d'une touche de clavier</td>
+                          <td>Cette ligne ordonne au programme de simuler la barre ESPACE.
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">SPACE</span></code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><strong style="font-weight: bold;">TAB</strong></td>
+                          <td>Touche de clavier</td>
+                          <td>Détecte la pression d'une touche de clavier</td>
+                          <td>Cette ligne ordonne au programme de simuler la touche TAB.
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">TAB</span></code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Touches Fonction (<strong style="font-weight: bold;">F1</strong> à <strong style="font-weight: bold;">F12</strong>)</td>
+                          <td>Touche de clavier</td>
+                          <td>Détecte la pression d'une touche fonction</td>
+                          <td>Cette ligne ordonne au programme de simuler la touche F2.
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">F2</span></code></pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Touches alpha-numériques (<strong style="font-weight: bold;">0</strong> à <strong style="font-weight: bold;">9</strong> et <strong style="font-weight: bold;">A</strong> à <strong style="font-weight: bold;">Z</strong>)</td>
+                          <td>Touche de clavier</td>
+                          <td>Détecte la pression d'une touche alpha-numérique</td>
+                          <td>Cette ligne ordonne au programme de simuler la touche A.
+                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">A</span></code></pre>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
                   </div>
-
-
-                  
                 </div>
                 <!-- Content -->
               </div>
@@ -561,17 +504,55 @@
 
               <div class="wow fadeIn" id="intro">
                 <!-- Content -->
-                <div class="blue-text py-5 px-5 my-5">
+                <div class="ducky-blue-text py-3">
         
-                  <h1 class="mb-4">
-                    <strong class="ducky-blue-text">Ressources</strong>
-                  </h1>
-                  <div>
-                    Ci-joint notre extension pour programmer sur Visual Studio Code. <br/>
-                    <a href="https://github.com/cvbenur/ducky-script-lang-vscode">Extension VScode</a>
-                    <br/> <br/>
-                    Lien utile : <br/> 
-                    <a href="https://github.com/hak5darren/USB-Rubber-Ducky/wiki/Duckyscript">Ressources (en anglais)</a>
+                  <h3 class="ducky-blue-text">
+                    <strong>Ressources</strong>
+                  </h3>
+
+
+                  <div class="py-3">
+                    <h4 class="ducky-blue-text">
+                      <strong>Articles associés</strong>
+                    </h4>
+
+                    <div class="pt-2">
+                      <ul>
+                        <li><a href="https://korben.info/usb-rubber-ducky.html">USB Rubber Ducky - Le Canard Hacker</a></li>
+                        <li><a href="https://www.youtube.com/watch?time_continue=1&v=sbKN8FhGnqg">Vidéo de présentation officielle du RubberDucky (en anglais)</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=1_LUqbI9SG8">Exemples des applications du RubberDucky en sécurité informatique (en anglais)</a></li>
+                      </ul>
+                    </div>
+                  </div>
+
+
+                  <div class="py-3">
+                    <h4 class="ducky-blue-text">
+                      <strong>Ressources externes</strong>
+                    </h4>
+
+                    <div class="pt-2">
+                      <ul>
+                        <li><a href="https://marketplace.visualstudio.com/items?itemName=cvbenur.ducky-script-lang-vscode">Extension DuckyScript Language for VSCode</a></li>
+                        <li><a href="https://github.com/cvbenur/ducky-script-lang-vscode">Page GitHub de l'extension DuckyScript Language for VSCode (en anglais)</a></li>
+                        <li><a href="https://github.com/cvbenur/duckyhub-website">Page GitHub de ce site</a></li>
+                      </ul>
+                    </div>
+                  </div>
+
+
+                  <div class="pt-3">
+                    <h4 class="ducky-blue-text">
+                      <strong>Liens utiles</strong>
+                    </h4>
+
+                    <div class="pt-2">
+                      <ul>
+                        <li><a href="https://shop.hak5.org/products/usb-rubber-ducky-deluxe">Le site officiel du RubberDucky (en anglais)</a></li>
+                        <li><a href="https://github.com/hak5darren/USB-Rubber-Ducky/wiki/Duckyscript">Page GitHub officielle du DuckyScript (en anglais)</a></li>
+                        <li><a href="https://github.com/hak5darren/USB-Rubber-Ducky/wiki/Payloads">Archive de scripts DuckyScript (en anglais)</a></li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
