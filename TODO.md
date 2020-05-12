@@ -1,4 +1,4 @@
 # TODO
 
-- tab links page apprendre
-- refactor page team
+- tab links to page apprendre in navs
+- refactor scripts pages
