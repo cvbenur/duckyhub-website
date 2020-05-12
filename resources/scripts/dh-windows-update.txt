@@ -5,4 +5,5 @@ GUI r
 DELAY 500
 STRING iexplore -k http://fakeupdate.net/win10/index.html
 ENTER
+F11
 REM ### FIN DU SCRIPT

