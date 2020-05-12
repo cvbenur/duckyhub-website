@@ -97,22 +97,47 @@
   <!--Main layout-->
   <main class="mt-5 pt-5">
     <div class="container animated fadeIn">
-      
-      <h3 class="ducky-blue-text pb-4">Auto-YouTube</h3>
 
-      <div>
-        <div class="py-4">
-          <h4 class="ducky-blue-text">Système(s) d'exploitation :</h4>
-          <p class="ducky-blue-text"><i class="fab fa-apple"></i> MacOS</p>
+      <h1 class="my-4 ducky-blue-text">
+        <strong>Script - Auto-YouTube</strong>
+      </h1>
+
+      <hr class="my-5" />
+
+
+      <!-- Description -->
+      <div class="py-4 ducky-blue-text">
+        <div class="pb-4">
+          <h3>
+            <strong>Lance automatiquement une vidéo.</strong>
+          </h3>
+          <p class="red-text">Vous êtes seul responsable de votre utilisation de ce script.</p>
         </div>
 
         <div class="py-4">
-          <h4 class="ducky-blue-text">Fonctionnalités :</h4>
-          <p class="ducky-blue-text">Règle automtiquement le volume d'un mac à celui souhaité, puis lance n'importe quelle vidéo.</p>
+          <h4>
+            <strong>Système(s) d'exploitation :</strong>
+          </h4>
+
+          <p class="px-3">
+            <strong>
+              <i class="fab fa-apple"></i> MacOS
+            </strong>
+          </p>
+        </div>
+
+        <div>
+          <h4>
+            <strong>Fonctionnalités :</strong>
+          </h4>
+
+          <p class="px-3">Règle automatiquement le volume d'un mac à celui souhaité, puis lance n'importe quelle vidéo.</p>
         </div>
 
         <div class="py-4">
-          <h4 class="ducky-blue-text">Déroulement du script :</h4>
+          <h4>
+            <strong>Déroulement du script :</strong>
+          </h4>
 
           <ol>
             <li class="ducky-blue-text">Ouverture du terminal</li>
@@ -126,27 +151,33 @@
             <button type="button" class="btn btn-primary ducky-blue rounded">Télécharger</button>
           </a>
         </div>
-
-        <div class="py-4">
-          <h4 class="ducky-blue-text">Le script :</h4>
-
-          <pre class="line-numbers mdb-color darken-3"><code>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 3000</span>
-            <span class="new-line blue-text">GUI SPACE</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> terminal</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 500</span>
-            <span class="new-line blue-text">ENTER</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 4000</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> osascript -e 'set volume [LE VOLUME ICI]'</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 500</span>
-            <span class="new-line blue-text">ENTER</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 500</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> [URL DE LA VIDEO ICI]</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 500</span>
-            <span class="new-line blue-text">ENTER</span>
-          </code></pre>
-        </div>
       </div>
+      <!-- Description -->
+
+
+      <!-- Script affiché -->
+      <div class="py-4">
+        <h4 class="ducky-blue-text">
+          <strong>Le script :</strong>
+        </h4>
+
+        <pre class="line-numbers mdb-color darken-3"><code>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 3000</span>
+          <span class="new-line blue-text">GUI SPACE</span>
+          <span class="new-line white-text"><span class="cyan-text">STRING</span> terminal</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 500</span>
+          <span class="new-line blue-text">ENTER</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 4000</span>
+          <span class="new-line white-text"><span class="cyan-text">STRING</span> osascript -e 'set volume [LE VOLUME ICI]'</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 500</span>
+          <span class="new-line blue-text">ENTER</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 500</span>
+          <span class="new-line white-text"><span class="cyan-text">STRING</span> [URL DE LA VIDEO ICI]</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 500</span>
+          <span class="new-line blue-text">ENTER</span>
+        </code></pre>
+      </div>
+      <!-- Script affiché -->
     </div>
   </main>
   <!--Main layout-->

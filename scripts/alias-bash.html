@@ -97,27 +97,52 @@
   <!--Main layout-->
   <main class="mt-5 pt-5">
     <div class="container animated fadeIn">
-      
-      <h3 class="ducky-blue-text pb-4">Ajouter une commande à son BASH</h3>
 
-      <div>
-        <div class="py-4">
-          <h4 class="ducky-blue-text">Système(s) d'exploitation :</h4>
-          <p class="ducky-blue-text"><i class="fab fa-linux"></i> Linux (toute distribution utilisant BASH)</p>
+      <h1 class="my-4 ducky-blue-text">
+        <strong>Script - Alias BASH</strong>
+      </h1>
+
+      <hr class="my-5" />
+
+
+      <!-- Description -->
+      <div class="py-4 ducky-blue-text">
+        <div class="pb-4">
+          <h3>
+            <strong>Ajoute une commande au BASH.</strong>
+          </h3>
+          <p class="red-text">Vous êtes seul responsable de votre utilisation de ce script.</p>
         </div>
 
         <div class="py-4">
-          <h4 class="ducky-blue-text">Fonctionnalités :</h4>
-          <p class="ducky-blue-text">Programme une nouvelle commande dans le BASH en tant qu'alias.</p>
+          <h4>
+            <strong>Système(s) d'exploitation :</strong>
+          </h4>
+
+          <p class="px-3">
+            <strong>
+              <i class="fab fa-linux"></i> Linux
+            </strong> (toute distribution utilisant BASH).
+          </p>
+        </div>
+
+        <div>
+          <h4>
+            <strong>Fonctionnalités :</strong>
+          </h4>
+
+          <p class="px-3">Programme une nouvelle commande dans le BASH en tant qu'alias.</p>
         </div>
 
         <div class="py-4">
-          <h4 class="ducky-blue-text">Déroulement du script :</h4>
+          <h4>
+            <strong>Déroulement du script :</strong>
+          </h4>
 
           <ol>
-            <li class="ducky-blue-text">Ouverture du terminal</li>
-            <li class="ducky-blue-text">Ajout de l'alias au fichier de configuration du BASH</li>
-            <li class="ducky-blue-text">Recompilation des fichiers de configuration du BASH</li>
+            <li>Ouverture du terminal</li>
+            <li>Ajout de l'alias au fichier de configuration du BASH</li>
+            <li>Recompilation des fichiers de configuration du BASH</li>
           </ol>
         </div>
 
@@ -126,33 +151,39 @@
             <button type="button" class="btn btn-primary ducky-blue rounded">Télécharger</button>
           </a>
         </div>
-
-        <div class="py-4">
-          <h4 class="ducky-blue-text">Le script :</h4>
-
-          <pre class="line-numbers mdb-color darken-3"><code>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 3000</span>
-            <span class="new-line grey-text">REM     ###     Ouverture du terminal</span>
-            <span class="new-line blue-text">GUI</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 450</span>
-            <span class="new-line grey-text">REM     ###     Au besoin, changer le nom du programme de terminal</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> term</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 200</span>
-            <span class="new-line blue-text">ENTER</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 450</span>
-            <span class="new-line grey-text">REM     ###     Ajout de l'alias au fichier '.bashrc'</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> echo "alias [NOM DE L'ALIAS ICI]='[LA COMMANDE ICI]'" >> ~/.bashrc</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 200</span>
-            <span class="new-line blue-text">ENTER</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 450</span>
-            <span class="new-line grey-text">REM     ###     Recompilation du fichier '.bashrc'</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> source .bashrc</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 200</span>
-            <span class="new-line blue-text">ENTER</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 450</span>
-          </code></pre>
-        </div>
       </div>
+      <!-- Description -->
+
+
+      <!-- Script affiché -->
+      <div class="py-4">
+        <h4 class="ducky-blue-text">
+          <strong>Le script :</strong>
+        </h4>
+
+        <pre class="line-numbers mdb-color darken-3"><code>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 3000</span>
+          <span class="new-line grey-text">REM     ###     Ouverture du terminal</span>
+          <span class="new-line blue-text">GUI</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 450</span>
+          <span class="new-line grey-text">REM     ###     Au besoin, changer le nom du programme de terminal</span>
+          <span class="new-line white-text"><span class="cyan-text">STRING</span> term</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 200</span>
+          <span class="new-line blue-text">ENTER</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 450</span>
+          <span class="new-line grey-text">REM     ###     Ajout de l'alias au fichier '.bashrc'</span>
+          <span class="new-line white-text"><span class="cyan-text">STRING</span> echo "alias [NOM DE L'ALIAS ICI]='[LA COMMANDE ICI]'" >> ~/.bashrc</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 200</span>
+          <span class="new-line blue-text">ENTER</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 450</span>
+          <span class="new-line grey-text">REM     ###     Recompilation du fichier '.bashrc'</span>
+          <span class="new-line white-text"><span class="cyan-text">STRING</span> source .bashrc</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 200</span>
+          <span class="new-line blue-text">ENTER</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 450</span>
+        </code></pre>
+      </div>
+      <!-- Script affiché -->
     </div>
   </main>
   <!--Main layout-->
