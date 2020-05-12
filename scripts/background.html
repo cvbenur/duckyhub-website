@@ -97,22 +97,45 @@
   <!--Main layout-->
   <main class="mt-5 pt-5">
     <div class="container animated fadeIn">
-      
-      <h3 class="ducky-blue-text pb-4">Background</h3>
 
-      <div>
+      <h1 class="my-4 ducky-blue-text">
+        <strong>Script - Background</strong>
+      </h1>
+
+      <hr class="my-5" />
+
+
+      <!-- Description -->
+      <div class="py-4 ducky-blue-text">
+        <h3 class=" pb-4">
+          <strong>Change le fond d'écran d'un ordinateur.</strong>
+        </h3>
+
         <div class="py-4">
-          <h4 class="ducky-blue-text">Système(s) d'exploitation :</h4>
-          <p class="ducky-blue-text"><i class="fab fa-windows"></i> Windows</p>
+          <h4>
+            <strong>Système(s) d'exploitation :</strong>
+          </h4>
+
+          <p class="px-3">
+            <i class="fab fa-windows"></i>
+            <strong>
+               Windows
+            </strong>
+          </p>
+        </div>
+
+        <div>
+          <h4>
+            <strong>Fonctionnalités :</strong>
+          </h4>
+
+          <p class="px-3">Change automatiquement le fond d'écran de la machine vers n'importe quelle image en ligne.</p>
         </div>
 
         <div class="py-4">
-          <h4 class="ducky-blue-text">Fonctionnalités :</h4>
-          <p class="ducky-blue-text">Change automatiquement le fond d'écran de ta machine vers n'importe quelle image en ligne.</p>
-        </div>
-
-        <div class="py-4">
-          <h4 class="ducky-blue-text">Déroulement du script :</h4>
+          <h4>
+            <strong>Déroulement du script :</strong>
+          </h4>
 
           <ol>
             <li class="ducky-blue-text">Ouverture du navigateur à la page de l'image</li>
@@ -126,50 +149,56 @@
             <button type="button" class="btn btn-primary ducky-blue rounded">Télécharger</button>
           </a>
         </div>
-
-        <div class="py-4">
-          <h4 class="ducky-blue-text">Le script :</h4>
-
-          <pre class="line-numbers mdb-color darken-3"><code>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 3000</span>
-            <span class="new-line blue-text">GUI R</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> iexplore LIEN DE L'IMAGE</span>
-            <span class="new-line blue-text">ENTER</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 2000</span>
-            <span class="new-line blue-text">ALT F</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> a</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> %USERPROFILE%\PLACEHOLDER.PNG</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
-            <span class="new-line blue-text">ENTER</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
-            <span class="new-line blue-text">CTRL W</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
-            <span class="new-line blue-text">CTRL ESC</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> paint</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
-            <span class="new-line blue-text">ENTER</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 500</span> 
-            <span class="new-line blue-text">CTRL O</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> %USERPROFILE%\PLACEHOLDER.PNG</span>
-            <span class="new-line blue-text">ENTER</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 300</span> 
-            <span class="new-line blue-text">ALT F</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> k</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> f</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 300</span> 
-            <span class="new-line blue-text">ALT F</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> x</span>
-          </code></pre>
-        </div>
       </div>
+      <!-- Description -->
+
+
+      <!-- Script affiché -->
+      <div class="py-4">
+        <h4 class="ducky-blue-text">
+          <strong>Le script :</strong>
+        </h4>
+
+        <pre class="line-numbers mdb-color darken-3"><code>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 3000</span>
+          <span class="new-line blue-text">GUI R</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
+          <span class="new-line white-text"><span class="cyan-text">STRING</span> iexplore LIEN DE L'IMAGE</span>
+          <span class="new-line blue-text">ENTER</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 2000</span>
+          <span class="new-line blue-text">ALT F</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
+          <span class="new-line white-text"><span class="cyan-text">STRING</span> a</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
+          <span class="new-line white-text"><span class="cyan-text">STRING</span> %USERPROFILE%\PLACEHOLDER.PNG</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
+          <span class="new-line blue-text">ENTER</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
+          <span class="new-line blue-text">CTRL W</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
+          <span class="new-line blue-text">CTRL ESC</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
+          <span class="new-line white-text"><span class="cyan-text">STRING</span> paint</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
+          <span class="new-line blue-text">ENTER</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 500</span> 
+          <span class="new-line blue-text">CTRL O</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
+          <span class="new-line white-text"><span class="cyan-text">STRING</span> %USERPROFILE%\PLACEHOLDER.PNG</span>
+          <span class="new-line blue-text">ENTER</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 300</span> 
+          <span class="new-line blue-text">ALT F</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
+          <span class="new-line white-text"><span class="cyan-text">STRING</span> k</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
+          <span class="new-line white-text"><span class="cyan-text">STRING</span> f</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 300</span> 
+          <span class="new-line blue-text">ALT F</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 100</span>
+          <span class="new-line white-text"><span class="cyan-text">STRING</span> x</span>
+        </code></pre>
+      </div>
+      <!-- Script affiché -->
     </div>
   </main>
   <!--Main layout-->

