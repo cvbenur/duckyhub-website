@@ -222,278 +222,280 @@
                         <strong>Les mots-clés</strong>
                       </h4>
 
-                      <table class="table table-bordered text-left">
-                        <tr class="ducky-blue white-text">
-                          <td><strong>Mot-Clé</strong></td>
-                          <td><strong>Catégorie</strong></td>
-                          <td><strong>Comportement</strong></td>
-                          <td><strong>Exemple d'utilisation</strong></td>
-                        </tr>
-                        <tr>
-                          <td><strong>REM</strong></td>
-                          <td>Commentaire</td>
-                          <td>Transforme la ligne en commentaire</td>
-                          <td>Cette ligne exprime le commentaire "Ceci est un commentaire".
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line grey-text">REM Ceci est un commentaire</span></code></pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><strong>STRING</strong></td>
-                          <td>Variable</td>
-                          <td>Détecte la valeur qui suit en tant que chaîne de caractères</td>
-                          <td>Cette ligne ordonne au programme de taper la chaîne de caractère "Exemple de chaîne de caractères".
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line white-text"><span class="cyan-text">STRING</span> Exemple de chaîne de caractères</span></code></pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><strong>DELAY</strong></td>
-                          <td>Variable</td>
-                          <td>Détecte la valeur qui suit en tant que nombre entier</td>
-                          <td>Cette ligne exprime une pause de 3 secondes.
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line white-text"><span class="orange-text">DELAY</span> 3000</span></code></pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><strong>DEFAULTDELAY</strong> ou <strong>DEFAULT_DELAY</strong></td>
-                          <td>Variable</td>
-                          <td>Détecte la valeur qui suit en tant que nombre entier</td>
-                          <td>Cette ligne exprime aussi une pause de 3 secondes.
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line white-text"><span class="orange-text">DEFAULTDELAY</span> 3000</span></code></pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><strong>REPEAT</strong></td>
-                          <td>Variable</td>
-                          <td>Détecte la valeur qui suit en tant que nombre entier</td>
-                          <td>Cette ligne ordonne au programme de répéter la dernière action 4 fois.
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line white-text"><span class="orange-text">REPEAT</span> 4</span></code></pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><strong>GUI</strong></td>
-                          <td>Touche de clavier</td>
-                          <td>Détecte la pression d'une touche de clavier</td>
-                          <td>Cette ligne ordonne au programme de simuler la touche Windows ou Pomme.
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">GUI</span></code></pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><strong>WINDOWS</strong></td>
-                          <td>Touche de clavier</td>
-                          <td>Détecte la pression d'une touche de clavier</td>
-                          <td>Cette ligne ordonne aussi au programme de simuler la touche Windows ou Pomme.
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">WINDOWS</span></code></pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><strong>APP</strong></td>
-                          <td>Touche de clavier</td>
-                          <td>Détecte la pression d'une touche de clavier</td>
-                          <td>Cette ligne ordonne au programme de simuler la touche Menu ou Applications.
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">APP</span></code></pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><strong>MENU</strong></td>
-                          <td>Touche de clavier</td>
-                          <td>Détecte la pression d'une touche de clavier</td>
-                          <td>Cette ligne ordonne aussi au programme de simuler la touche Menu ou Applications.
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">MENU</span></code></pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><strong>SHIFT</strong></td>
-                          <td>Touche de clavier</td>
-                          <td>Détecte la pression d'une touche de clavier</td>
-                          <td>Cette ligne ordonne au programme de simuler la touche MAJ.
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">SHIFT</span></code></pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><strong>ALT</strong></td>
-                          <td>Touche de clavier</td>
-                          <td>Détecte la pression d'une touche de clavier</td>
-                          <td>Cette ligne ordonne au programme de simuler la touche ALT.
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">ALT</span></code></pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><strong>CTRL</strong> ou <strong>CONTROL</strong></td>
-                          <td>Touche de clavier</td>
-                          <td>Détecte la pression d'une touche de clavier</td>
-                          <td>Cette ligne ordonne au programme de simuler la touche CTRL (ou CONTROL).
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">CTRL</span></code></pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><strong>DOWNARROW</strong> ou <strong>DOWN</strong></td>
-                          <td>Touche de clavier</td>
-                          <td>Détecte la pression d'une touche de clavier</td>
-                          <td>Cette ligne ordonne au programme de simuler la flèche directionnelle du bas.
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">DOWNARROW</span></code></pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><strong>UPARROW</strong> ou <strong>UP</strong></td>
-                          <td>Touche de clavier</td>
-                          <td>Détecte la pression d'une touche de clavier</td>
-                          <td>Cette ligne ordonne au programme de simuler la flèche directionnelle du haut.
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">UPARROW</span></code></pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><strong>LEFTARROW</strong> ou <strong>LEFT</strong></td>
-                          <td>Touche de clavier</td>
-                          <td>Détecte la pression d'une touche de clavier</td>
-                          <td>Cette ligne ordonne au programme de simuler la flèche directionnelle de gauche.
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">LEFTARROW</span></code></pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><strong>RIGHTARROW</strong> ou <strong>RIGHT</strong></td>
-                          <td>Touche de clavier</td>
-                          <td>Détecte la pression d'une touche de clavier</td>
-                          <td>Cette ligne ordonne au programme de simuler la flèche directionnelle de droite.
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">RIGHTARROW</span></code></pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><strong>BREAK</strong></td>
-                          <td>Touche de clavier</td>
-                          <td>Détecte la pression d'une touche de clavier</td>
-                          <td>Cette ligne ordonne au programme de simuler la touche PAUSE.
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">BREAK</span></code></pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><strong>PAUSE</strong></td>
-                          <td>Touche de clavier</td>
-                          <td>Détecte la pression d'une touche de clavier</td>
-                          <td>Cette ligne ordonne aussi au programme de simuler la touche PAUSE.
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">PAUSE</span></code></pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><strong>CAPSLOCK</strong></td>
-                          <td>Touche de clavier</td>
-                          <td>Détecte la pression d'une touche de clavier</td>
-                          <td>Cette ligne ordonne au programme de simuler la touche VERR. MAJ.
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">CAPSLOCK</span></code></pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><strong>END</strong></td>
-                          <td>Touche de clavier</td>
-                          <td>Détecte la pression d'une touche de clavier</td>
-                          <td>Cette ligne ordonne au programme de simuler la touche FIN.
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">END</span></code></pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><strong>ENTER</strong></td>
-                          <td>Touche de clavier</td>
-                          <td>Détecte la pression d'une touche de clavier</td>
-                          <td>Cette ligne ordonne au programme de simuler la touche ENTREE.
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">ENTER</span></code></pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><strong>ESCAPE</strong> ou <strong>ESC</strong></td>
-                          <td>Touche de clavier</td>
-                          <td>Détecte la pression d'une touche de clavier</td>
-                          <td>Cette ligne ordonne au programme de simuler la touche ECHAP.
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">ESCAPE</span></code></pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><strong>HOME</strong></td>
-                          <td>Touche de clavier</td>
-                          <td>Détecte la pression d'une touche de clavier</td>
-                          <td>Cette ligne ordonne au programme de simuler la touche DEBUT.
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">HOME</span></code></pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><strong>INSERT</strong></td>
-                          <td>Touche de clavier</td>
-                          <td>Détecte la pression d'une touche de clavier</td>
-                          <td>Cette ligne ordonne au programme de simuler la touche INSERER.
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">INSERT</span></code></pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><strong>NUMLOCK</strong></td>
-                          <td>Touche de clavier</td>
-                          <td>Détecte la pression d'une touche de clavier</td>
-                          <td>Cette ligne ordonne au programme de simuler la touche VERR. NUM.
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">NUMLOCK</span></code></pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><strong>PAGEUP</strong></td>
-                          <td>Touche de clavier</td>
-                          <td>Détecte la pression d'une touche de clavier</td>
-                          <td>Cette ligne ordonne au programme de simuler la touche HAUT DE PAGE.
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">PAGEUP</span></code></pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><strong>PAGEDOWN</strong></td>
-                          <td>Touche de clavier</td>
-                          <td>Détecte la pression d'une touche de clavier</td>
-                          <td>Cette ligne ordonne au programme de simuler la touche BAS DE PAGE.
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">PAGEDOWN</span></code></pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><strong>PRINTSCREEN</strong></td>
-                          <td>Touche de clavier</td>
-                          <td>Détecte la pression d'une touche de clavier</td>
-                          <td>Cette ligne ordonne au programme de simuler la touche IMPR. ECRAN.
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">PRINTSCREEN</span></code></pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><strong>SCROLLLOCK</strong></td>
-                          <td>Touche de clavier</td>
-                          <td>Détecte la pression d'une touche de clavier</td>
-                          <td>Cette ligne ordonne au programme de simuler la touche ARRÊT DEFIL.
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">SCROLLLOCK</span></code></pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><strong>SPACE</strong></td>
-                          <td>Touche de clavier</td>
-                          <td>Détecte la pression d'une touche de clavier</td>
-                          <td>Cette ligne ordonne au programme de simuler la barre ESPACE.
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">SPACE</span></code></pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><strong>TAB</strong></td>
-                          <td>Touche de clavier</td>
-                          <td>Détecte la pression d'une touche de clavier</td>
-                          <td>Cette ligne ordonne au programme de simuler la touche TAB.
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">TAB</span></code></pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Touches Fonction (<strong>F1</strong> à <strong>F12</strong>)</td>
-                          <td>Touche de clavier</td>
-                          <td>Détecte la pression d'une touche fonction</td>
-                          <td>Cette ligne ordonne au programme de simuler la touche F2.
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">F2</span></code></pre>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Touches alpha-numériques (<strong>0</strong> à <strong>9</strong> et <strong>A</strong> à <strong>Z</strong>)</td>
-                          <td>Touche de clavier</td>
-                          <td>Détecte la pression d'une touche alpha-numérique</td>
-                          <td>Cette ligne ordonne au programme de simuler la touche A.
-                            <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">A</span></code></pre>
-                          </td>
-                        </tr>
-                      </table>
+                      <div class="table-responsive">
+                        <table class="table table-bordered text-left">
+                          <tr class="ducky-blue white-text">
+                            <td><strong>Mot-Clé</strong></td>
+                            <td><strong>Catégorie</strong></td>
+                            <td><strong>Comportement</strong></td>
+                            <td><strong>Exemple d'utilisation</strong></td>
+                          </tr>
+                          <tr>
+                            <td><strong>REM</strong></td>
+                            <td>Commentaire</td>
+                            <td>Transforme la ligne en commentaire</td>
+                            <td>Cette ligne exprime le commentaire "Ceci est un commentaire".
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line grey-text">REM Ceci est un commentaire</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>STRING</strong></td>
+                            <td>Variable</td>
+                            <td>Détecte la valeur qui suit en tant que chaîne de caractères</td>
+                            <td>Cette ligne ordonne au programme de taper la chaîne de caractère "Exemple de chaîne de caractères".
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line white-text"><span class="cyan-text">STRING</span> Exemple de chaîne de caractères</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>DELAY</strong></td>
+                            <td>Variable</td>
+                            <td>Détecte la valeur qui suit en tant que nombre entier</td>
+                            <td>Cette ligne exprime une pause de 3 secondes.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line white-text"><span class="orange-text">DELAY</span> 3000</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>DEFAULTDELAY</strong> ou <strong>DEFAULT_DELAY</strong></td>
+                            <td>Variable</td>
+                            <td>Détecte la valeur qui suit en tant que nombre entier</td>
+                            <td>Cette ligne exprime aussi une pause de 3 secondes.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line white-text"><span class="orange-text">DEFAULTDELAY</span> 3000</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>REPEAT</strong></td>
+                            <td>Variable</td>
+                            <td>Détecte la valeur qui suit en tant que nombre entier</td>
+                            <td>Cette ligne ordonne au programme de répéter la dernière action 4 fois.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line white-text"><span class="orange-text">REPEAT</span> 4</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>GUI</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche Windows ou Pomme.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">GUI</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>WINDOWS</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne aussi au programme de simuler la touche Windows ou Pomme.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">WINDOWS</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>APP</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche Menu ou Applications.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">APP</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>MENU</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne aussi au programme de simuler la touche Menu ou Applications.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">MENU</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>SHIFT</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche MAJ.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">SHIFT</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>ALT</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche ALT.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">ALT</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>CTRL</strong> ou <strong>CONTROL</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche CTRL (ou CONTROL).
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">CTRL</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>DOWNARROW</strong> ou <strong>DOWN</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la flèche directionnelle du bas.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">DOWNARROW</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>UPARROW</strong> ou <strong>UP</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la flèche directionnelle du haut.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">UPARROW</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>LEFTARROW</strong> ou <strong>LEFT</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la flèche directionnelle de gauche.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">LEFTARROW</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>RIGHTARROW</strong> ou <strong>RIGHT</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la flèche directionnelle de droite.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">RIGHTARROW</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>BREAK</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche PAUSE.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">BREAK</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>PAUSE</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne aussi au programme de simuler la touche PAUSE.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">PAUSE</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>CAPSLOCK</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche VERR. MAJ.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">CAPSLOCK</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>END</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche FIN.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">END</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>ENTER</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche ENTREE.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">ENTER</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>ESCAPE</strong> ou <strong>ESC</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche ECHAP.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">ESCAPE</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>HOME</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche DEBUT.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">HOME</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>INSERT</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche INSERER.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">INSERT</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>NUMLOCK</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche VERR. NUM.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">NUMLOCK</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>PAGEUP</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche HAUT DE PAGE.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">PAGEUP</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>PAGEDOWN</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche BAS DE PAGE.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">PAGEDOWN</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>PRINTSCREEN</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche IMPR. ECRAN.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">PRINTSCREEN</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>SCROLLLOCK</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche ARRÊT DEFIL.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">SCROLLLOCK</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>SPACE</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la barre ESPACE.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">SPACE</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>TAB</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche TAB.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">TAB</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Touches Fonction (<strong>F1</strong> à <strong>F12</strong>)</td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche fonction</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche F2.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">F2</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Touches alpha-numériques (<strong>0</strong> à <strong>9</strong> et <strong>A</strong> à <strong>Z</strong>)</td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche alpha-numérique</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche A.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">A</span></code></pre>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
                     </div>
                   </div>
                 </div>
