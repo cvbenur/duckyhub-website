@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
-  <title>DuckyHub - Template</title>
+  <title>DuckyHub - Accueil</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -45,7 +45,7 @@
 
             <!-- Accueil -->
             <li class="nav-item active">
-              <a class="nav-link waves-effect white-text px-2" href="./index.html"><strong>Accueil</strong>
+              <a class="nav-link waves-effect white-text px-2" href="./index.html">Accueil
                 <span class="sr-only">(current)</span>
               </a>
             </li>
@@ -96,64 +96,135 @@
 
   <!--Main layout-->
   <main class="mt-5 pt-5">
-    <div class="container">
+    <div class="container animated fadeIn">
 
-      <!-- Section 1 - REMPLACER LE CONTENU DE LA SECTION -->
-      <section>
-        <h1 class="mb-4 text-center">
-          Contenu du site
-        </h1>
-      </section>
-      <!-- Section 1 -->
-
-      <!--Section 2 - REMPLACER LE CONTENU DE LA SECTION ET ENLEVER LA CLASS blue-gradient -->
-      <section class="card blue-gradient wow fadeIn" id="intro">
+      <!--Section: Jumbotron-->
+      <section class="card wow fadeIn ducky-blue img-fluid" style="background-image: url(./img/ducky/bg_long.png);">
 
         <!-- Content -->
         <div class="card-body text-white text-center py-5 px-5 my-5">
 
-          <h1 class="mb-4">
-            <strong>Section 2</strong>
-          </h1>
+          <div class="mask flex-center rgba-black-strong d-block">
+
+            <div class="py-5 px-4">
+              <h1 class="mb-4">DuckyHub</h1>
+
+              <p class="pb-4"><strong>Apprendre, générer et pratiquer simplement le DuckyScript.</strong></p>
+
+              <a href="./apprendre.html" class="btn btn-outline-yellow btn-lg rounded">
+                <i class="fas fa-flag-checkered white-text pr-2"></i>
+                <span class="white-text">Commencer</span>
+                <i class="fas fa-flag-checkered white-text pl-2"></i>
+              </a>
+            </div>
+
+          </div>
 
         </div>
         <!-- Content -->
       </section>
-      <!--Section 2 -->
+      <!--Section: Jumbotron-->
 
-      <br class="mb-4">
+      <hr class="my-5">
 
-      <!-- Section 3 - REMPLACER LE CONTENU DE LA SECTION ET ENLEVER LA CLASS purple-gradient -->
-      <section class="card purple-gradient wow fadeIn" id="intro">
+      <!--Section: Cards-->
+      <section class="text-center">
 
-        <!-- Content -->
-        <div class="card-body text-white text-center py-5 px-5 my-5">
+        <!--Grid row-->
+        <div class="row mb-4 wow fadeIn">
 
-          <h1 class="mb-4">
-            <strong>Section 3</strong>
-          </h1>
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-12 mb-4">
+
+            <!-- Apprendre -->
+            <div class="card">
+
+              <!--Card image-->
+              <div class="view overlay pt-4">
+                <i class="fas fa-graduation-cap fa-5x ducky-blue-text"></i>
+              </div>
+
+              <!--Card content-->
+              <div class="card-body">
+                <!--Title-->
+                <h4 class="card-title">Apprendre</h4>
+                <!--Text-->
+                <p class="card-text">Apprennez le DuckyScript par étapes grâce à notre documentation, et découvrez-en les principes clés.</p>
+                
+                <a href="./apprendre.html" class="btn btn-primary rounded btn-md ducky-blue">Apprendre le DuckyScript
+                  <i class="fas fa-play ml-2"></i>
+                </a>
+              </div>
+
+            </div>
+            <!-- Apprendre -->
+
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-6 mb-4">
+
+            <!-- Pratiquer -->
+            <div class="card">
+
+                <!--Card image-->
+                <div class="view overlay pt-4">
+                  <i class="far fa-file-code fa-5x ducky-blue-text"></i>
+                </div>
+
+                <!--Card content-->
+                <div class="card-body">
+                  <!--Title-->
+                  <h4 class="card-title">Pratiquer</h4>
+                  <!--Text-->
+                  <p class="card-text">Téléchargez et éditez nos scripts préécrits, que cela soit pour vous entrainer ou les adapter à vos besoins.</p>
+
+                  <a href="./scripts.html" class="btn btn-primary rounded btn-md ducky-blue">Voir les scripts
+                    <i class="fas fa-play ml-2"></i>
+                  </a>
+                </div>
+
+            </div>
+            <!-- Pratiquer -->
+
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-6 mb-4">
+
+            <!-- Générer -->
+            <div class="card">
+
+              <!--Card image-->
+              <div class="view overlay pt-4">
+                <i class="far fa-edit fa-5x ducky-blue-text"></i>
+              </div>
+
+              <!--Card content-->
+              <div class="card-body">
+                <!--Title-->
+                <h4 class="card-title">Générer</h4>
+                <!--Text-->
+                <p class="card-text">Générez facilement vos propres scripts DuckyScript simples, grâce à nos deux générateurs en ligne.</p>
+                
+                <a href="./generateur.html" class="btn btn-primary rounded btn-md ducky-blue">Générer un script
+                  <i class="fas fa-play ml-2"></i>
+                </a>
+              </div>
+
+            </div>
+            <!-- Générer -->
+
+          </div>
+          <!--Grid column-->
 
         </div>
-        <!-- Content -->
+        <!--Grid row-->
+
       </section>
-      <!-- Section 3 -->
-
-      <br class="mb-4">
-
-      <!-- Section 4 - REMPLACER LE CONTENU DE LA SECTION ET ENLEVER LA CLASS peach-gradient -->
-      <section class="card peach-gradient wow fadeIn" id="intro">
-
-        <!-- Content -->
-        <div class="card-body text-white text-center py-5 px-5 my-5">
-
-          <h1 class="mb-4">
-            <strong>Section 3</strong>
-          </h1>
-
-        </div>
-        <!-- Content -->
-      </section>
-      <!-- Section 4 -->
+      <!--Section: Cards-->
 
     </div>
   </main>
@@ -164,9 +235,9 @@
 
     <!-- Links -->
     <div class="py-2 row justify-content-center">
-      <a class="py-1 px-2 col-sm-2" href="https://github.com/cvbenur/duckyhub-website/"><i class="fab fa-github white-text"></i> DuckyHub sur GitHub</a>
+      <a class="py-1 px-2 col-sm-2" href="https://github.com/cvbenur/duckyhub-website/" target="_blank"><i class="fab fa-github white-text"></i> DuckyHub sur GitHub</a>
       <a class="py-1 px-2 col-sm-2" href="./team.html"><i class="fas fa-users white-text"></i> L'équipe</a>
-      <a class="py-1 px-2 col-sm-2" href="https://github.com/cvbenur/duckyhub-website/issues"><i class="fas fa-exclamation-circle white-text"></i> Signaler un bug</a>
+      <a class="py-1 px-2 col-sm-2" href="https://github.com/cvbenur/duckyhub-website/issues" target="_blank"><i class="fas fa-exclamation-circle white-text"></i> Signaler un bug</a>
     </div>
     <!-- Links -->
 
