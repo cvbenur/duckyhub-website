@@ -12,39 +12,10 @@
 
 .page-footer a:hover {text-decoration: underline;}
 
-.teampage-item {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.teambox-item {
-    width: 500px;
-    text-align: center;
-    padding: 1% 1% 1% 1%;
-    margin: 1% 1% 1% 1%;
-}
-
-.portrait-item {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    box-shadow: 5px 5px 20px black;
-    display: inline-block;
-}
-
 .nom-team {
     font-size: 30px;
-    text-align: center;
-    display: block;
     margin-bottom: 10px;
     margin-top: 30px;
-}
-
-.texte-role-team {
-    text-align: center;
-    margin-top: 5px;
-    margin-bottom: 5px;
 }
 
 pre.line-numbers code span.new-line {
