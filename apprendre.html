@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+  <title>Apprendre</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="light-blue-skin">
+
+  <!--Main Navigation-->
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light ducky-blue scrolling-navbar">
+      <div class="container">
+
+        <!-- Brand -->
+        <a class="navbar-brand waves-effect" href="./index.html">
+          <img src="./img/ducky/logo.png" height="35" alt="DuckyHub Logo">
+          <strong class="white-text">DuckyHub</strong>
+        </a>
+
+        <!-- Collapse -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <!-- Left -->
+          <ul class="navbar-nav mr-auto">
+
+            <!-- Accueil -->
+            <li class="nav-item">
+              <a class="nav-link waves-effect white-text px-2" href="./index.html">Accueil
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <!-- Accueil -->
+
+            <!-- Apprendre -->
+            <li class="nav-item active px-2 dropdown">
+              <a class="white-text nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">Apprendre  </a>
+              <div class="dropdown-menu ducky-blue" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item white-text" href="./apprendre.html">Tutoriels</a>
+                <a class="dropdown-item white-text" href="./apprendre.html">Ressources</a>
+              </div>
+            </li>
+            <!-- Apprendre -->
+
+            <!-- Scripts -->
+            <li class="nav-item px-2">
+              <a class="nav-link waves-effect white-text" href="./scripts.html">Scripts</a>
+            </li>
+            <!-- Scripts -->
+
+            <!-- Générateur -->
+            <li class="nav-item px-2">
+              <a class="nav-link waves-effect white-text" href="./generateur.html">Générateur</a>
+            </li>
+            <!-- Générateur -->
+          </ul>
+
+          <!-- Right -->
+          <ul class="navbar-nav nav-flex-icons">
+            <li class="nav-item">
+              <a href="https://github.com/cvbenur/duckyhub-website" class="nav-link border border-light rounded waves-effect white-text"
+                target="_blank">
+                <i class="fab fa-github mr-2"></i>DuckyHub GitHub
+              </a>
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+    </nav>
+    <!-- Navbar -->
+
+  </header>
+  <!--Main Navigation-->
+
+  <!--Main layout-->
+  <main class="mt-5 pt-5">
+    <div class="container animated fadeIn">
+
+      <div>
+
+        <h1 class="my-4 ducky-blue-text">
+          <strong>Apprendre</strong>
+        </h1>
+
+
+        <hr class="my-5" />
+        
+
+        <div>
+          <ul class="nav nav-tabs pt-4" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active tab ducky-blue-text" id="tutoriels-tab" data-toggle="tab" href="#tutoriels" role="tab" aria-controls="tutoriels"
+                aria-selected="true"><h4><strong>Tutoriels</strong></h4></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link tab ducky-blue-text" id="ressources-tab" data-toggle="tab" href="#ressources" role="tab" aria-controls="ressources"
+                aria-selected="false"><h4><strong>Ressources</strong></h4></a>
+            </li>
+          </ul>
+
+          <div class="tab-content pt-5" id="myTabContent">
+
+            <!-- Tab 1 -->
+            <div class="tab-pane fade show active" id="tutoriels" role="tabpanel" aria-labelledby="tutoriels-tab">
+              
+              <div class="wow fadeIn" id="intro">
+        
+                <!-- Content -->
+                <div class="ducky-blue-text">
+        
+                  <div class="py-3">
+                    <h3 class="ducky-blue-text">
+                      <strong>Généralités</strong>
+                    </h3>
+  
+  
+                    <div class="ducky-blue-text text-justify">
+                      <h4 class="ducky-blue-text pt-3">
+                        <strong>Qu'est-ce que le DuckyScript ?</strong>
+                      </h4>
+                      
+                      <p class="pt-3">
+                        Le DuckyScript est un langage de scripting, déstiné à des clés USB programmables, les "RubberDucky". Celles-ci simulent des frappes de clavier au moment où elles sont branchées à un ordinateur.<br/> 
+                        Simple d'accès, il peut être généré via n'importe quel éditeur de texte.
+                      </p>
+
+                      <p class="py-3">
+                        Le RubberDucky, quant à lui, trouve un grand nombre de ses applications dans le domaine de la sécurité informatique.
+                      </p>
+  
+                      <h4 class="ducky-blue-text pb-3">
+                        <strong>Pourquoi s'en servir ?</strong>
+                      </h4>
+                      
+                      <p class="pb-3">
+                        Il existe de nombreux cas où l'on peut être amené à effectuer la même action sur un ordinateur un très grand nombre de fois.
+                        Réaliser toutes ces actions peut être long et fastidieux.<br/>
+                        Une clé RubberDucky, quelques lignes de DuckyScript, et il ne vous reste plus qu'à brancher la clé dans l'ordinateur et attendre.
+                      </p>
+  
+                      <p class="pb-3">
+                        De même, vous pouvez avoir besoin d'effectuer un certain nombre d'actions sur un ordinateur, mais avec un temps d'accès limité.
+                        De la même façon, un script DuckyScript, contenant une série d'instructions pré-programmées, peut être la solution à votre problème.
+                      </p>
+                    </div>
+
+
+                    <div class="ducky-blue-text text-justify">
+                      <h4 class="ducky-blue-text pt-3">
+                        <strong>Programmer en DuckyScript</strong>
+                      </h4>
+    
+                      <div>
+                        <p class="py-3">
+                          Le DuckyScript est un ensemble d'instructions, simplifiées au maximum. Elles sont faites pour émuler des frappes de clavier.
+                          Les commandes sont composées d'un mot-clé, écrit en majuscule, et d'un argument, en minuscule.<br/>
+                          Chaque commande représente une ligne.
+                        </p>
+
+                        <div class="py-3">
+                          <p>Les mots-clé sont divisées en 3 catégories :</p>
+                          <ul>
+                            <li>Les commentaires,</li>
+                            <li>Les variables,</li>
+                            <li>Les touches de clavier.</li>
+                          </ul>
+                        </div>
+
+                        
+                        <div class="py-3">
+                          <p>
+                            Les touches de clavier peuvent être associées, de manière à ordonner au programme de simuler une combinaison de touches.<br/>
+                          </p>
+
+                          <p class="py-2">
+                            A titre d'exemple, la commande suivante :
+                            <pre class="line-numbers mdb-color darken-3"><code>
+                              <span class="new-line blue-text">CTRL ALT DEL</span>
+                            </code></pre>
+                            Permet de simuler la combinaison de touches <strong>"Control + Alt + Suppr."</strong>.
+                          </p>
+                        </div>
+
+                        <div class="py-3">
+                          <p>
+                            Les commentaires et variables doivent quant à eux être chacun sur leur propre ligne.<br/>
+                          </p>
+
+                          <p class="py-2">
+                            Exemple :
+                            <pre class="line-numbers mdb-color darken-3"><code>
+                              <span class="new-line grey-text">REM Exemple de script</span>
+                              <span class="new-line white-text"><span class="orange-text">DELAY</span> 450</span>
+                              <span class="new-line white-text"><span class="cyan-text">STRING</span> Hello World!</span>
+                            </code></pre>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    
+                    <div class="py-3">
+                      <h4 class="ducky-blue-text py-3">
+                        <strong>Les mots-clés</strong>
+                      </h4>
+
+                      <div class="table-responsive text-justify">
+                        <table class="table table-bordered text-left">
+                          <tr class="ducky-blue white-text">
+                            <td><strong>Mot-Clé</strong></td>
+                            <td><strong>Catégorie</strong></td>
+                            <td><strong>Comportement</strong></td>
+                            <td><strong>Exemple d'utilisation</strong></td>
+                          </tr>
+                          <tr>
+                            <td><strong>REM</strong></td>
+                            <td>Commentaire</td>
+                            <td>Transforme la ligne en commentaire</td>
+                            <td>Cette ligne exprime le commentaire "Ceci est un commentaire".
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line grey-text">REM Ceci est un commentaire</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>STRING</strong></td>
+                            <td>Variable</td>
+                            <td>Détecte la valeur qui suit en tant que chaîne de caractères</td>
+                            <td>Cette ligne ordonne au programme de taper la chaîne de caractère "Exemple de chaîne de caractères".
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line white-text"><span class="cyan-text">STRING</span> Exemple de chaîne de caractères</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>DELAY</strong></td>
+                            <td>Variable</td>
+                            <td>Détecte la valeur qui suit en tant que nombre entier</td>
+                            <td>Cette ligne exprime une pause de 3 secondes.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line white-text"><span class="orange-text">DELAY</span> 3000</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>DEFAULTDELAY</strong> ou <strong>DEFAULT_DELAY</strong></td>
+                            <td>Variable</td>
+                            <td>Détecte la valeur qui suit en tant que nombre entier</td>
+                            <td>Cette ligne exprime aussi une pause de 3 secondes.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line white-text"><span class="orange-text">DEFAULTDELAY</span> 3000</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>REPEAT</strong></td>
+                            <td>Variable</td>
+                            <td>Détecte la valeur qui suit en tant que nombre entier</td>
+                            <td>Cette ligne ordonne au programme de répéter la dernière action 4 fois.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line white-text"><span class="orange-text">REPEAT</span> 4</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>GUI</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche Windows ou Pomme.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">GUI</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>WINDOWS</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne aussi au programme de simuler la touche Windows ou Pomme.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">WINDOWS</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>APP</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche Menu ou Applications.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">APP</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>MENU</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne aussi au programme de simuler la touche Menu ou Applications.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">MENU</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>SHIFT</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche MAJ.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">SHIFT</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>ALT</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche ALT.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">ALT</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>CTRL</strong> ou <strong>CONTROL</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche CTRL (ou CONTROL).
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">CTRL</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>DOWNARROW</strong> ou <strong>DOWN</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la flèche directionnelle du bas.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">DOWNARROW</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>UPARROW</strong> ou <strong>UP</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la flèche directionnelle du haut.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">UPARROW</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>LEFTARROW</strong> ou <strong>LEFT</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la flèche directionnelle de gauche.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">LEFTARROW</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>RIGHTARROW</strong> ou <strong>RIGHT</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la flèche directionnelle de droite.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">RIGHTARROW</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>BREAK</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche PAUSE.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">BREAK</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>PAUSE</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne aussi au programme de simuler la touche PAUSE.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">PAUSE</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>CAPSLOCK</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche VERR. MAJ.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">CAPSLOCK</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>END</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche FIN.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">END</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>ENTER</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche ENTREE.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">ENTER</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>ESCAPE</strong> ou <strong>ESC</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche ECHAP.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">ESCAPE</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>HOME</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche DEBUT.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">HOME</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>INSERT</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche INSERER.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">INSERT</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>NUMLOCK</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche VERR. NUM.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">NUMLOCK</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>PAGEUP</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche HAUT DE PAGE.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">PAGEUP</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>PAGEDOWN</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche BAS DE PAGE.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">PAGEDOWN</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>PRINTSCREEN</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche IMPR. ECRAN.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">PRINTSCREEN</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>SCROLLLOCK</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche ARRÊT DEFIL.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">SCROLLLOCK</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>SPACE</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la barre ESPACE.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">SPACE</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><strong>TAB</strong></td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche de clavier</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche TAB.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">TAB</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Touches Fonction (<strong>F1</strong> à <strong>F12</strong>)</td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche fonction</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche F2.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">F2</span></code></pre>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Touches alpha-numériques (<strong>0</strong> à <strong>9</strong> et <strong>A</strong> à <strong>Z</strong>)</td>
+                            <td>Touche de clavier</td>
+                            <td>Détecte la pression d'une touche alpha-numérique</td>
+                            <td>Cette ligne ordonne au programme de simuler la touche A.
+                              <pre class="line-numbers mdb-color darken-3"><code><span class="new-line blue-text">A</span></code></pre>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Content -->
+              </div>
+              
+            </div>
+            <!-- Tab 1 -->
+
+            <!-- Tab 2 -->
+            <div class="tab-pane fade" id="ressources" role="tabpanel" aria-labelledby="ressources-tab">
+
+              <div class="wow fadeIn" id="intro">
+                <!-- Content -->
+                <div class="ducky-blue-text py-3">
+        
+                  <h3 class="ducky-blue-text">
+                    <strong>Ressources</strong>
+                  </h3>
+
+
+                  <div class="py-3">
+                    <h4 class="ducky-blue-text">
+                      <strong>Articles associés</strong>
+                    </h4>
+
+                    <div class="pt-2">
+                      <ul>
+                        <li><a target="_blank" href="https://korben.info/usb-rubber-ducky.html">USB Rubber Ducky - Le Canard Hacker</a></li>
+                        <li><a target="_blank" href="https://www.youtube.com/watch?time_continue=1&v=sbKN8FhGnqg">Vidéo de présentation officielle du RubberDucky (en anglais)</a></li>
+                        <li><a target="_blank" href="https://www.youtube.com/watch?v=1_LUqbI9SG8">Exemples des applications du RubberDucky en sécurité informatique (en anglais)</a></li>
+                      </ul>
+                    </div>
+                  </div>
+
+
+                  <div class="py-3">
+                    <h4 class="ducky-blue-text">
+                      <strong>Ressources externes</strong>
+                    </h4>
+
+                    <div class="pt-2">
+                      <ul>
+                        <li><a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=cvbenur.ducky-script-lang-vscode">Extension DuckyScript Language for VSCode</a></li>
+                        <li><a target="_blank" href="https://github.com/cvbenur/ducky-script-lang-vscode">Page GitHub de l'extension DuckyScript Language for VSCode (en anglais)</a></li>
+                        <li><a target="_blank" href="https://github.com/cvbenur/duckyhub-website">Page GitHub de ce site</a></li>
+                      </ul>
+                    </div>
+                  </div>
+
+
+                  <div class="pt-3">
+                    <h4 class="ducky-blue-text">
+                      <strong>Liens utiles</strong>
+                    </h4>
+
+                    <div class="pt-2">
+                      <ul>
+                        <li><a target="_blank" href="https://shop.hak5.org/products/usb-rubber-ducky-deluxe">Le site officiel du RubberDucky (en anglais)</a></li>
+                        <li><a target="_blank" href="https://github.com/hak5darren/USB-Rubber-Ducky/wiki/Duckyscript">Page GitHub officielle du DuckyScript (en anglais)</a></li>
+                        <li><a target="_blank" href="https://github.com/hak5darren/USB-Rubber-Ducky/wiki/Payloads">Archive de scripts DuckyScript (en anglais)</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <!-- Tab 2 -->
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+  <!--Main layout-->
+
+  <!--Footer-->
+  <footer class="page-footer text-center font-small ducky-blue mt-4 wow fadeIn">
+
+    <!-- Links -->
+    <div class="py-2 row justify-content-center">
+      <a class="py-1 px-2 col-sm-2" href="https://github.com/cvbenur/duckyhub-website/" target="_blank"><i class="fab fa-github white-text"></i> DuckyHub sur GitHub</a>
+      <a class="py-1 px-2 col-sm-2" href="./team.html"><i class="fas fa-users white-text"></i> L'équipe</a>
+      <a class="py-1 px-2 col-sm-2" href="https://github.com/cvbenur/duckyhub-website/issues" target="_blank"><i class="fas fa-exclamation-circle white-text"></i> Signaler un bug</a>
+    </div>
+    <!-- Links -->
+
+    <!--Copyright-->
+    <div class="footer-copyright white-text py-3">
+      © 2020 Copyright : DuckyHub </a>
+    </div>
+    <!--/.Copyright-->
+
+  </footer>
+  <!--/.Footer-->
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Custom JS -->
+  <script type="text/javascript" src="./js/ducky/tabs/tabs.js"></script>
+  <!-- Initializations -->
+  <script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+
+  </script>
+</body>
+
+</html>
